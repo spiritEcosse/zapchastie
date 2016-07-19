@@ -16,6 +16,7 @@ db.sqlite3
 soloha_shop
 /media/*
 !/media/image_not_found.jpg
+/conf
 # Vagrant
 .vagrant
 npm-debug.log
