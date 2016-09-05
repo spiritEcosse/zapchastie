@@ -116,17 +116,6 @@
         }
     },
     {
-        "pk": 2,
-        "model": "offer.benefit",
-        "fields": {
-            "range": null,
-            "proxy_class": "apps.offers.ChangesOwnerName",
-            "type": "",
-            "max_affected_items": null,
-            "value": null
-        }
-    },
-    {
         "pk": 3,
         "model": "offer.benefit",
         "fields": {
