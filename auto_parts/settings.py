@@ -1,3 +1,4 @@
+#  -*- coding: utf-8 -*-
 """
 Django settings for auto_parts project.
 
@@ -195,9 +196,9 @@ HAYSTACK_CONNECTIONS = {
 }
 
 
-# CACHES = settings_local.CACHES
-# CACHE_MIDDLEWARE_SECONDS = settings_local.CACHE_MIDDLEWARE_SECONDS
-# CACHE_MIDDLEWARE_KEY_PREFIX = settings_local.CACHE_MIDDLEWARE_KEY_PREFIX
+CACHES = settings_local.CACHES
+CACHE_MIDDLEWARE_SECONDS = settings_local.CACHE_MIDDLEWARE_SECONDS
+KEY_PREFIX = settings_local.KEY_PREFIX
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -210,3 +211,5 @@ EMAIL_HOST = settings_local.EMAIL_HOST
 EMAIL_PORT = settings_local.EMAIL_PORT
 EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
 
+OSCAR_DEFAULT_CURRENCY = 'UAH'
+OSCAR_CURRENCY_FORMAT = u'#,##0.## грн.'
