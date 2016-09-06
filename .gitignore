@@ -27,7 +27,7 @@ npm-debug.log
 *.DS_Store
 .python-version
 **/migrations/
-conf/
+conf
 
 # IDE files
 .project
