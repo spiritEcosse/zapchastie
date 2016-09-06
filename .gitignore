@@ -16,7 +16,6 @@ db.sqlite3
 soloha_shop
 /media/*
 !/media/image_not_found.jpg
-/conf
 # Vagrant
 .vagrant
 npm-debug.log
@@ -27,6 +26,8 @@ npm-debug.log
 .~lock.*
 *.DS_Store
 .python-version
+**/migrations/
+conf/
 
 # IDE files
 .project
@@ -112,7 +113,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-Будет удалено .gitignore
-Будет удалено auto_parts/
-Будет удалено manage.py
-Будет удалено templates/
