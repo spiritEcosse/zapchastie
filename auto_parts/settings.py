@@ -49,27 +49,17 @@ INSTALLED_APPS = [
     'compressor',
     'widget_tweaks',
     'import_export',
+    'debug_toolbar',
 ] + get_core_apps()
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'oscar.apps.basket.middleware.BasketMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-]
-
-ROOT_URLCONF = 'auto_parts.urls'
+MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 
 AUTHENTICATION_BACKENDS = (
     'oscar.apps.customer.auth_backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+ROOT_URLCONF = 'auto_parts.urls'
 
 TEMPLATES = [
     {
