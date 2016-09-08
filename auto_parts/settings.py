@@ -38,6 +38,8 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'flat',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +52,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'import_export',
     'debug_toolbar',
-] + get_core_apps()
+] + get_core_apps(['apps.catalogue'])
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 

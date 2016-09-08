@@ -1,14 +1,16 @@
 from oscar.apps.catalogue.models import *  # noqa
 from django.utils.translation import ugettext_lazy as _
 from mptt.models import MPTTModel, TreeForeignKey
+from django.utils.encoding import python_2_unicode_compatible
+from django.db import models
 
 
 @python_2_unicode_compatible
 class Feature(MPTTModel):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, verbose_name=_('Title'))
     slug = models.SlugField(verbose_name=_('Slug'), max_length=255, unique=True)
     parent = TreeForeignKey('self', verbose_name=_('Parent'), related_name='children', blank=True, null=True, db_index=True)
-    sort = models.IntegerField(blank=True, null=True, default=0)
+    sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0)
     created = models.DateTimeField(auto_now_add=True)
     enable = models.BooleanField(verbose_name=_('Enable'), default=True)
 

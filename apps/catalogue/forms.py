@@ -1,6 +1,6 @@
 from django import forms
 from dal import autocomplete
-from apps.catalogue.models import Feature
+from models import Feature
 
 
 class FeatureForm(forms.ModelForm):
