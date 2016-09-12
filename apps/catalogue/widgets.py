@@ -1,15 +1,11 @@
 from django.conf import settings
 from import_export import widgets as import_export_widgets
 import os
-from django.core.exceptions import ObjectDoesNotExist
 from filer.models.imagemodels import Image
-from django.db import transaction
 from oscar.core.loading import get_model
 from filer import settings as filer_settings
-try:
-    from django.utils.encoding import force_text
-except ImportError:
-    from django.utils.encoding import force_unicode as force_text
+from django.utils.encoding import force_text
+
 
 ProductImage = get_model('catalogue', 'ProductImage')
 
@@ -30,7 +26,7 @@ def search_file(image_name, folder):
 
 
 class ImageForeignKeyWidget(import_export_widgets.ForeignKeyWidget):
-    def clean(self, value):
+    def clean(self, value, ):
         if value:
             if not os.path.dirname(value):
                 folder = os.path.join(settings.MEDIA_ROOT, filer_settings.DEFAULT_FILER_STORAGES['public']['main']['UPLOAD_TO_PREFIX'])
@@ -109,26 +105,21 @@ class CharWidget(import_export_widgets.Widget):
     Widget for converting text fields.
     """
 
-    def render(self, value):
+    def render(self, value, obj=None):
         try:
-            featured_value = force_text(int(float(value)))
+            featured_value = int(float(value))
         except ValueError:
-            featured_value = force_text(value)
-        return featured_value
+            featured_value = value
+        return force_text(featured_value)
 
 
 class ManyToManyWidget(import_export_widgets.ManyToManyWidget):
-    def clean(self, value):
+    def clean(self, value, row=None, *args, **kwargs):
         if not value:
             return self.model.objects.none()
+
         ids = filter(None, value.split(self.separator))
-        objects = []
-
-        with transaction.atomic():
-            for id in ids:
-                try:
-                    objects.append(self.model.objects.get(**{self.field: id}))
-                except ObjectDoesNotExist as e:
-                    raise ValueError('{} {}: \'{}\'.'.format(e, self.model._meta.object_name, id))
-
-        return objects
+        ids = map(lambda slug: slug.strip(), ids)
+        return self.model.objects.filter(**{
+            '%s__in' % self.field: ids
+        })

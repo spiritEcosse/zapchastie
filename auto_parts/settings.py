@@ -32,6 +32,8 @@ SECRET_KEY = '_l+4+_0xt9j=8*xj%dml+i8rsoa73#e%09fw^m7+yr611b15y&pa'
 DEBUG = settings_local.DEBUG
 THUMBNAIL_DEBUG = settings_local.THUMBNAIL_DEBUG
 ALLOWED_HOSTS = settings_local.ALLOWED_HOSTS
+DEBUG_TOOLBAR_CONFIG = settings_local.DEBUG_TOOLBAR_CONFIG
+
 SITE_ID = 1
 
 # Application definition

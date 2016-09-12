@@ -9,6 +9,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from dal import autocomplete
 from django.db.models import Q
+from oscar.core.loading import get_model
+from django.db.models.query import Prefetch
+
+
+Product = get_model('catalogue', 'Product')
 
 
 class FeatureAutocomplete(autocomplete.Select2QuerySetView):
@@ -35,4 +40,31 @@ class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPT
         js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
               "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
 
+
+class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
+    list_display = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'attribute_summary', )
+    list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
+    inlines = (ProductRecommendationInline, AttributeInline, CategoryInline, )
+    prepopulated_fields = {"slug": ("title",)}
+    search_fields = ('upc', 'title', 'slug', 'id', )
+    # form = forms.ProductForm
+    resource_class = resources.ProductResource
+    list_select_related = ('product_class', )
+    list_attr = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'product_class__name', )
+
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
+    def get_queryset(self, request):
+        qs = super(ProductAdmin, self).get_queryset(request)
+        return qs.only(*self.list_attr).order_by('-date_updated', 'title').prefetch_related(
+            Prefetch('images', queryset=ProductImage.objects.only('original', 'product')),
+            Prefetch('attribute_values'),
+            Prefetch('attributes'),
+        )
+
+
 admin.site.register(Feature, FeatureAdmin)
+admin.site.unregister(Product)
+admin.site.register(Product, ProductAdmin)
