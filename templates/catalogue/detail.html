@@ -11,7 +11,7 @@
 
 {% block title %}{{ product.get_meta_title }} | {{ block.super }}{% endblock %}
 
-{% block description %}{{ product.get_meta_description }}{% endblock %}
+{% block description %}{{ product.get_meta_description|default:""|striptags }}{% endblock %}
 
 {% block extrahead %}<meta name="keywords" content="{{ product.get_meta_keywords }}">{% endblock %}
 
@@ -64,7 +64,7 @@
             {% if user.is_authenticated and user.is_staff %}
                 <a class="pull-right hidden-xs" href="{% url 'dashboard:catalogue-product' pk=product.id %}"><small><i class="icon-edit"></i> {% trans "Edit this product" %}</small></a>
             {% endif %}
-            <h1>{{ product.get_title }}</h1>
+            <h1>{{ product.get_h1 }}</h1>
 
             {% block product_stock_record %}
                 {% include "catalogue/partials/stock_record.html" with verbose=1 %}

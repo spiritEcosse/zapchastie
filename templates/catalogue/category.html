@@ -1,0 +1,39 @@
+{% extends "catalogue/browse.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ category.get_meta_title }} | {{ block.super }}{% endblock %}
+
+{% block description %}{{ category.get_meta_description|default:""|striptags }}{% endblock %}
+
+{% block extrahead %}<meta name="keywords" content="{{ category.get_meta_keywords }}">{% endblock %}
+
+{% block headertext %}{{ category.get_h1 }}{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+        </li>
+        {% for category in category.get_ancestors %}
+            <li>
+                <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+        <li class="active">{{ category.name }}</li>
+    </ul>
+{% endblock breadcrumbs %}
+
+{% block content %}
+    {% if category.description %}
+        <div class="row">
+            <div class="col-sm-9"><p>{{ category.description|safe }}</p></div>
+            {% if category.image %}
+                <div class="col-sm-3">
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive" />
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

@@ -4,9 +4,6 @@ from mptt.models import MPTTModel, TreeForeignKey
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from oscar.core.utils import slugify
-from django.utils.html import strip_tags
-from django.template.defaultfilters import truncatechars
-from auto_parts.settings import TRUNCATECHARS_DESCRIPTION
 
 
 @python_2_unicode_compatible
@@ -60,7 +57,7 @@ def init(self, *args, **kwargs):
 
 
 def get_meta_title(self):
-    return self.meta_title or self.title
+    return self.meta_title or self.get_title()
 
 
 def get_meta_keywords(self):
@@ -68,13 +65,32 @@ def get_meta_keywords(self):
 
 
 def get_meta_description(self):
-    return self.meta_description or truncatechars(strip_tags(self.description), TRUNCATECHARS_DESCRIPTION)
+    return self.meta_description or self.description
+
+
+def get_h1(self):
+    return self.h1 or self.get_title()
 
 
 Product.__init__ = init
 Product.get_meta_title = get_meta_title
 Product.get_meta_description = get_meta_description
 Product.get_meta_keywords = get_meta_keywords
+Product.get_h1 = get_h1
+
+
+def get_meta_title(self):
+    return self.meta_title or self.name
+
+
+def get_h1(self):
+    return self.h1 or self.name
+
+
+Category.get_meta_title = get_meta_title
+Category.get_meta_description = get_meta_description
+Category.get_meta_keywords = get_meta_keywords
+Category.get_h1 = get_h1
 
 filters = models.ManyToManyField(
     'catalogue.Feature', related_name="filter_products",
@@ -95,3 +111,8 @@ meta_description.contribute_to_class(Product, "meta_description")
 
 meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
 meta_keywords.contribute_to_class(Product, "meta_keywords")
+
+h1.contribute_to_class(Category, "h1")
+meta_title.contribute_to_class(Category, "meta_title")
+meta_description.contribute_to_class(Category, "meta_description")
+meta_keywords.contribute_to_class(Category, "meta_keywords")
