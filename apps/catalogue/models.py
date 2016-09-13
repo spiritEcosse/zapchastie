@@ -87,17 +87,22 @@ def get_h1(self):
     return self.h1 or self.name
 
 
+@property
+def parent(self):
+    return self.get_parent()
+
 Category.get_meta_title = get_meta_title
 Category.get_meta_description = get_meta_description
 Category.get_meta_keywords = get_meta_keywords
 Category.get_h1 = get_h1
+Category.parent = parent
 
 filters = models.ManyToManyField(
     'catalogue.Feature', related_name="filter_products",
     verbose_name=_('Filters of product'), blank=True
 )
 filters.contribute_to_class(Product, "filters")
-enable = models.BooleanField(verbose_name=_('Enable'), default=True)
+enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
 enable.contribute_to_class(Product, "enable")
 
 h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=310)
@@ -116,3 +121,11 @@ h1.contribute_to_class(Category, "h1")
 meta_title.contribute_to_class(Category, "meta_title")
 meta_description.contribute_to_class(Category, "meta_description")
 meta_keywords.contribute_to_class(Category, "meta_keywords")
+enable.contribute_to_class(Category, "enable")
+
+created = models.DateTimeField(auto_now_add=True, db_index=True)
+created.contribute_to_class(Category, "created")
+
+sort = models.IntegerField(blank=True, null=True, default=0, db_index=True)
+sort.contribute_to_class(Category, "sort")
+

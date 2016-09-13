@@ -15,6 +15,21 @@ class ModelResource(resources.ModelResource):
         return self.fields['delete'].clean(row)
 
 
+class CategoryResource(ModelResource):
+    # parent = fields.Field(
+    #     attribute='parent', widget=import_export_widgets.ForeignKeyWidget(
+    #         model=Category, field='slug'
+    #     )
+    # )
+    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
+
+    class Meta:
+        model = Category
+        fields = ('id', 'delete', 'enable', 'name', 'slug', 'sort', 'meta_title', 'h1', 'meta_description',
+                  'meta_keywords', 'description', )
+        export_order = fields
+
+
 class FeatureResource(ModelResource):
     title = fields.Field(column_name='title', attribute='title', widget=widgets.CharWidget())
     parent = fields.Field(attribute='parent', column_name='parent', widget=import_export_widgets.ForeignKeyWidget(

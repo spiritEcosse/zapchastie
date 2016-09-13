@@ -1,6 +1,7 @@
 from oscar.apps.catalogue.admin import *  # noqa
 from django import forms
 from mptt.admin import DraggableMPTTAdmin
+from treebeard.admin import TreeAdmin
 from import_export.admin import ImportExportMixin, ImportExportActionModelAdmin
 import resources
 import forms
@@ -11,6 +12,8 @@ from dal import autocomplete
 from django.db.models import Q
 from oscar.core.loading import get_model
 from django.db.models.query import Prefetch
+from django.forms import Textarea
+from django.db import models
 
 
 Product = get_model('catalogue', 'Product')
@@ -65,6 +68,24 @@ class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
         )
 
 
+class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, TreeAdmin):
+    prepopulated_fields = {'slug': ("name",)}
+    list_display = ('pk', 'name', 'slug', 'enable', 'parent', 'sort', 'created')
+    list_filter = ('enable', 'created', )
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea()},
+    }
+    search_fields = ('name', 'slug', 'id',)
+    resource_class = resources.CategoryResource
+    # form = forms.CategoryForm
+
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
+
 admin.site.register(Feature, FeatureAdmin)
 admin.site.unregister(Product)
 admin.site.register(Product, ProductAdmin)
+admin.site.unregister(Category)
+admin.site.register(Category, CategoryAdmin)
