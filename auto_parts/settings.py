@@ -85,6 +85,7 @@ TEMPLATES = [
                 'oscar.apps.checkout.context_processors.checkout',
                 'oscar.apps.customer.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
+                'auto_parts.core.context_processors.metadata',
             ],
         },
     },
@@ -204,6 +205,8 @@ EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
 EMAIL_HOST = settings_local.EMAIL_HOST
 EMAIL_PORT = settings_local.EMAIL_PORT
 EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
+
+TRUNCATECHARS_DESCRIPTION = 300
 
 OSCAR_DEFAULT_CURRENCY = 'UAH'
 OSCAR_CURRENCY_FORMAT = u'#,##0.## грн.'

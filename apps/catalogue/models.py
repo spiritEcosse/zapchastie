@@ -4,6 +4,9 @@ from mptt.models import MPTTModel, TreeForeignKey
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from oscar.core.utils import slugify
+from django.utils.html import strip_tags
+from django.template.defaultfilters import truncatechars
+from auto_parts.settings import TRUNCATECHARS_DESCRIPTION
 
 
 @python_2_unicode_compatible
@@ -56,7 +59,23 @@ def init(self, *args, **kwargs):
     self.attr = ProductAttributesContainer(product=self)
 
 
+def get_meta_title(self):
+    return self.meta_title or self.title
+
+
+def get_meta_keywords(self):
+    return self.meta_keywords
+
+
+def get_meta_description(self):
+    return self.meta_description or truncatechars(strip_tags(self.description), TRUNCATECHARS_DESCRIPTION)
+
+
 Product.__init__ = init
+Product.get_meta_title = get_meta_title
+Product.get_meta_description = get_meta_description
+Product.get_meta_keywords = get_meta_keywords
+
 filters = models.ManyToManyField(
     'catalogue.Feature', related_name="filter_products",
     verbose_name=_('Filters of product'), blank=True
