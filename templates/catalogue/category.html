@@ -6,7 +6,13 @@
 
 {% block description %}{{ category.get_meta_description|default:""|striptags }}{% endblock %}
 
-{% block extrahead %}<meta name="keywords" content="{{ category.get_meta_keywords }}">{% endblock %}
+{% block extrahead %}
+    <meta name="keywords" content="{{ category.get_meta_keywords }}">
+
+    {% if page_obj.number > 1 %}
+        <meta name="robots" content="nofollow" />
+    {% endif %}
+{% endblock %}
 
 {% block headertext %}{{ category.get_h1 }}{% endblock %}
 
