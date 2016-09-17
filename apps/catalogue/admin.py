@@ -51,7 +51,7 @@ class FeatureAutocomplete(autocomplete.Select2QuerySetView):
         qs = Feature.objects.all().only('pk', 'title', 'slug', )
 
         if self.q:
-            qs = qs.filter(Q(title__icontains=self.q) | Q(slug__icontains=self.q))
+            qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
         return qs
 
 
