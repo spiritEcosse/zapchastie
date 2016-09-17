@@ -19,6 +19,19 @@ from django.db import models
 Product = get_model('catalogue', 'Product')
 
 
+class CategoriesAutocomplete(autocomplete.Select2QuerySetView):
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(CategoriesAutocomplete, self).dispatch(*args, **kwargs)
+
+    def get_queryset(self):
+        qs = Category.objects.all().only('pk', 'name', 'slug', )
+
+        if self.q:
+            qs = qs.filter(Q(name__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
+        return qs
+
+
 class FeatureAutocomplete(autocomplete.Select2QuerySetView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -77,7 +90,7 @@ class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMP
     }
     search_fields = ('name', 'slug', 'id',)
     resource_class = resources.CategoryResource
-    # form = forms.CategoryForm
+    form = forms.CategoryForm
 
     class Media:
         js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
