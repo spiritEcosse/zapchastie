@@ -53,6 +53,9 @@ INSTALLED_APPS = \
         'compressor',
         'easy_thumbnails',
         'filer',
+        'feincms',
+        # 'feincms.module.page',
+        # 'feincms.module.medialibrary',
         'mptt',
         'widget_tweaks',
         'ckeditor',
@@ -83,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
 
                 'oscar.apps.search.context_processors.search_form',
                 'oscar.apps.promotions.context_processors.promotions',

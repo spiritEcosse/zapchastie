@@ -8,6 +8,13 @@ from filer.fields.image import FilerImageField
 from django.core.urlresolvers import reverse
 from django.utils.translation import get_language, pgettext_lazy
 from django.core.cache import cache
+from oscar.models.fields import AutoSlugField, NullCharField
+from oscar.core.loading import get_classes
+from oscar.core.decorators import deprecated
+from django.utils.functional import cached_property
+
+ProductManager, BrowsableProductManager = get_classes(
+    'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])
 
 
 class EnableManager(models.Manager):
@@ -279,6 +286,474 @@ class Category(MPTTModel):
         return ret
 
 
+from oscar.apps.catalogue.abstract_models import ProductAttributesContainer as CoreProductAttributesContainer
+
+
+class ProductAttributesContainer(CoreProductAttributesContainer):
+    def __getattr__(self, item):
+        super(object, self).__getattr__(item)
+
+
+@python_2_unicode_compatible
+class Product(models.Model):
+    """
+    The base product object
+
+    There's three kinds of products; they're distinguished by the structure
+    field.
+
+    - A stand alone product. Regular product that lives by itself.
+    - A child product. All child products have a parent product. They're a
+      specific version of the parent.
+    - A parent product. It essentially represents a set of products.
+
+    An example could be a yoga course, which is a parent product. The different
+    times/locations of the courses would be associated with the child products.
+    """
+    STANDALONE, PARENT, CHILD = 'standalone', 'parent', 'child'
+    STRUCTURE_CHOICES = (
+        (STANDALONE, _('Stand-alone product')),
+        (PARENT, _('Parent product')),
+        (CHILD, _('Child product'))
+    )
+    structure = models.CharField(
+        _("Product structure"), max_length=10, choices=STRUCTURE_CHOICES,
+        default=STANDALONE)
+
+    upc = NullCharField(
+        _("UPC"), max_length=64, blank=True, null=True, unique=True,
+        help_text=_("Universal Product Code (UPC) is an identifier for "
+                    "a product which is not specific to a particular "
+                    " supplier. Eg an ISBN for a book."))
+
+    parent = models.ForeignKey(
+        'self', null=True, blank=True, related_name='children',
+        verbose_name=_("Parent product"),
+        help_text=_("Only choose a parent product if you're creating a child "
+                    "product.  For example if this is a size "
+                    "4 of a particular t-shirt.  Leave blank if this is a "
+                    "stand-alone product (i.e. there is only one version of"
+                    " this product)."))
+
+    # Title is mandatory for canonical products but optional for child products
+    title = models.CharField(pgettext_lazy(u'Product title', u'Title'),
+                             max_length=255, blank=True)
+    slug = models.SlugField(_('Slug'), max_length=255, unique=False)
+    h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=310)
+    meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=520)
+    meta_description = models.TextField(verbose_name=_('Meta tag: description'), blank=True)
+    meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
+    description = models.TextField(_('Description'), blank=True)
+
+    #: "Kind" of product, e.g. T-Shirt, Book, etc.
+    #: None for child products, they inherit their parent's product class
+    product_class = models.ForeignKey(
+        'catalogue.ProductClass', null=True, blank=True, on_delete=models.PROTECT,
+        verbose_name=_('Product type'), related_name="products",
+        help_text=_("Choose what type of product this is"))
+    attributes = models.ManyToManyField(
+        'catalogue.ProductAttribute',
+        through='ProductAttributeValue',
+        verbose_name=_("Attributes"),
+        help_text=_("A product attribute is something that this product may "
+                    "have, such as a size, as specified by its class"))
+    #: It's possible to have options product class-wide, and per product.
+    product_options = models.ManyToManyField(
+        'catalogue.Option', blank=True, verbose_name=_("Product options"),
+        help_text=_("Options are values that can be associated with a item "
+                    "when it is added to a customer's basket.  This could be "
+                    "something like a personalised message to be printed on "
+                    "a T-shirt."))
+
+    recommended_products = models.ManyToManyField(
+        'catalogue.Product', through='ProductRecommendation', blank=True,
+        verbose_name=_("Recommended products"),
+        help_text=_("These are products that are recommended to accompany the "
+                    "main product."))
+
+    # Denormalised product rating - used by reviews app.
+    # Product has no ratings if rating is None
+    rating = models.FloatField(_('Rating'), null=True, editable=False)
+
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
+
+    # This field is used by Haystack to reindex search
+    date_updated = models.DateTimeField(
+        _("Date updated"), auto_now=True, db_index=True)
+
+    categories = models.ManyToManyField('catalogue.Category', related_name="products", verbose_name=_("Categories"))
+
+    filters = models.ManyToManyField(
+        'catalogue.Feature', related_name="filter_products",
+        verbose_name=_('Filters of product'), blank=True
+    )
+
+    #: Determines if a product may be used in an offer. It is illegal to
+    #: discount some types of product (e.g. ebooks) and this field helps
+    #: merchants from avoiding discounting such products
+    #: Note that this flag is ignored for child products; they inherit from
+    #: the parent product.
+    is_discountable = models.BooleanField(
+        _("Is discountable?"), default=True, help_text=_(
+            "This flag indicates if this product can be used in an offer "
+            "or not"))
+
+    enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
+    objects = ProductManager()
+    browsable = BrowsableProductManager()
+
+    class Meta:
+        app_label = 'catalogue'
+        ordering = ['-date_created']
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')
+
+    def __init__(self, *args, **kwargs):
+        super(Product, self).__init__(*args, **kwargs)
+        self.attr = ProductAttributesContainer(product=self)
+
+    def __str__(self):
+        if self.title:
+            return self.title
+        if self.attribute_summary:
+            return u"%s (%s)" % (self.get_title(), self.attribute_summary)
+        else:
+            return self.get_title()
+
+    def get_absolute_url(self):
+        """
+        Return a product's absolute url
+        """
+        return reverse('catalogue:detail',
+                       kwargs={'product_slug': self.slug, 'pk': self.id})
+
+    def clean(self):
+        """
+        Validate a product. Those are the rules:
+
+        +---------------+-------------+--------------+--------------+
+        |               | stand alone | parent       | child        |
+        +---------------+-------------+--------------+--------------+
+        | title         | required    | required     | optional     |
+        +---------------+-------------+--------------+--------------+
+        | product class | required    | required     | must be None |
+        +---------------+-------------+--------------+--------------+
+        | parent        | forbidden   | forbidden    | required     |
+        +---------------+-------------+--------------+--------------+
+        | stockrecords  | 0 or more   | forbidden    | 0 or more    |
+        +---------------+-------------+--------------+--------------+
+        | categories    | 1 or more   | 1 or more    | forbidden    |
+        +---------------+-------------+--------------+--------------+
+        | attributes    | optional    | optional     | optional     |
+        +---------------+-------------+--------------+--------------+
+        | rec. products | optional    | optional     | unsupported  |
+        +---------------+-------------+--------------+--------------+
+        | options       | optional    | optional     | forbidden    |
+        +---------------+-------------+--------------+--------------+
+
+        Because the validation logic is quite complex, validation is delegated
+        to the sub method appropriate for the product's structure.
+        """
+        getattr(self, '_clean_%s' % self.structure)()
+        if not self.is_parent:
+            self.attr.validate_attributes()
+
+    def _clean_standalone(self):
+        """
+        Validates a stand-alone product
+        """
+        if not self.title:
+            raise ValidationError(_("Your product must have a title."))
+        if not self.product_class:
+            raise ValidationError(_("Your product must have a product class."))
+        if self.parent_id:
+            raise ValidationError(_("Only child products can have a parent."))
+
+    def _clean_child(self):
+        """
+        Validates a child product
+        """
+        if not self.parent_id:
+            raise ValidationError(_("A child product needs a parent."))
+        if self.parent_id and not self.parent.is_parent:
+            raise ValidationError(
+                _("You can only assign child products to parent products."))
+        if self.product_class:
+            raise ValidationError(
+                _("A child product can't have a product class."))
+        if self.pk and self.categories.exists():
+            raise ValidationError(
+                _("A child product can't have a category assigned."))
+        # Note that we only forbid options on product level
+        if self.pk and self.product_options.exists():
+            raise ValidationError(
+                _("A child product can't have options."))
+
+    def _clean_parent(self):
+        """
+        Validates a parent product.
+        """
+        self._clean_standalone()
+        if self.has_stockrecords:
+            raise ValidationError(
+                _("A parent product can't have stockrecords."))
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.get_title())
+        super(Product, self).save(*args, **kwargs)
+        self.attr.save()
+
+    # Properties
+
+    @property
+    def is_standalone(self):
+        return self.structure == self.STANDALONE
+
+    @property
+    def is_parent(self):
+        return self.structure == self.PARENT
+
+    @property
+    def is_child(self):
+        return self.structure == self.CHILD
+
+    def can_be_parent(self, give_reason=False):
+        """
+        Helps decide if a the product can be turned into a parent product.
+        """
+        reason = None
+        if self.is_child:
+            reason = _('The specified parent product is a child product.')
+        if self.has_stockrecords:
+            reason = _(
+                "One can't add a child product to a product with stock"
+                " records.")
+        is_valid = reason is None
+        if give_reason:
+            return is_valid, reason
+        else:
+            return is_valid
+
+    @property
+    def options(self):
+        """
+        Returns a set of all valid options for this product.
+        It's possible to have options product class-wide, and per product.
+        """
+        pclass_options = self.get_product_class().options.all()
+        return set(pclass_options) or set(self.product_options.all())
+
+    @property
+    def is_shipping_required(self):
+        return self.get_product_class().requires_shipping
+
+    @property
+    def has_stockrecords(self):
+        """
+        Test if this product has any stockrecords
+        """
+        return self.stockrecords.exists()
+
+    @property
+    def num_stockrecords(self):
+        return self.stockrecords.count()
+
+    @property
+    def attribute_summary(self):
+        """
+        Return a string of all of a product's attributes
+        """
+        attributes = self.attribute_values.all()
+        pairs = [attribute.summary() for attribute in attributes]
+        return ", ".join(pairs)
+
+    # The two properties below are deprecated because determining minimum
+    # price is not as trivial as it sounds considering multiple stockrecords,
+    # currencies, tax, etc.
+    # The current implementation is very naive and only works for a limited
+    # set of use cases.
+    # At the very least, we should pass in the request and
+    # user. Hence, it's best done as an extension to a Strategy class.
+    # Once that is accomplished, these properties should be removed.
+
+    @property
+    @deprecated
+    def min_child_price_incl_tax(self):
+        """
+        Return minimum child product price including tax.
+        """
+        return self._min_child_price('incl_tax')
+
+    @property
+    @deprecated
+    def min_child_price_excl_tax(self):
+        """
+        Return minimum child product price excluding tax.
+
+        This is a very naive approach; see the deprecation notice above. And
+        only use it for display purposes (e.g. "new Oscar shirt, prices
+        starting from $9.50").
+        """
+        return self._min_child_price('excl_tax')
+
+    def _min_child_price(self, prop):
+        """
+        Return minimum child product price.
+
+        This is for visual purposes only. It ignores currencies, most of the
+        Strategy logic for selecting stockrecords, knows nothing about the
+        current user or request, etc. It's only here to ensure
+        backwards-compatibility; the previous implementation wasn't any
+        better.
+        """
+        strategy = Selector().strategy()
+
+        children_stock = strategy.select_children_stockrecords(self)
+        prices = [
+            strategy.pricing_policy(child, stockrecord)
+            for child, stockrecord in children_stock]
+        raw_prices = sorted([getattr(price, prop) for price in prices])
+        return raw_prices[0] if raw_prices else None
+
+    # Wrappers for child products
+
+    def get_title(self):
+        """
+        Return a product's title or it's parent's title if it has no title
+        """
+        title = self.title
+        if not title and self.parent_id:
+            title = self.parent.title
+        return title
+    get_title.short_description = pgettext_lazy(u"Product title", u"Title")
+
+    def get_meta_title(self):
+        return self.meta_title or self.get_title()
+
+    def get_meta_keywords(self):
+        return self.meta_keywords
+
+    def get_meta_description(self):
+        return self.meta_description or self.description
+
+    def get_h1(self):
+        return self.h1 or self.get_title()
+
+    def get_product_class(self):
+        """
+        Return a product's item class. Child products inherit their parent's.
+        """
+        if self.is_child:
+            return self.parent.product_class
+        else:
+            return self.product_class
+    get_product_class.short_description = _("Product class")
+
+    def get_is_discountable(self):
+        """
+        At the moment, is_discountable can't be set individually for child
+        products; they inherit it from their parent.
+        """
+        if self.is_child:
+            return self.parent.is_discountable
+        else:
+            return self.is_discountable
+
+    def get_categories(self):
+        """
+        Return a product's categories or parent's if there is a parent product.
+        """
+        if self.is_child:
+            return self.parent.categories
+        else:
+            return self.categories
+    get_categories.short_description = _("Categories")
+
+    # Images
+
+    def get_missing_image(self):
+        """
+        Returns a missing image object.
+        """
+        # This class should have a 'name' property so it mimics the Django file
+        # field.
+        return MissingProductImage()
+
+    def primary_image(self):
+        """
+        Returns the primary image for a product. Usually used when one can
+        only display one product image, e.g. in a list of products.
+        """
+        images = self.images.all()
+        ordering = self.images.model.Meta.ordering
+        if not ordering or ordering[0] != 'display_order':
+            # Only apply order_by() if a custom model doesn't use default
+            # ordering. Applying order_by() busts the prefetch cache of
+            # the ProductManager
+            images = images.order_by('display_order')
+        try:
+            return images[0]
+        except IndexError:
+            # We return a dict with fields that mirror the key properties of
+            # the ProductImage class so this missing image can be used
+            # interchangeably in templates.  Strategy pattern ftw!
+            return {
+                'original': self.get_missing_image(),
+                'caption': '',
+                'is_missing': True}
+
+    # Updating methods
+
+    def update_rating(self):
+        """
+        Recalculate rating field
+        """
+        self.rating = self.calculate_rating()
+        self.save()
+    update_rating.alters_data = True
+
+    def calculate_rating(self):
+        """
+        Calculate rating value
+        """
+        result = self.reviews.filter(
+            status=self.reviews.model.APPROVED
+        ).aggregate(
+            sum=Sum('score'), count=Count('id'))
+        reviews_sum = result['sum'] or 0
+        reviews_count = result['count'] or 0
+        rating = None
+        if reviews_count > 0:
+            rating = float(reviews_sum) / reviews_count
+        return rating
+
+    def has_review_by(self, user):
+        if user.is_anonymous():
+            return False
+        return self.reviews.filter(user=user).exists()
+
+    def is_review_permitted(self, user):
+        """
+        Determines whether a user may add a review on this product.
+
+        Default implementation respects OSCAR_ALLOW_ANON_REVIEWS and only
+        allows leaving one review per user and product.
+
+        Override this if you want to alter the default behaviour; e.g. enforce
+        that a user purchased the product to be allowed to leave a review.
+        """
+        if user.is_authenticated() or settings.OSCAR_ALLOW_ANON_REVIEWS:
+            return not self.has_review_by(user)
+        else:
+            return False
+
+    @cached_property
+    def num_approved_reviews(self):
+        return self.reviews.filter(
+            status=self.reviews.model.APPROVED).count()
+
+
 @python_2_unicode_compatible
 class Feature(MPTTModel):
     title = models.CharField(max_length=255, verbose_name=_('Title'))
@@ -317,58 +792,3 @@ class Feature(MPTTModel):
 
 
 from oscar.apps.catalogue.models import *  # noqa
-from oscar.apps.catalogue.models import ProductAttributesContainer as CoreProductAttributesContainer
-
-
-class ProductAttributesContainer(CoreProductAttributesContainer):
-    def __getattr__(self, item):
-        super(object, self).__getattr__(item)
-
-
-def init(self, *args, **kwargs):
-    super(Product, self).__init__(*args, **kwargs)
-    self.attr = ProductAttributesContainer(product=self)
-
-
-def get_meta_title(self):
-    return self.meta_title or self.get_title()
-
-
-def get_meta_keywords(self):
-    return self.meta_keywords
-
-
-def get_meta_description(self):
-    return self.meta_description or self.description
-
-
-def get_h1(self):
-    return self.h1 or self.get_title()
-
-
-Product.__init__ = init
-Product.get_meta_title = get_meta_title
-Product.get_meta_description = get_meta_description
-Product.get_meta_keywords = get_meta_keywords
-Product.get_h1 = get_h1
-
-filters = models.ManyToManyField(
-    'catalogue.Feature', related_name="filter_products",
-    verbose_name=_('Filters of product'), blank=True
-)
-filters.contribute_to_class(Product, "filters")
-enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
-enable.contribute_to_class(Product, "enable")
-
-h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=310)
-h1.contribute_to_class(Product, "h1")
-
-meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=520)
-meta_title.contribute_to_class(Product, "meta_title")
-
-meta_description = models.TextField(verbose_name=_('Meta tag: description'), blank=True)
-meta_description.contribute_to_class(Product, "meta_description")
-
-meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
-meta_keywords.contribute_to_class(Product, "meta_keywords")
-

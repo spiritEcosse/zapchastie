@@ -47,7 +47,7 @@ class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPT
 class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
     list_display = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'attribute_summary', )
     list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
-    inlines = (ProductRecommendationInline, AttributeInline, CategoryInline, )
+    inlines = (ProductRecommendationInline, )
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('upc', 'title', 'slug', 'id', )
     # form = forms.ProductForm
