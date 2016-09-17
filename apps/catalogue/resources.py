@@ -5,10 +5,8 @@ from oscar.core.loading import get_model
 from models import Feature
 from filer.models.imagemodels import Image
 from django.utils.translation import ugettext_lazy as _
+from apps.catalogue.models import Product, Category
 
-
-Product = get_model('catalogue', 'Product')
-Category = get_model('catalogue', 'Category')
 ProductClass = get_model('catalogue', 'ProductClass')
 
 
@@ -84,6 +82,6 @@ class ProductResource(ModelResource):
     class Meta:
         model = Product
         fields = ('id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
-                  'description', 'filters', 'categories', 'product_class', )
+                  'description', 'filters', 'categories', 'product_class', 'structure', 'parent', )
         export_order = fields
 

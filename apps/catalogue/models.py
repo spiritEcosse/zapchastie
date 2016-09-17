@@ -287,10 +287,10 @@ class Category(MPTTModel):
         return ret
 
 
-from oscar.apps.catalogue.abstract_models import ProductAttributesContainer as CoreProductAttributesContainer
+from oscar.apps.catalogue.abstract_models import ProductAttributesContainer
 
 
-class ProductAttributesContainer(CoreProductAttributesContainer):
+class ProductAttributesContainerCustom(ProductAttributesContainer):
     def __getattr__(self, item):
         super(object, self).__getattr__(item)
 
@@ -411,7 +411,7 @@ class Product(models.Model):
 
     def __init__(self, *args, **kwargs):
         super(Product, self).__init__(*args, **kwargs)
-        self.attr = ProductAttributesContainer(product=self)
+        self.attr = ProductAttributesContainerCustom(product=self)
 
     def __str__(self):
         if self.title:
