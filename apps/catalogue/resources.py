@@ -4,6 +4,7 @@ import widgets
 from oscar.core.loading import get_model
 from models import Feature
 from filer.models.imagemodels import Image
+from django.utils.translation import ugettext_lazy as _
 
 
 Product = get_model('catalogue', 'Product')
@@ -18,29 +19,37 @@ class ModelResource(resources.ModelResource):
 
 class CategoryResource(ModelResource):
     parent = fields.Field(
-        attribute='parent', widget=import_export_widgets.ForeignKeyWidget(
+        attribute='parent', column_name=_('Parent'),
+        widget=widgets.ForeignKeyWidget(
             model=Category, field='slug',
         )
     )
     image = fields.Field(
-        column_name='image', attribute='image',
-        widget=widgets.ImageForeignKeyWidget(
+        attribute='image', column_name=_('Image'),
+        widget=widgets.ForeignKeyWidget(
             model=Image, field='original_filename'
         )
+    )
+    name = fields.Field(
+        attribute='name', column_name=_('Title'),
+        widget=widgets.CharWidget()
     )
     delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = Category
         fields = ('id', 'delete', 'enable', 'name', 'slug', 'parent', 'sort', 'meta_title', 'h1', 'meta_description',
-                  'meta_keywords', 'description', )
+                  'meta_keywords', 'description', 'image', )
         export_order = fields
 
 
 class FeatureResource(ModelResource):
-    title = fields.Field(column_name='title', attribute='title', widget=widgets.CharWidget())
-    parent = fields.Field(attribute='parent', column_name='parent', widget=import_export_widgets.ForeignKeyWidget(
-        model=Feature, field='slug'))
+    title = fields.Field(attribute='title', column_name=_('Title'), widget=widgets.CharWidget())
+    parent = fields.Field(
+        attribute='parent', column_name=_('Parent'),
+        widget=widgets.ForeignKeyWidget(
+            model=Feature, field='slug')
+    )
     delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
@@ -51,16 +60,20 @@ class FeatureResource(ModelResource):
 
 class ProductResource(ModelResource):
     filters_slug = fields.Field(
-        column_name='filters', attribute='filters',
+        attribute='filters', column_name=_('Filters'),
         widget=widgets.ManyToManyWidget(model=Feature, field='slug')
     )
     parent = fields.Field(
-        attribute='parent', column_name='parent',
-        widget=import_export_widgets.ForeignKeyWidget(model=Product, field='slug')
+        attribute='parent', column_name=_('Parent'),
+        widget=widgets.ForeignKeyWidget(model=Product, field='slug')
     )
     product_class = fields.Field(
-        attribute='product_class', column_name='product_class',
-        widget=import_export_widgets.ForeignKeyWidget(model=ProductClass, field='slug')
+        attribute='product_class', column_name=_('Class of product'),
+        widget=widgets.ForeignKeyWidget(model=ProductClass, field='slug')
+    )
+    title = fields.Field(
+        attribute='title', column_name=_('Title'),
+        widget=widgets.CharWidget()
     )
     delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 

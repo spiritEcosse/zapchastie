@@ -6,38 +6,12 @@ from oscar.core.loading import get_model
 from filer import settings as filer_settings
 from django.utils.encoding import force_text
 
-
 ProductImage = get_model('catalogue', 'ProductImage')
 
 
-def search_file(image_name, folder):
-    """ Given a search path, find file with requested name """
-    file = None
-
-    for root, directories, file_names in os.walk(folder):
-        for file_name in file_names:
-            if file_name == image_name:
-                if file is None:
-                    file = os.path.join(root, file_name)
-                else:
-                    raise ValueError('The desired image {} is not unique. Duplicate - {}'.
-                                     format(file, os.path.join(root, file_name)))
-    return file
-
-
-class ImageForeignKeyWidget(import_export_widgets.ForeignKeyWidget):
+class ForeignKeyWidget(import_export_widgets.ForeignKeyWidget):
     def clean(self, value, row=None, *args, **kwargs):
-        if value:
-            if not os.path.dirname(value):
-                folder = os.path.join(settings.MEDIA_ROOT, filer_settings.DEFAULT_FILER_STORAGES['public']['main']['UPLOAD_TO_PREFIX'])
-                image = search_file(value, folder)
-                value = '/'.join(os.path.relpath(image).split('/')[1:])
-
-            image = self.model.objects.get(file=value)
-
-            if image is None:
-                image = Image.objects.create(**{'file': value, self.field: value})
-            return image
+        return super(ForeignKeyWidget, self).clean(value.strip(), row=row, *args, **kwargs)
 
 
 class ImageManyToManyWidget(import_export_widgets.ManyToManyWidget):
@@ -100,10 +74,12 @@ class ImageManyToManyWidget(import_export_widgets.ManyToManyWidget):
         return product_images
 
 
-class CharWidget(import_export_widgets.Widget):
+class CharWidget(import_export_widgets.CharWidget):
     """
     Widget for converting text fields.
     """
+    def clean(self, value, row=None, *args, **kwargs):
+        return super(CharWidget, self).clean(value.strip(), row=row, *args, **kwargs)
 
     def render(self, value, obj=None):
         try:
