@@ -59,7 +59,7 @@ class FeatureResource(ModelResource):
 
 
 class ProductResource(ModelResource):
-    filters_slug = fields.Field(
+    filters = fields.Field(
         attribute='filters', column_name=_('Filters'),
         widget=widgets.ManyToManyWidget(model=Feature, field='slug')
     )
@@ -75,11 +75,15 @@ class ProductResource(ModelResource):
         attribute='title', column_name=_('Title'),
         widget=widgets.CharWidget()
     )
+    categories = fields.Field(
+        attribute='categories', column_name=_('Categories'),
+        widget=widgets.ManyToManyWidget(model=Category, field='slug')
+    )
     delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = Product
         fields = ('id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
-                  'description', 'filters_slug', 'product_class', )
+                  'description', 'filters', 'categories', 'product_class', )
         export_order = fields
 
