@@ -12,6 +12,7 @@ from oscar.models.fields import AutoSlugField, NullCharField
 from oscar.core.loading import get_classes
 from oscar.core.decorators import deprecated
 from django.utils.functional import cached_property
+from django.core.exceptions import ImproperlyConfigured, ValidationError
 
 ProductManager, BrowsableProductManager = get_classes(
     'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])

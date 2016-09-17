@@ -1,7 +1,6 @@
 from oscar.apps.catalogue.admin import *  # noqa
 from django import forms
 from mptt.admin import DraggableMPTTAdmin
-from treebeard.admin import TreeAdmin
 from import_export.admin import ImportExportMixin, ImportExportActionModelAdmin
 import resources
 import forms
@@ -10,13 +9,24 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from dal import autocomplete
 from django.db.models import Q
-from oscar.core.loading import get_model
 from django.db.models.query import Prefetch
 from django.forms import Textarea
 from django.db import models
+from apps.catalogue.models import Product
+from oscar.apps.partner.models import StockRecord
 
 
-Product = get_model('catalogue', 'Product')
+class ProductAutocomplete(autocomplete.Select2QuerySetView):
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ProductAutocomplete, self).dispatch(*args, **kwargs)
+
+    def get_queryset(self):
+        qs = Product.objects.all().only('pk', 'title', 'slug', )
+
+        if self.q:
+            qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
+        return qs
 
 
 class CategoriesAutocomplete(autocomplete.Select2QuerySetView):
@@ -57,13 +67,27 @@ class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPT
               "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
 
 
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+
+
+class StockRecordInline(admin.StackedInline):
+    model = StockRecord
+
+
+class ProductRecommendationInline(admin.TabularInline):
+    model = ProductRecommendation
+    fk_name = 'primary'
+    form = forms.ProductRecommendationForm
+
+
 class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
     list_display = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'attribute_summary', )
     list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
-    inlines = (ProductRecommendationInline, )
+    inlines = (ProductRecommendationInline, ProductImageInline, StockRecordInline, )
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('upc', 'title', 'slug', 'id', )
-    # form = forms.ProductForm
+    form = forms.ProductForm
     resource_class = resources.ProductResource
     list_select_related = ('product_class', )
     list_attr = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'product_class__name', )
