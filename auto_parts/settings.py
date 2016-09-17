@@ -38,23 +38,27 @@ SITE_ID = 1
 
 # Application definition
 
-INSTALLED_APPS = [
-    'flat',
-    'dal',
-    'dal_select2',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.flatpages',
-    'compressor',
-    'widget_tweaks',
-    'import_export',
-    'debug_toolbar',
-] + get_core_apps(['apps.catalogue'])
+INSTALLED_APPS = \
+    [
+        'dal',
+        'dal_select2',
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.sites',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'django.contrib.flatpages',
+        'compressor',
+        'easy_thumbnails',
+        'filer',
+        'mptt',
+        'widget_tweaks',
+        'ckeditor',
+        'import_export',
+        'debug_toolbar',
+    ] + get_core_apps(['apps.catalogue'])
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 
@@ -208,3 +212,24 @@ EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
 
 OSCAR_DEFAULT_CURRENCY = 'UAH'
 OSCAR_CURRENCY_FORMAT = u'#,##0.## грн.'
+
+THUMBNAIL_HIGH_RESOLUTION = True
+FILER_CANONICAL_URL = 'sharing/'
+FILER_DEBUG = DEBUG
+FILER_ENABLE_LOGGING = DEBUG
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    # 'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
+THUMBNAIL_DUMMY = True
+THUMBNAIL_FORCE_OVERWRITE = True
+
+USE_LESS = True
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)

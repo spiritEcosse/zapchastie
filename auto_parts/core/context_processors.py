@@ -1,5 +1,4 @@
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.translation import ugettext_lazy as _
 
 
 def metadata(request):

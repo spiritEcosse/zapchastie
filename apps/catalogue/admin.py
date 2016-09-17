@@ -68,9 +68,9 @@ class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
         )
 
 
-class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, TreeAdmin):
+class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPTTAdmin):
     prepopulated_fields = {'slug': ("name",)}
-    list_display = ('pk', 'name', 'slug', 'enable', 'parent', 'sort', 'created')
+    list_display = ('pk', 'indented_title', 'slug', 'enable', 'parent', 'sort', 'created')
     list_filter = ('enable', 'created', )
     formfield_overrides = {
         models.TextField: {'widget': Textarea()},

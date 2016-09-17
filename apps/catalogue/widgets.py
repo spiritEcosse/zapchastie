@@ -26,14 +26,14 @@ def search_file(image_name, folder):
 
 
 class ImageForeignKeyWidget(import_export_widgets.ForeignKeyWidget):
-    def clean(self, value, ):
+    def clean(self, value, row=None, *args, **kwargs):
         if value:
             if not os.path.dirname(value):
                 folder = os.path.join(settings.MEDIA_ROOT, filer_settings.DEFAULT_FILER_STORAGES['public']['main']['UPLOAD_TO_PREFIX'])
                 image = search_file(value, folder)
                 value = '/'.join(os.path.relpath(image).split('/')[1:])
 
-            image = self.model.objects.filter(file=value).first()
+            image = self.model.objects.get(file=value)
 
             if image is None:
                 image = Image.objects.create(**{'file': value, self.field: value})
