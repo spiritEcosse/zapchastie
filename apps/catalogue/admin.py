@@ -82,7 +82,7 @@ class ProductRecommendationInline(admin.TabularInline):
 
 
 class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
-    list_display = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'attribute_summary', )
+    list_display = ('pk', 'title', 'enable', 'thumb', 'date_updated', 'slug', 'structure', 'attribute_summary', )
     list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
     inlines = (ProductRecommendationInline, ProductImageInline, StockRecordInline, )
     prepopulated_fields = {"slug": ("title",)}

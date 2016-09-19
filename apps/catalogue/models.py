@@ -13,6 +13,7 @@ from oscar.core.loading import get_classes
 from oscar.core.decorators import deprecated
 from django.utils.functional import cached_property
 from django.core.exceptions import ImproperlyConfigured, ValidationError
+from django.template import loader, Context
 
 ProductManager, BrowsableProductManager = get_classes(
     'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])
@@ -21,6 +22,44 @@ ProductManager, BrowsableProductManager = get_classes(
 class EnableManager(models.Manager):
     def get_queryset(self):
         return super(EnableManager, self).get_queryset().filter(enable=True)
+
+
+class CommonFeatureProduct(object):
+    @property
+    def product_slug(self):
+        return self.product.slug
+
+    def product_enable(self):
+        return self.product.enable
+    product_enable.short_description = _('Enable product')
+
+    def product_categories_to_str(self):
+        return self.product.categories_to_str()
+    product_categories_to_str.short_description = _("Categories")
+
+    def product_partner(self):
+        return self.product.partner
+    product_partner.short_description = _("Product partner")
+
+    def thumb(self, image=None):
+        if not image:
+            image = self.product.primary_image()
+
+        return loader.get_template(
+            'admin/catalogue/product/thumb.html'
+        ).render(
+            Context(
+                {
+                    'image': image
+                }
+            )
+        )
+    thumb.allow_tags = True
+    thumb.short_description = _('Image of product')
+
+    def product_date_updated(self):
+        return self.product.date_updated
+    product_date_updated.short_description = _("Product date updated")
 
 
 @python_2_unicode_compatible
@@ -287,7 +326,7 @@ class Category(MPTTModel):
         return ret
 
 
-from oscar.apps.catalogue.abstract_models import ProductAttributesContainer
+from oscar.apps.catalogue.abstract_models import ProductAttributesContainer, MissingProductImage
 
 
 class ProductAttributesContainerCustom(ProductAttributesContainer):
@@ -296,7 +335,7 @@ class ProductAttributesContainerCustom(ProductAttributesContainer):
 
 
 @python_2_unicode_compatible
-class Product(models.Model):
+class Product(models.Model, CommonFeatureProduct):
     """
     The base product object
 
@@ -680,6 +719,9 @@ class Product(models.Model):
         # This class should have a 'name' property so it mimics the Django file
         # field.
         return MissingProductImage()
+
+    def thumb(self, image=None):
+        return super(Product, self).thumb(image=self.primary_image())
 
     def primary_image(self):
         """

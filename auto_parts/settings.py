@@ -44,6 +44,7 @@ INSTALLED_APPS = \
         'dal_select2',
         'django.contrib.admin',
         'django.contrib.auth',
+        'debug_toolbar',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.sites',
@@ -51,16 +52,15 @@ INSTALLED_APPS = \
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
         'compressor',
+        'mptt',
         'easy_thumbnails',
         'filer',
-        'feincms',
+        # 'feincms',
         # 'feincms.module.page',
         # 'feincms.module.medialibrary',
-        'mptt',
         'widget_tweaks',
         'ckeditor',
         'import_export',
-        'debug_toolbar',
     ] + get_core_apps(['apps.catalogue'])
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
