@@ -1,7 +1,6 @@
 from django import forms
 from dal import autocomplete
-from models import Feature
-from apps.catalogue.models import Category, Product, ProductRecommendation
+from models import Feature, Category, Product, ProductRecommendation, ProductImage
 
 
 class FeatureForm(forms.ModelForm):
@@ -41,4 +40,14 @@ class ProductRecommendationForm(forms.ModelForm):
             'recommendation': autocomplete.ModelSelect2(url='product-autocomplete'),
             'primary': autocomplete.ModelSelect2(url='product-autocomplete')
         }
+
+
+class ProductImageForm(forms.ModelForm):
+    class Meta:
+        fields = '__all__'
+        model = ProductImage
+        widgets = {
+            'product': autocomplete.ModelSelect2(url='product-autocomplete'),
+        }
+
 

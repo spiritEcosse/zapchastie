@@ -8,9 +8,13 @@ from django.utils.translation import ugettext_lazy as _
 from apps.catalogue.models import Product, Category
 
 ProductClass = get_model('catalogue', 'ProductClass')
+ProductImage = get_model('catalogue', 'ProductImage')
+ProductRecommendation = get_model('catalogue', 'ProductRecommendation')
 
 
 class ModelResource(resources.ModelResource):
+    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
+
     def for_delete(self, row, instance):
         return self.fields['delete'].clean(row)
 
@@ -83,5 +87,42 @@ class ProductResource(ModelResource):
         model = Product
         fields = ('id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
                   'description', 'filters', 'categories', 'product_class', 'structure', 'parent', )
+        export_order = fields
+
+
+class ProductImageResource(ModelResource):
+    original = fields.Field(
+        column_name='original', attribute='original',
+        widget=widgets.ForeignKeyWidget(model=Image, field='original_filename')
+    )
+    product_slug = fields.Field(
+        column_name='product', attribute='product',
+        widget=widgets.ForeignKeyWidget(model=Product, field='slug')
+    )
+    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
+
+    class Meta:
+        model = ProductImage
+        fields = ('id', 'delete', 'product_slug', 'original', 'caption', 'display_order', )
+        export_order = fields
+
+
+class ProductRecommendationResource(ModelResource):
+    primary = fields.Field(
+        column_name='primary', attribute='primary',
+        widget=import_export_widgets.ForeignKeyWidget(
+            model=Product, field='slug',
+        )
+    )
+    recommendation = fields.Field(
+        column_name='recommendation', attribute='recommendation',
+        widget=import_export_widgets.ForeignKeyWidget(
+            model=Product, field='slug',
+        )
+    )
+
+    class Meta:
+        model = ProductRecommendation
+        fields = ('id', 'delete', 'primary', 'recommendation', 'ranking', )
         export_order = fields
 

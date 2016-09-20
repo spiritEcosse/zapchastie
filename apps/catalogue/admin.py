@@ -4,7 +4,6 @@ from mptt.admin import DraggableMPTTAdmin
 from import_export.admin import ImportExportMixin, ImportExportActionModelAdmin
 import resources
 import forms
-from models import Feature
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from dal import autocomplete
@@ -12,7 +11,7 @@ from django.db.models import Q
 from django.db.models.query import Prefetch
 from django.forms import Textarea
 from django.db import models
-from apps.catalogue.models import Product
+from models import Feature, Product, ProductImage
 from oscar.apps.partner.models import StockRecord
 
 
@@ -25,7 +24,13 @@ class ProductAutocomplete(autocomplete.Select2QuerySetView):
         qs = Product.objects.all().only('pk', 'title', 'slug', )
 
         if self.q:
-            qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
+            try:
+                self.q = int(self.q)
+            except ValueError:
+                qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q))
+            else:
+                qs = qs.filter(Q(pk=self.q))
+
         return qs
 
 
@@ -55,18 +60,6 @@ class FeatureAutocomplete(autocomplete.Select2QuerySetView):
         return qs
 
 
-class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPTTAdmin):
-    list_display = ('pk', 'indented_title', 'enable', 'slug', 'parent', )
-    list_filter = ('created', 'enable', )
-    search_fields = ('title', 'slug', 'id', )
-    resource_class = resources.FeatureResource
-    form = forms.FeatureForm
-
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
-
-
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
 
@@ -81,8 +74,22 @@ class ProductRecommendationInline(admin.TabularInline):
     form = forms.ProductRecommendationForm
 
 
+class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPTTAdmin):
+    list_display = ('pk', 'indented_title', 'enable', 'slug', 'parent', )
+    list_filter = ('created', 'enable', )
+    search_fields = ('title', 'slug', 'id', )
+    resource_class = resources.FeatureResource
+    form = forms.FeatureForm
+    list_select_related = ('parent', )
+
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
+
 class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
-    list_display = ('pk', 'title', 'enable', 'thumb', 'date_updated', 'slug', 'structure', 'attribute_summary', )
+    list_display = ('pk', 'title', 'enable', 'slug', 'thumb', 'date_updated', 'structure', 'attribute_summary',
+                    'product_categories_to_str', 'partners_to_str', )
     list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
     inlines = (ProductRecommendationInline, ProductImageInline, StockRecordInline, )
     prepopulated_fields = {"slug": ("title",)}
@@ -115,6 +122,44 @@ class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMP
     search_fields = ('name', 'slug', 'id',)
     resource_class = resources.CategoryResource
     form = forms.CategoryForm
+    list_select_related = ('parent', )
+
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
+
+class ProductImageAdmin(ImportExportMixin, ImportExportActionModelAdmin):
+    resource_class = resources.ProductImageResource
+    list_display = ('pk', 'thumb', 'product', 'product_slug', 'product_date_updated', 'display_order', 'caption',
+                    'product_enable', 'product_categories_to_str', 'partners_to_str', 'date_created', )
+    list_filter = ('date_created', 'product__date_updated', 'product__enable', 'product__stockrecords__partner',
+                   'product__categories', )
+    search_fields = ('product__title', 'product__slug', 'product__id', )
+    form = forms.ProductImageForm
+    list_select_related = ('product', )
+
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
+    def get_queryset(self, request):
+        qs = super(ProductImageAdmin, self).get_queryset(request)
+        return qs.prefetch_related(
+            Prefetch('product__categories'),
+            Prefetch('product__stockrecords__partner'),
+        )
+
+
+class ProductRecommendationAdmin(ImportExportMixin, ImportExportActionModelAdmin):
+    list_display = ('pk', 'primary', 'product_slug', 'product_enable', 'thumb', 'product_date_updated',
+                    'product_categories_to_str', 'partners_to_str', 'recommendation', 'recommendation_thumb',
+                    'ranking',)
+    list_filter = ('primary__date_updated', 'primary__enable', 'primary__stockrecords__partner',
+                   'primary__categories', )
+    search_fields = ('primary__title', 'primary__slug', 'primary__pk', )
+    resource_class = resources.ProductRecommendationResource
+    form = forms.ProductRecommendationForm
 
     class Media:
         js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
@@ -126,3 +171,6 @@ admin.site.unregister(Product)
 admin.site.register(Product, ProductAdmin)
 admin.site.unregister(Category)
 admin.site.register(Category, CategoryAdmin)
+admin.site.unregister(ProductImage)
+admin.site.register(ProductImage, ProductImageAdmin)
+admin.site.register(ProductRecommendation, ProductRecommendationAdmin)

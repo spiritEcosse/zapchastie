@@ -14,6 +14,9 @@ from oscar.core.decorators import deprecated
 from django.utils.functional import cached_property
 from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.template import loader, Context
+from django.conf import settings
+import os
+from auto_parts.settings import MEDIA_ROOT
 
 ProductManager, BrowsableProductManager = get_classes(
     'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])
@@ -34,12 +37,12 @@ class CommonFeatureProduct(object):
     product_enable.short_description = _('Enable product')
 
     def product_categories_to_str(self):
-        return self.product.categories_to_str()
+        return self.product.product_categories_to_str()
     product_categories_to_str.short_description = _("Categories")
 
-    def product_partner(self):
-        return self.product.partner
-    product_partner.short_description = _("Product partner")
+    def partners_to_str(self):
+        return self.product.partners_to_str()
+    partners_to_str.short_description = _("Partner")
 
     def thumb(self, image=None):
         if not image:
@@ -326,7 +329,147 @@ class Category(MPTTModel):
         return ret
 
 
-from oscar.apps.catalogue.abstract_models import ProductAttributesContainer, MissingProductImage
+@python_2_unicode_compatible
+class ProductImage(models.Model, CommonFeatureProduct):
+    """
+    An image of a product
+    """
+    product = models.ForeignKey(
+        'catalogue.Product', related_name='images', verbose_name=_("Product"))
+    original = FilerImageField(verbose_name=_("Original"), null=True, blank=True, related_name="original")
+    caption = models.CharField(_("Caption"), max_length=200, blank=True)
+
+    #: Use display_order to determine which is the "primary" image
+    display_order = models.PositiveIntegerField(
+        _("Display order"), default=0,
+        help_text=_("An image with a display order of zero will be the primary"
+                    " image for a product"))
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
+
+    class Meta:
+        app_label = 'catalogue'
+        # Any custom models should ensure that this ordering is unchanged, or
+        # your query count will explode. See AbstractProduct.primary_image.
+        ordering = ["display_order"]
+        unique_together = ("product", "display_order")
+        verbose_name = _('Product image')
+        verbose_name_plural = _('Product images')
+
+    def __str__(self):
+        return u"Image of '%s'" % getattr(self, 'product', None)
+
+    @property
+    def name(self):
+        return self.original.file.name if self.original else ''
+
+    @property
+    def image(self):
+        return self.check_exist_image()
+
+    def check_exist_image(self):
+        current_path = os.getcwd()
+        os.chdir(MEDIA_ROOT)
+        abs_path = os.path.abspath(self.name)
+        image = self
+
+        if not self.name or not os.path.exists(abs_path) or not os.path.isfile(abs_path):
+            image = self.product.get_missing_image()
+
+        os.chdir(current_path)
+        return image
+
+    def is_primary(self):
+        """
+        Return bool if image display order is 0
+        """
+        return self.display_order == 0
+
+    def thumb(self, image=None):
+        return super(AbstractProductImage, self).thumb(image=self.image)
+
+    def delete(self, *args, **kwargs):
+        """
+        Always keep the display_order as consecutive integers. This avoids
+        issue #855.
+        """
+        images = self.product.images.all().exclude(pk=self.pk)
+
+        super(ProductImage, self).delete(*args, **kwargs)
+
+        for idx, image in enumerate(images):
+            image.display_order = idx
+            image.save()
+
+    def thumb(self, image=None):
+        return super(ProductImage, self).thumb(image=self)
+
+
+from oscar.apps.catalogue.abstract_models import ProductAttributesContainer, AbstractProductRecommendation
+
+
+class ProductRecommendation(AbstractProductRecommendation, CommonFeatureProduct):
+    def __init__(self, *args, **kwargs):
+        super(ProductRecommendation, self).__init__(*args, **kwargs)
+        self.product = getattr(self, 'primary', None)
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if self.ranking is None:
+            self.ranking = 0
+        super(ProductRecommendation, self).save(
+            force_insert=force_insert, force_update=force_update, using=using,
+            update_fields=update_fields
+        )
+
+    def recommendation_thumb(self):
+        return self.recommendation.thumb()
+    recommendation_thumb.allow_tags = True
+    recommendation_thumb.short_description = _('Image of recommendation product.')
+
+
+class MissingProductImage(object):
+
+    """
+    Mimics a Django file field by having a name property.
+
+    sorl-thumbnail requires all it's images to be in MEDIA_ROOT. This class
+    tries symlinking the default "missing image" image in STATIC_ROOT
+    into MEDIA_ROOT for convenience, as that is necessary every time an Oscar
+    project is setup. This avoids the less helpful NotFound IOError that would
+    be raised when sorl-thumbnail tries to access it.
+    """
+
+    def __init__(self, name=None):
+        self.name = name if name else settings.OSCAR_MISSING_IMAGE_URL
+        media_file_path = os.path.join(settings.MEDIA_ROOT, self.name)
+        # don't try to symlink if MEDIA_ROOT is not set (e.g. running tests)
+        if settings.MEDIA_ROOT and not os.path.exists(media_file_path):
+            self.symlink_missing_image(media_file_path)
+
+    @property
+    def is_missing(self):
+        return True
+
+    @property
+    def original(self):
+        return self.name
+
+    def symlink_missing_image(self, media_file_path):
+        static_file_path = find('oscar/img/%s' % self.name)
+        if static_file_path is not None:
+            try:
+                os.symlink(static_file_path, media_file_path)
+            except OSError:
+                raise ImproperlyConfigured((
+                    "Please copy/symlink the "
+                    "'missing image' image at %s into your MEDIA_ROOT at %s. "
+                    "This exception was raised because Oscar was unable to "
+                    "symlink it for you.") % (media_file_path,
+                                              settings.MEDIA_ROOT))
+            else:
+                logging.info((
+                    "Symlinked the 'missing image' image at %s into your "
+                    "MEDIA_ROOT at %s") % (media_file_path,
+                                           settings.MEDIA_ROOT))
 
 
 class ProductAttributesContainerCustom(ProductAttributesContainer):
@@ -378,7 +521,7 @@ class Product(models.Model, CommonFeatureProduct):
     # Title is mandatory for canonical products but optional for child products
     title = models.CharField(pgettext_lazy(u'Product title', u'Title'),
                              max_length=255, blank=True)
-    slug = models.SlugField(_('Slug'), max_length=255, unique=False)
+    slug = models.SlugField(_('Slug'), max_length=255, unique=True)
     h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=310)
     meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=520)
     meta_description = models.TextField(verbose_name=_('Meta tag: description'), blank=True)
@@ -441,6 +584,7 @@ class Product(models.Model, CommonFeatureProduct):
     enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
     objects = ProductManager()
     browsable = BrowsableProductManager()
+    separator = ','
 
     class Meta:
         app_label = 'catalogue'
@@ -690,6 +834,14 @@ class Product(models.Model, CommonFeatureProduct):
             return self.product_class
     get_product_class.short_description = _("Product class")
 
+    def product_categories_to_str(self):
+        return self.separator.join([category.name for category in self.get_categories().all()])
+    product_categories_to_str.short_description = _("Categories")
+
+    def partners_to_str(self):
+        return self.separator.join([stockrecord.partner.name for stockrecord in self.stockrecords.all()])
+    partners_to_str.short_description = _("Partners")
+
     def get_is_discountable(self):
         """
         At the moment, is_discountable can't be set individually for child
@@ -728,23 +880,7 @@ class Product(models.Model, CommonFeatureProduct):
         Returns the primary image for a product. Usually used when one can
         only display one product image, e.g. in a list of products.
         """
-        images = self.images.all()
-        ordering = self.images.model.Meta.ordering
-        if not ordering or ordering[0] != 'display_order':
-            # Only apply order_by() if a custom model doesn't use default
-            # ordering. Applying order_by() busts the prefetch cache of
-            # the ProductManager
-            images = images.order_by('display_order')
-        try:
-            return images[0]
-        except IndexError:
-            # We return a dict with fields that mirror the key properties of
-            # the ProductImage class so this missing image can be used
-            # interchangeably in templates.  Strategy pattern ftw!
-            return {
-                'original': self.get_missing_image(),
-                'caption': '',
-                'is_missing': True}
+        return self.images.all()[0].image if self.images.exists() else self.get_missing_image()
 
     # Updating methods
 

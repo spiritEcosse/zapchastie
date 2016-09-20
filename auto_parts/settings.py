@@ -52,13 +52,13 @@ INSTALLED_APPS = \
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
         'compressor',
+        'widget_tweaks',
         'mptt',
         'easy_thumbnails',
         'filer',
         # 'feincms',
         # 'feincms.module.page',
         # 'feincms.module.medialibrary',
-        'widget_tweaks',
         'ckeditor',
         'import_export',
     ] + get_core_apps(['apps.catalogue'])
@@ -79,8 +79,14 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates'),
             OSCAR_MAIN_TEMPLATE_DIR
         ],
-        'APP_DIRS': True,
         'OPTIONS': {
+            'loaders': [
+                # ('django.template.loaders.cached.Loader', [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+                'django.template.loaders.eggs.Loader',
+                # ]),
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -95,6 +101,9 @@ TEMPLATES = [
                 'oscar.core.context_processors.metadata',
                 'auto_parts.core.context_processors.metadata',
             ],
+            'libraries': {
+                'thumbnail': 'easy_thumbnails.templatetags.thumbnail',
+            },
         },
     },
 ]
@@ -153,10 +162,6 @@ LANGUAGES = (
     ('ru', _('Russia')),
 )
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
 
 import os
 location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', x)
@@ -178,6 +183,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
