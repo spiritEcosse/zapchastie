@@ -36,7 +36,6 @@ class CategoryResource(ModelResource):
         attribute='name', column_name=_('Title'),
         widget=widgets.CharWidget()
     )
-    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = Category
@@ -52,7 +51,6 @@ class FeatureResource(ModelResource):
         widget=widgets.ForeignKeyWidget(
             model=Feature, field='slug')
     )
-    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = Feature
@@ -81,7 +79,6 @@ class ProductResource(ModelResource):
         attribute='categories', column_name=_('Categories'),
         widget=widgets.ManyToManyWidget(model=Category, field='slug')
     )
-    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = Product
@@ -99,7 +96,6 @@ class ProductImageResource(ModelResource):
         column_name='product', attribute='product',
         widget=widgets.ForeignKeyWidget(model=Product, field='slug')
     )
-    delete = fields.Field(widget=import_export_widgets.BooleanWidget())
 
     class Meta:
         model = ProductImage
