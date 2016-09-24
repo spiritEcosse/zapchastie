@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load thumbnail %}
+
+{% if promotion.images %}
+    {% with 'banner-' as id %}
+        <div id="{{ id }}{{ promotion.pk }}" class="carousel slide">
+            <ol class="carousel-indicators">
+                {% for promotion_image in promotion.images.all %}
+                    <li data-target="#{{ promotion.name|slugify }}" data-slide-to="{{ forloop.counter0 }}"
+                        class="{% if forloop.first %}active{% endif %}">
+                    </li>
+                {% endfor %}
+            </ol>
+
+            <div class="carousel-inner">
+                {% for promotion_image in promotion.images.all %}
+                    <div class="item {% if forloop.first %}active{% endif %}">
+                        {% with image=promotion_image.image|thumbnail_url:'home_thumb_slide' title=promotion_image.name %}
+                            {% if promotion_image.link_url %}
+                                <a href="{{ promotion_image.link_url }}">
+                                    {% include 'promotions/image.html' %}
+                                </a>
+                            {% else %}
+                                {% include 'promotions/image.html' %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <a class="left carousel-control stop-change-url" href="#{{ id }}{{ promotion.pk }}" title="{% trans "Previous" %}"
+               role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">{% trans "Previous" %}</span>
+            </a>
+            <a class="right carousel-control stop-change-url" href="#{{ id }}{{ promotion.pk }}" title="{% trans "Next" %}"
+               role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">{% trans "Next" %}</span>
+            </a>
+        </div>
+    {% endwith %}
+{% endif %}

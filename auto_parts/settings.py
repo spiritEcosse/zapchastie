@@ -51,6 +51,7 @@ INSTALLED_APPS = \
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
+        'apps.seo',
         'compressor',
         'widget_tweaks',
         'mptt',
@@ -61,7 +62,7 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
-    ] + get_core_apps(['apps.catalogue'])
+    ] + get_core_apps(['apps.catalogue', 'apps.promotions'])
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 
@@ -99,6 +100,7 @@ TEMPLATES = [
                 'oscar.apps.checkout.context_processors.checkout',
                 'oscar.apps.customer.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
+                'apps.seo.context_processors.meta_tags',
                 'auto_parts.core.context_processors.metadata',
             ],
             'libraries': {
@@ -238,8 +240,21 @@ THUMBNAIL_PROCESSORS = (
 THUMBNAIL_DUMMY = True
 THUMBNAIL_FORCE_OVERWRITE = True
 
-USE_LESS = True
+USE_LESS = False
 
-COMPRESS_PRECOMPILERS = (
-    ('text/less', 'lessc {infile} {outfile}'),
-)
+COMPRESS_OFFLINE_CONTEXT = {
+    # this is the only default value from compressor itself
+    'STATIC_URL': STATIC_URL,
+    'use_less': USE_LESS,
+}
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'category_icon': {'size': (50, 30), 'crop': True},
+        'basket_quick': {'size': (85, 50), 'crop': True},
+        'basket_quick_product_image': {'size': (30, 30), 'crop': True},
+        'basket_content': {'size': (150, 150), 'crop': True},
+        'checkout': {'size': (150, 150), 'crop': True},
+        'home_thumb_slide': {'size': (1170, 392), 'crop': True},
+    },
+}

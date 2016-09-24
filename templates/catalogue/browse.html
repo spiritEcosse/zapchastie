@@ -13,6 +13,13 @@
 
 {% block headertext %}{{ summary }}{% endblock %}
 
+{% block robots %}
+    {{ block.super }}
+    {% if page_obj.number > 1 %}
+        , nofollow
+    {% endif %}
+{% endblock %}
+
 {% block breadcrumbs %}
     <ul class="breadcrumb">
         <li>

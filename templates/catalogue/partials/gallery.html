@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load staticfiles %}
 
-{% with all_images=product.images.all %}
+{% with all_images=product.images_all %}
     {# use length rather then count as the images get queried anyways #}
 
     {% if all_images|length > 1 %}
@@ -15,7 +15,6 @@
                     <div class="item {% if forloop.first %}active{% endif %}">
                         {% thumbnail image.original "440x400" upscale=False as thumb %}
                         <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
-                        {% endthumbnail %}
                     </div>
                 {% endfor %}
                 </div>
@@ -38,7 +37,6 @@
                     <li data-target="#product_gallery" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}">
                         {% thumbnail image.original "65x55" crop="center" as thumb %}
                         <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
-                        {% endthumbnail %}
                     </li>
                 {% endfor %}
             </ol>
@@ -53,8 +51,7 @@
                     <div class="item active">
                     {% with image=product.primary_image %}
                         {% thumbnail image.original "440x400" upscale=False as thumb %}
-                            <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
-                        {% endthumbnail %}
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
                     {% endwith %}
                     </div>
                 </div>

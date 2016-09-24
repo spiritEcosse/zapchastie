@@ -66,6 +66,44 @@ class CommonFeatureProduct(object):
 
 
 @python_2_unicode_compatible
+class Feature(MPTTModel):
+    title = models.CharField(max_length=255, verbose_name=_('Title'))
+    slug = models.SlugField(verbose_name=_('Slug'), max_length=255, unique=True)
+    parent = TreeForeignKey('self', verbose_name=_('Parent'), related_name='children', blank=True, null=True, db_index=True)
+    sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0)
+    created = models.DateTimeField(auto_now_add=True)
+    enable = models.BooleanField(verbose_name=_('Enable'), default=True)
+    slug_separator = '/'
+
+    class MPTTMeta:
+        order_insertion_by = ('sort', 'title', )
+
+    class Meta:
+        unique_together = ('slug', 'parent', )
+        ordering = ('sort', 'title', )
+        verbose_name = _('Feature')
+        verbose_name_plural = _('Features')
+
+    def __str__(self):
+        if self.parent:
+            return u'{} > {}'.format(self.parent, self.title)
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.sort:
+            self.sort = 0
+
+        if not self.slug and self.title:
+            self.slug = ''
+
+            if self.parent:
+                self.slug = self.parent.slug + '-'
+            self.slug += slugify(self.title)
+
+        super(Feature, self).save(*args, **kwargs)
+
+
+@python_2_unicode_compatible
 class Category(MPTTModel):
     name = models.CharField(_('Name'), max_length=300, db_index=True)
     slug = models.SlugField(verbose_name=_('Slug'), max_length=400, unique=True)
@@ -227,106 +265,20 @@ class Category(MPTTModel):
     def get_num_children(self):
         return self.get_children().count()
 
-    def get_absolute_url(self):
-        """
-        Our URL scheme means we have to look up the category's ancestors. As
-        that is a bit more expensive, we cache the generated URL. That is
-        safe even for a stale cache, as the default implementation of
-        ProductCategoryView does the lookup via primary key anyway. But if
-        you change that logic, you'll have to reconsider the caching
-        approach.
-        """
-        current_locale = get_language()
-        cache_key = 'CATEGORY_URL_%s_%s' % (current_locale, self.pk)
-        url = cache.get(cache_key)
-        if not url:
-            url = reverse(
-                'catalogue:category',
-                kwargs={'category_slug': self.full_slug, 'pk': self.pk})
-            cache.set(cache_key, url)
-        return url
+    def get_absolute_url(self, values={}):
+        dict_values = {'category_slug': self.full_slug}
 
-    @classmethod
-    def get_annotated_list_qs_depth(cls, parent=None, max_depth=None):
-        """
-        Gets an annotated list from a tree branch, change queryset
+        if values.get('filter_slug_objects'):
+            filter_slug = values.get('filter_slug_objects').values_list('slug', flat=True)
+            filter_slug = Feature.slug_separator.join(filter_slug)
 
-        :param parent:
+            dict_values.update(
+                {
+                    'filter_slug': filter_slug
+                }
+            )
 
-            The node whose descendants will be annotated. The node itself            will be included in the list. If not given, the entire tree
-            will be annotated.
-
-        :param max_depth:
-
-            Optionally limit to specified depth
-
-        :sort_order
-
-            Sort order queryset.
-
-        """
-
-        result, info = [], {}
-        start_depth, prev_depth = (None, None)
-        qs = cls.get_tree(parent)
-        if max_depth:
-            qs = qs.filter(depth__lte=max_depth)
-        return cls.get_annotated_list_qs(qs)
-
-    @classmethod
-    def dump_bulk_depth(cls, parent=None, keep_ids=True, max_depth=3):
-        """
-        Dumps a tree branch to a python type structure.
-
-        Args:
-            parent: by default None (if you set the Parent to the object category then we obtain a tree search)
-            keep_ids: by default True (if True add id category in data)
-            max_depth: by default 3 (max depth in category tree) (if max_depth = 0 return all tree)
-
-        Returns:
-        [{'data': category.get_values()},
-            {'data': category.get_values(), 'children':[
-                {'data': category.get_values()},
-                {'data': category.get_values()},
-                {'data': category.get_values(), 'children':[
-                    {'data': category.get_values()},
-                ]},
-                {'data': category.get_values()},
-            ]},
-            {'data': category.get_values()},
-            {'data': category.get_values(), 'children':[
-                {'data': category.get_values()},
-            ]},
-        ]
-        """
-        # Because of fix_tree, this method assumes that the depth
-        # and numchild properties in the nodes can be incorrect,
-        # so no helper methods are used
-        data = cls.get_annotated_list_qs_depth(max_depth=max_depth)
-        ret, lnk = [], {}
-
-        for pyobj, info in data:
-            # django's serializer stores the attributes in 'fields'
-            path = pyobj.path
-            depth = int(len(path) / cls.steplen)
-            # this will be useless in load_bulk
-
-            newobj = {'data': pyobj.get_values()}
-
-            if keep_ids:
-                newobj['id'] = pyobj.pk
-
-            if (not parent and depth == 1) or \
-                    (parent and len(path) == len(parent.path)):
-                ret.append(newobj)
-            else:
-                parentpath = cls._get_basepath(path, depth - 1)
-                parentobj = lnk[parentpath]
-                if 'children' not in parentobj:
-                    parentobj['children'] = []
-                parentobj['children'].append(newobj)
-            lnk[path] = newobj
-        return ret
+        return reverse('catalogue:category', kwargs=dict_values)
 
 
 @python_2_unicode_compatible
@@ -608,8 +560,7 @@ class Product(models.Model, CommonFeatureProduct):
         """
         Return a product's absolute url
         """
-        return reverse('catalogue:detail',
-                       kwargs={'product_slug': self.slug, 'pk': self.id})
+        return reverse('catalogue:detail', kwargs={'product_slug': self.slug})
 
     def clean(self):
         """
@@ -864,6 +815,11 @@ class Product(models.Model, CommonFeatureProduct):
 
     # Images
 
+    def images_all(self):
+        images = [image.image for image in self.images.all()]
+        images = filter(lambda image: getattr(image, 'is_missing', False) is False, images)
+        return [self.get_missing_image()] if not images else images
+
     def get_missing_image(self):
         """
         Returns a missing image object.
@@ -931,43 +887,6 @@ class Product(models.Model, CommonFeatureProduct):
     def num_approved_reviews(self):
         return self.reviews.filter(
             status=self.reviews.model.APPROVED).count()
-
-
-@python_2_unicode_compatible
-class Feature(MPTTModel):
-    title = models.CharField(max_length=255, verbose_name=_('Title'))
-    slug = models.SlugField(verbose_name=_('Slug'), max_length=255, unique=True)
-    parent = TreeForeignKey('self', verbose_name=_('Parent'), related_name='children', blank=True, null=True, db_index=True)
-    sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0)
-    created = models.DateTimeField(auto_now_add=True)
-    enable = models.BooleanField(verbose_name=_('Enable'), default=True)
-
-    class MPTTMeta:
-        order_insertion_by = ('sort', 'title', )
-
-    class Meta:
-        unique_together = ('slug', 'parent', )
-        ordering = ('sort', 'title', )
-        verbose_name = _('Feature')
-        verbose_name_plural = _('Features')
-
-    def __str__(self):
-        if self.parent:
-            return u'{} > {}'.format(self.parent, self.title)
-        return self.title
-
-    def save(self, *args, **kwargs):
-        if not self.sort:
-            self.sort = 0
-
-        if not self.slug and self.title:
-            self.slug = ''
-
-            if self.parent:
-                self.slug = self.parent.slug + '-'
-            self.slug += slugify(self.title)
-
-        super(Feature, self).save(*args, **kwargs)
 
 
 from oscar.apps.catalogue.models import *  # noqa
