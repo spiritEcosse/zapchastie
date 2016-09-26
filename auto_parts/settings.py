@@ -40,6 +40,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = \
     [
+        'flat',
         'dal',
         'dal_select2',
         'django.contrib.admin',
@@ -53,6 +54,7 @@ INSTALLED_APPS = \
         'django.contrib.flatpages',
         'apps.seo',
         'compressor',
+        'djmoney_rates',
         'widget_tweaks',
         'mptt',
         'easy_thumbnails',
@@ -147,7 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -237,14 +239,6 @@ THUMBNAIL_PROCESSORS = (
 THUMBNAIL_DUMMY = True
 THUMBNAIL_FORCE_OVERWRITE = True
 
-USE_LESS = False
-
-COMPRESS_OFFLINE_CONTEXT = {
-    # this is the only default value from compressor itself
-    'STATIC_URL': STATIC_URL,
-    'use_less': USE_LESS,
-}
-
 THUMBNAIL_ALIASES = {
     '': {
         'category_icon': {'size': (50, 30), 'crop': True},
@@ -254,4 +248,11 @@ THUMBNAIL_ALIASES = {
         'checkout': {'size': (150, 150), 'crop': True},
         'home_thumb_slide': {'size': (1170, 392), 'crop': True},
     },
+}
+
+DJANGO_MONEY_RATES = {
+    'DEFAULT_BACKEND': 'djmoney_rates.backends.OpenExchangeBackend',
+    'OPENEXCHANGE_URL': 'http://openexchangerates.org/api/latest.json',
+    'OPENEXCHANGE_APP_ID': 'a4157eac5336497e963212eeee2e1b14',
+    'OPENEXCHANGE_BASE_CURRENCY': 'USD',
 }

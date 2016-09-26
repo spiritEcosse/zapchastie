@@ -1,8 +1,7 @@
 from django.core.urlresolvers import reverse
 from django import template
 from django.template import Node, Library, TemplateSyntaxError, VariableDoesNotExist, NodeList, resolve_variable
-import re
-
+from auto_parts.settings import DJANGO_MONEY_RATES
 register = Library()
 
 
@@ -150,3 +149,8 @@ def join_slug(list, separator):
     return separator.join([item.slug for item in list])
 
 
+@register.simple_tag
+def convert_money(price, currency):
+    from djmoney_rates.utils import convert_money
+
+    return convert_money(price, currency, DJANGO_MONEY_RATES['OPENEXCHANGE_BASE_CURRENCY'])
