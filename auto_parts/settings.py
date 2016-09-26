@@ -103,9 +103,6 @@ TEMPLATES = [
                 'apps.seo.context_processors.meta_tags',
                 'auto_parts.core.context_processors.metadata',
             ],
-            'libraries': {
-                'thumbnail': 'easy_thumbnails.templatetags.thumbnail',
-            },
         },
     },
 ]
