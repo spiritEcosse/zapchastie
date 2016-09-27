@@ -56,7 +56,6 @@ class ProductCategoryView(CoreProductCategoryView):
         context = super(ProductCategoryView, self).get_context_data(**kwargs)
         context['url_extra_kwargs'] = {'category_slug': self.kwargs.get('category_slug')}
         context['selected_filters'] = self.selected_filters
-        # context['page'] = self.kwargs.get('page', None)
         return context
 
     def get_search_handler(self, *args, **kwargs):

@@ -21,19 +21,19 @@ class ModelResource(resources.ModelResource):
 
 class CategoryResource(ModelResource):
     parent = fields.Field(
-        attribute='parent', column_name=_('Parent'),
+        attribute='parent', column_name='Parent',
         widget=widgets.ForeignKeyWidget(
             model=Category, field='slug',
         )
     )
     image = fields.Field(
-        attribute='image', column_name=_('Image'),
+        attribute='image', column_name='Image',
         widget=widgets.ForeignKeyWidget(
             model=Image, field='original_filename'
         )
     )
     name = fields.Field(
-        attribute='name', column_name=_('Title'),
+        attribute='name', column_name='Title',
         widget=widgets.CharWidget()
     )
 
@@ -45,11 +45,12 @@ class CategoryResource(ModelResource):
 
 
 class FeatureResource(ModelResource):
-    title = fields.Field(attribute='title', column_name=_('Title'), widget=widgets.CharWidget())
+    title = fields.Field(attribute='title', column_name='Title', widget=widgets.CharWidget())
     parent = fields.Field(
-        attribute='parent', column_name=_('Parent'),
+        attribute='parent', column_name='Parent',
         widget=widgets.ForeignKeyWidget(
-            model=Feature, field='slug')
+            model=Feature, field='slug'
+        )
     )
 
     class Meta:
@@ -60,23 +61,23 @@ class FeatureResource(ModelResource):
 
 class ProductResource(ModelResource):
     filters = fields.Field(
-        attribute='filters', column_name=_('Filters'),
+        attribute='filters', column_name='Filters',
         widget=widgets.ManyToManyWidget(model=Feature, field='slug')
     )
     parent = fields.Field(
-        attribute='parent', column_name=_('Parent'),
+        attribute='parent', column_name='Parent',
         widget=widgets.ForeignKeyWidget(model=Product, field='slug')
     )
     product_class = fields.Field(
-        attribute='product_class', column_name=_('Class of product'),
+        attribute='product_class', column_name='Class of product',
         widget=widgets.ForeignKeyWidget(model=ProductClass, field='slug')
     )
     title = fields.Field(
-        attribute='title', column_name=_('Title'),
+        attribute='title', column_name='Title',
         widget=widgets.CharWidget()
     )
     categories = fields.Field(
-        attribute='categories', column_name=_('Categories'),
+        attribute='categories', column_name='Categories',
         widget=widgets.ManyToManyWidget(model=Category, field='slug')
     )
 
