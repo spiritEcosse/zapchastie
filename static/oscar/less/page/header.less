@@ -52,10 +52,15 @@
             text-decoration: underline;
         }
     }
+    .page_inner {
+        padding: 0;
+        padding-bottom: 20px;
+    }
 
     @media (min-width: @screen-sm-min) {
         .page_inner {
-            padding:50px 0 40px;
+            padding: 0;
+            padding-bottom: 20px;
         }
     }
     h1 {
@@ -66,6 +71,7 @@
 
     .navbar-static-top {
         margin-bottom: 0; // remove 18px margin for default navbar
+        position: static;
     }
 }
 

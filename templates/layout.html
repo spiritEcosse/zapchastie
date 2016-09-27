@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load promotion_tags %}
+{% load i18n %}
 
 {% block styles %}
     {% comment %}
@@ -26,6 +27,28 @@
         <div class="page_inner">
             <div class="row">
                 {% include "partials/brand.html" %}
+                <div class="col-xs-12 col-sm-1 col-md-3">
+                    {% if current_site.info.phone_numbers.exists %}
+                        {% with current_site.info.phone_numbers|length as count_phone_numbers %}
+                            <p class="lead {% if count_phone_numbers < 4 %}hidden-sm hidden-xs {% else %}hidden-md hidden-sm hidden-xs {% endif %}">
+                                {% for phone in current_site.info.phone_numbers.all %}
+                                    <a class="text-white" href="tel:{{ phone }}">{{ phone.phone_number.as_international }}</a><br>
+                                {% endfor %}
+                            </p>
+
+                            <div class="dropdown {% if count_phone_numbers < 4 %}visible-sm visible-xs {% else %}visible-md visible-sm visible-xs {% endif %}">
+                                <button type="button" class="btn btn-transparent dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {% trans 'Phones' %} <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu stop-propagation">
+                                    {% for phone in current_site.info.phone_numbers.all %}
+                                        <li><a class="text-white" href="tel:{{ phone }}">{{ phone.phone_number.as_international }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                </div>
                 {# Mini-basket wrapped in a block so some templates can now display it #}
                 {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
             </div>

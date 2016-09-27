@@ -8818,9 +8818,14 @@ form.flat {
 .header #menu .dropdown-menu > .active > a:hover {
   text-decoration: underline;
 }
+.header .page_inner {
+  padding: 0;
+  padding-bottom: 20px;
+}
 @media (min-width: 768px) {
   .header .page_inner {
-    padding: 50px 0 40px;
+    padding: 0;
+    padding-bottom: 20px;
   }
 }
 .header h1 {
@@ -8830,6 +8835,7 @@ form.flat {
 }
 .header .navbar-static-top {
   margin-bottom: 0;
+  position: static;
 }
 @media (min-width: 768px) {
   #language_selector select {

@@ -59,6 +59,7 @@ INSTALLED_APPS = \
         'mptt',
         'easy_thumbnails',
         'filer',
+        'apps.ex_sites',
         # 'feincms',
         # 'feincms.module.page',
         # 'feincms.module.medialibrary',
@@ -145,6 +146,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

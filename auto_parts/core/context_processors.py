@@ -10,4 +10,5 @@ def metadata(request):
     return {
         'shop_name': current_site.name,
         'shop_tagline': current_site.domain,
+        'current_site': current_site
     }
