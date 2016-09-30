@@ -589,6 +589,9 @@ class Product(models.Model, CommonFeatureProduct):
         Because the validation logic is quite complex, validation is delegated
         to the sub method appropriate for the product's structure.
         """
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+
         getattr(self, '_clean_%s' % self.structure)()
         if not self.is_parent:
             self.attr.validate_attributes()

@@ -52,6 +52,7 @@ INSTALLED_APPS = \
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
+        'django.contrib.redirects',
         'apps.seo',
         'compressor',
         'djmoney_rates',
@@ -65,7 +66,7 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
-    ] + get_core_apps(['apps.catalogue', 'apps.promotions'])
+    ] + get_core_apps(['apps.catalogue', 'apps.promotions', 'apps.partner'])
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 
@@ -226,8 +227,7 @@ EMAIL_HOST = settings_local.EMAIL_HOST
 EMAIL_PORT = settings_local.EMAIL_PORT
 EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
 
-OSCAR_DEFAULT_CURRENCY = 'UAH'
-OSCAR_CURRENCY_FORMAT = u'#,##0.## грн.'
+OSCAR_DEFAULT_CURRENCY = 'USD'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 FILER_CANONICAL_URL = 'sharing/'
@@ -259,5 +259,5 @@ DJANGO_MONEY_RATES = {
     'DEFAULT_BACKEND': 'djmoney_rates.backends.OpenExchangeBackend',
     'OPENEXCHANGE_URL': 'http://openexchangerates.org/api/latest.json',
     'OPENEXCHANGE_APP_ID': 'a4157eac5336497e963212eeee2e1b14',
-    'OPENEXCHANGE_BASE_CURRENCY': 'USD',
+    'OPENEXCHANGE_BASE_CURRENCY': 'UAH',
 }
