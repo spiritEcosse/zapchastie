@@ -484,7 +484,7 @@ class Product(models.Model, CommonFeatureProduct):
     meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=520)
     meta_description = models.TextField(verbose_name=_('Meta tag: description'), blank=True)
     meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
-    description = models.TextField(_('Description'), blank=True)
+    description = RichTextUploadingField(_('Description'), blank=True)
 
     #: "Kind" of product, e.g. T-Shirt, Book, etc.
     #: None for child products, they inherit their parent's product class
