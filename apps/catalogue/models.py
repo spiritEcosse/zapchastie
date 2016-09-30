@@ -27,6 +27,15 @@ class EnableManager(models.Manager):
         return super(EnableManager, self).get_queryset().filter(enable=True)
 
 
+def get_product_class():
+    try:
+        product_class = ProductClass.objects.get(slug='obshchii')
+    except ProductClass.DoesNotExist:
+        product_class = ProductClass.objects.create(requires_shipping=False, track_stock=False, name='obshchii')
+
+    return product_class
+
+
 class CommonFeatureProduct(object):
     @property
     def product_slug(self):
@@ -72,7 +81,6 @@ class Feature(MPTTModel):
     parent = TreeForeignKey('self', verbose_name=_('Parent'), related_name='children', blank=True, null=True, db_index=True)
     sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0)
     created = models.DateTimeField(auto_now_add=True)
-    enable = models.BooleanField(verbose_name=_('Enable'), default=True)
     slug_separator = '/'
 
     class MPTTMeta:
@@ -337,7 +345,7 @@ class ProductImage(models.Model, CommonFeatureProduct):
         return self.display_order == 0
 
     def thumb(self, image=None):
-        return super(AbstractProductImage, self).thumb(image=self.image)
+        return super(ProductImage, self).thumb(image=self.image)
 
     def delete(self, *args, **kwargs):
         """
@@ -352,9 +360,6 @@ class ProductImage(models.Model, CommonFeatureProduct):
             image.display_order = idx
             image.save()
 
-    def thumb(self, image=None):
-        return super(ProductImage, self).thumb(image=self)
-
 
 from oscar.apps.catalogue.abstract_models import ProductAttributesContainer, AbstractProductRecommendation
 
@@ -367,6 +372,7 @@ class ProductRecommendation(AbstractProductRecommendation, CommonFeatureProduct)
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         if self.ranking is None:
             self.ranking = 0
+
         super(ProductRecommendation, self).save(
             force_insert=force_insert, force_update=force_update, using=using,
             update_fields=update_fields
@@ -589,12 +595,21 @@ class Product(models.Model, CommonFeatureProduct):
         Because the validation logic is quite complex, validation is delegated
         to the sub method appropriate for the product's structure.
         """
-        if not self.slug and self.title:
-            self.slug = slugify(self.title)
+        self.save_deffer_fields()
 
         getattr(self, '_clean_%s' % self.structure)()
         if not self.is_parent:
             self.attr.validate_attributes()
+
+    def save_deffer_fields(self):
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+
+        if not self.product_class:
+            self.product_class = get_product_class()
+
+        if not self.structure:
+            self.structure = self.STANDALONE
 
     def _clean_standalone(self):
         """
@@ -637,8 +652,8 @@ class Product(models.Model, CommonFeatureProduct):
                 _("A parent product can't have stockrecords."))
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.get_title())
+        self.save_deffer_fields()
+
         super(Product, self).save(*args, **kwargs)
         self.attr.save()
 

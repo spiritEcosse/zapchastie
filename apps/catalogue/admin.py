@@ -12,7 +12,8 @@ from django.db.models.query import Prefetch
 from django.forms import Textarea
 from django.db import models
 from models import Feature, Product, ProductImage
-from oscar.apps.partner.models import StockRecord
+from apps.partner.models import StockRecord
+from apps.partner.forms import StockRecordForm
 
 
 class ProductAutocomplete(autocomplete.Select2QuerySetView):
@@ -29,7 +30,7 @@ class ProductAutocomplete(autocomplete.Select2QuerySetView):
             except ValueError:
                 qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q))
             else:
-                qs = qs.filter(Q(pk=self.q))
+                qs = qs.filter(pk=self.q)
 
         return qs
 
@@ -43,7 +44,13 @@ class CategoriesAutocomplete(autocomplete.Select2QuerySetView):
         qs = Category.objects.all().only('pk', 'name', 'slug', )
 
         if self.q:
-            qs = qs.filter(Q(name__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
+            try:
+                self.q = int(self.q)
+            except ValueError:
+                qs = qs.filter(Q(name__iexact=self.q) | Q(slug__iexact=self.q))
+            else:
+                qs = qs.filter(pk=self.q)
+
         return qs
 
 
@@ -56,7 +63,13 @@ class FeatureAutocomplete(autocomplete.Select2QuerySetView):
         qs = Feature.objects.all().only('pk', 'title', 'slug', )
 
         if self.q:
-            qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q) | Q(pk=self.q))
+            try:
+                self.q = int(self.q)
+            except ValueError:
+                qs = qs.filter(Q(title__iexact=self.q) | Q(slug__iexact=self.q))
+            else:
+                qs = qs.filter(pk=self.q)
+
         return qs
 
 
@@ -66,6 +79,7 @@ class ProductImageInline(admin.TabularInline):
 
 class StockRecordInline(admin.StackedInline):
     model = StockRecord
+    form = StockRecordForm
 
 
 class ProductRecommendationInline(admin.TabularInline):
@@ -75,40 +89,30 @@ class ProductRecommendationInline(admin.TabularInline):
 
 
 class FeatureAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMPTTAdmin):
-    list_display = ('pk', 'indented_title', 'enable', 'slug', 'parent', )
-    list_filter = ('created', 'enable', )
+    list_display = ('pk', 'indented_title', 'slug', 'parent', )
+    list_filter = ('created', )
     search_fields = ('title', 'slug', 'id', )
     resource_class = resources.FeatureResource
     form = forms.FeatureForm
     list_select_related = ('parent', )
 
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
-
 
 class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
-    list_display = ('pk', 'title', 'enable', 'slug', 'thumb', 'date_updated', 'structure', 'attribute_summary',
-                    'product_categories_to_str', 'partners_to_str', )
-    list_filter = ('enable', 'date_updated', 'categories__name', 'structure', 'is_discountable', )
+    list_display = (
+        'pk', 'title', 'enable', 'slug', 'thumb', 'date_updated', 'product_categories_to_str', 'partners_to_str',
+    )
+    list_filter = ('enable', 'date_updated', 'categories__name', 'is_discountable', )
     inlines = (ProductRecommendationInline, ProductImageInline, StockRecordInline, )
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('upc', 'title', 'slug', 'id', )
     form = forms.ProductForm
     resource_class = resources.ProductResource
-    list_select_related = ('product_class', )
-    list_attr = ('pk', 'title', 'enable', 'date_updated', 'slug', 'structure', 'product_class__name', )
-
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+    list_attr = ('pk', 'title', 'enable', 'date_updated', 'slug', )
 
     def get_queryset(self, request):
         qs = super(ProductAdmin, self).get_queryset(request)
         return qs.only(*self.list_attr).order_by('-date_updated', 'title').prefetch_related(
             Prefetch('images', queryset=ProductImage.objects.only('original', 'product')),
-            Prefetch('attribute_values'),
-            Prefetch('attributes'),
         )
 
 
@@ -124,10 +128,6 @@ class CategoryAdmin(ImportExportMixin, ImportExportActionModelAdmin, DraggableMP
     form = forms.CategoryForm
     list_select_related = ('parent', )
 
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
-
 
 class ProductImageAdmin(ImportExportMixin, ImportExportActionModelAdmin):
     resource_class = resources.ProductImageResource
@@ -138,10 +138,6 @@ class ProductImageAdmin(ImportExportMixin, ImportExportActionModelAdmin):
     search_fields = ('product__title', 'product__slug', 'product__id', )
     form = forms.ProductImageForm
     list_select_related = ('product', )
-
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
 
     def get_queryset(self, request):
         qs = super(ProductImageAdmin, self).get_queryset(request)
@@ -161,10 +157,6 @@ class ProductRecommendationAdmin(ImportExportMixin, ImportExportActionModelAdmin
     resource_class = resources.ProductRecommendationResource
     form = forms.ProductRecommendationForm
 
-    class Media:
-        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
-
 
 admin.site.register(Feature, FeatureAdmin)
 admin.site.unregister(Product)
@@ -174,3 +166,9 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.unregister(ProductImage)
 admin.site.register(ProductImage, ProductImageAdmin)
 admin.site.register(ProductRecommendation, ProductRecommendationAdmin)
+admin.site.unregister(ProductAttribute)
+# admin.site.unregister(ProductClass)
+admin.site.unregister(ProductAttributeValue)
+admin.site.unregister(AttributeOptionGroup)
+admin.site.unregister(Option)
+admin.site.unregister(ProductCategory)

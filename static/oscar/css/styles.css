@@ -9236,9 +9236,6 @@ input[type="text"][id*="quantity"],
 input[type="number"][id*="quantity"] {
   max-width: 55px;
 }
-.checkout-quantity .input-group {
-  max-width: 130px;
-}
 .checkout-quantity .input-group input[type="number"][id*="quantity"] {
   max-width: none;
 }

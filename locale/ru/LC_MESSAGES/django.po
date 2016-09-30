@@ -63,24 +63,24 @@ msgstr ""
 
 #: apps/catalogue/models.py:72 apps/catalogue/models.py:110
 msgid "Parent"
-msgstr ""
+msgstr "Родитель"
 
 #: apps/catalogue/models.py:73
 msgid "Sort"
-msgstr ""
+msgstr "Сортировка"
 
 #: apps/catalogue/models.py:75 apps/catalogue/models.py:118
 #: apps/catalogue/models.py:536
 msgid "Enable"
-msgstr ""
+msgstr "Включено"
 
 #: apps/catalogue/models.py:84
 msgid "Feature"
-msgstr ""
+msgstr "Особенность"
 
 #: apps/catalogue/models.py:85
 msgid "Features"
-msgstr ""
+msgstr "Особенности"
 
 #: apps/catalogue/models.py:108 templates/customer/profile/profile.html:9
 #: templates/customer/wishlists/wishlists_list.html:9

@@ -24,9 +24,8 @@ class CategoryForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('product_class', 'structure', 'parent', 'product_options', )
         widgets = {
-            'parent': autocomplete.ModelSelect2(url='product-autocomplete'),
             'filters': autocomplete.ModelSelect2Multiple(url='feature-autocomplete'),
             'categories': autocomplete.ModelSelect2Multiple(url='categories-autocomplete'),
         }

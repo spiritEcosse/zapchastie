@@ -1,15 +1,8 @@
 from import_export import widgets as import_export_widgets
 from import_export import resources, fields
 import widgets
-from oscar.core.loading import get_model
-from models import Feature
+from models import Feature, Product, Category, ProductImage, ProductRecommendation
 from filer.models.imagemodels import Image
-from django.utils.translation import ugettext_lazy as _
-from apps.catalogue.models import Product, Category
-
-ProductClass = get_model('catalogue', 'ProductClass')
-ProductImage = get_model('catalogue', 'ProductImage')
-ProductRecommendation = get_model('catalogue', 'ProductRecommendation')
 
 
 class ModelResource(resources.ModelResource):
@@ -55,7 +48,7 @@ class FeatureResource(ModelResource):
 
     class Meta:
         model = Feature
-        fields = ('id', 'delete', 'enable', 'title', 'slug', 'parent', 'sort',)
+        fields = ('id', 'delete', 'title', 'slug', 'parent', 'sort',)
         export_order = fields
 
 
@@ -63,14 +56,6 @@ class ProductResource(ModelResource):
     filters = fields.Field(
         attribute='filters', column_name='Filters',
         widget=widgets.ManyToManyWidget(model=Feature, field='slug')
-    )
-    parent = fields.Field(
-        attribute='parent', column_name='Parent',
-        widget=widgets.ForeignKeyWidget(model=Product, field='slug')
-    )
-    product_class = fields.Field(
-        attribute='product_class', column_name='Class of product',
-        widget=widgets.ForeignKeyWidget(model=ProductClass, field='slug')
     )
     title = fields.Field(
         attribute='title', column_name='Title',
@@ -83,8 +68,10 @@ class ProductResource(ModelResource):
 
     class Meta:
         model = Product
-        fields = ('id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
-                  'description', 'filters', 'categories', 'product_class', 'structure', 'parent', )
+        fields = (
+            'id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
+            'filters', 'categories'
+        )
         export_order = fields
 
 
