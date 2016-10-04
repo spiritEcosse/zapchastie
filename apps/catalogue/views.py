@@ -100,7 +100,11 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
     def ajax(self, request):
         form = self.form_class(data=json.loads(request.body))
 
-        if not form.errors:
+        if form.is_valid():
+            product_question = form.save(commit=False)
+            product_question.user = self.request.user
+            product_question.product = self.get_object()
+            product_question.save()
             email_to = get_current_site(request).info.email
             form_email = form.cleaned_data['email']
             self.send_email(form, form_email, email_to)

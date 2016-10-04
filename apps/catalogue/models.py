@@ -920,6 +920,7 @@ class ProductQuestion(models.Model):
     question = models.TextField(verbose_name=_('Question about the product'))
     product = models.ForeignKey(Product, verbose_name=_('Product'))
     user = models.ForeignKey(User, verbose_name=_('User'), blank=True)
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
 
     class Meta:
         verbose_name = _('Question about the product')
@@ -927,4 +928,12 @@ class ProductQuestion(models.Model):
         ordering = ('product', )
 
     def __str__(self):
-        return 'Question "{}" of product {}'.format(truncatechars(self.question, 50), self.product)
+        return u'Question "{}" of product {}'.format(truncatechars(self.question, 50), self.product)
+
+    def get_email(self):
+        return self.user.email or self.email
+    get_email.short_description = _('User email')
+
+    def get_name(self):
+        return self.user.username or self.name
+    get_name.short_description = _('User name')

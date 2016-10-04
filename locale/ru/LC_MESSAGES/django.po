@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 14:01+0000\n"
+"POT-Creation-Date: 2016-10-04 16:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -200,7 +200,7 @@ msgid ""
 msgstr ""
 
 #: apps/catalogue/models.py:310 apps/catalogue/models.py:522
-#: templates/customer/alerts/alert_list.html:14
+#: apps/catalogue/models.py:923 templates/customer/alerts/alert_list.html:14
 #: templates/dashboard/promotions/promotion_list.html:44
 #: templates/dashboard/ranges/range_list.html:34
 #: templates/dashboard/reports/partials/submitted_basket_report.html:12
@@ -409,17 +409,17 @@ msgstr ""
 msgid "Partners"
 msgstr ""
 
-#: apps/catalogue/models.py:918
+#: apps/catalogue/models.py:918 apps/catalogue/models.py:939
 msgid "User name"
-msgstr ""
+msgstr "Имя пользователя"
 
-#: apps/catalogue/models.py:919
+#: apps/catalogue/models.py:919 apps/catalogue/models.py:935
 msgid "User email"
-msgstr ""
+msgstr "email пользователя"
 
-#: apps/catalogue/models.py:920 apps/catalogue/models.py:925
+#: apps/catalogue/models.py:920 apps/catalogue/models.py:926
 msgid "Question about the product"
-msgstr ""
+msgstr "Вопрос по товару"
 
 #: apps/catalogue/models.py:922
 #: templates/dashboard/orders/order_detail.html:610
@@ -430,19 +430,19 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: apps/catalogue/models.py:926
+#: apps/catalogue/models.py:927
 msgid "Questions about the products"
-msgstr ""
+msgstr "Вопросы по товарам"
 
 #: apps/catalogue/views.py:77
 msgid "You question has been sent!"
 msgstr "Ваш вопрос был отправлен!"
 
-#: apps/catalogue/views.py:116
+#: apps/catalogue/views.py:120
 msgid "You received a letter from the site {}"
 msgstr "Вы получили письмо с сайта {}"
 
-#: apps/catalogue/views.py:117
+#: apps/catalogue/views.py:121
 msgid ""
 "User name: {}.\n"
 "Email: {}.\n"
@@ -454,7 +454,7 @@ msgstr ""
 
 #: apps/ex_sites/models.py:11
 msgid "Phone numbers"
-msgstr ""
+msgstr "Телефонные номера"
 
 #: apps/ex_sites/models.py:12 templates/checkout/checkout.html:49
 #: templates/checkout/thank_you.html:52
@@ -479,7 +479,7 @@ msgstr ""
 
 #: apps/ex_sites/models.py:24
 msgid "Phone number"
-msgstr ""
+msgstr "Номер телефона"
 
 #: apps/seo/models.py:13 templates/dashboard/promotions/form.html:49
 msgid "Page URL"

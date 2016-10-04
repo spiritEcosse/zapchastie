@@ -160,6 +160,9 @@ class ProductRecommendationAdmin(ImportExportMixin, ImportExportActionModelAdmin
 
 class ProductQuestionAdmin(admin.ModelAdmin):
     form = forms.ProductQuestionForm
+    search_fields = ('email', 'user__username', 'user__email', 'name', 'product__title', )
+    list_display = ('get_email', 'get_name', 'product', )
+    list_filter = ('date_created', )
 
 
 admin.site.register(Feature, FeatureAdmin)
