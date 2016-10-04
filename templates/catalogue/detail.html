@@ -138,6 +138,8 @@
             </table>
         {% endblock %}
 
+        <div class="sub-header"><h2>{% trans 'Question about this item' %}</h2></div>
+
         <form name="{{ product_question_form.form_name }}" method="post" novalidate action="." ng-init="button.send='{% trans "Send" %}'; button.actual=button.send; button.sending='{% trans "Sending..." %}'">
             {% csrf_token %}
             {{ product_question_form.as_div }}
