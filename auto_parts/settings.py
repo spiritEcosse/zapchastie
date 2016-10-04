@@ -60,6 +60,7 @@ INSTALLED_APPS = \
         'mptt',
         'easy_thumbnails',
         'filer',
+        'djng',
         'apps.ex_sites',
         # 'feincms',
         # 'feincms.module.page',

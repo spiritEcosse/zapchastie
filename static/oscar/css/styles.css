@@ -1,4 +1,5 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+@import "../../../static_root/djng/css/styles.css";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

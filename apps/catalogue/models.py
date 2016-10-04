@@ -17,6 +17,9 @@ from django.template import loader, Context
 from django.conf import settings
 import os
 from auto_parts.settings import MEDIA_ROOT
+from django.template.defaultfilters import truncatechars
+from django.contrib.auth.models import User
+
 
 ProductManager, BrowsableProductManager = get_classes(
     'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])
@@ -908,3 +911,20 @@ class Product(models.Model, CommonFeatureProduct):
 
 
 from oscar.apps.catalogue.models import *  # noqa
+
+
+@python_2_unicode_compatible
+class ProductQuestion(models.Model):
+    name = models.CharField(verbose_name=_('User name'), max_length=100)
+    email = models.EmailField(verbose_name=_('User email'))
+    question = models.TextField(verbose_name=_('Question about the product'))
+    product = models.ForeignKey(Product, verbose_name=_('Product'))
+    user = models.ForeignKey(User, verbose_name=_('User'), blank=True)
+
+    class Meta:
+        verbose_name = _('Question about the product')
+        verbose_name_plural = _('Questions about the products')
+        ordering = ('product', )
+
+    def __str__(self):
+        return 'Question "{}" of product {}'.format(truncatechars(self.question, 50), self.product)

@@ -11,7 +11,7 @@ from django.db.models import Q
 from django.db.models.query import Prefetch
 from django.forms import Textarea
 from django.db import models
-from models import Feature, Product, ProductImage
+from models import Feature, Product, ProductImage, ProductQuestion
 from apps.partner.models import StockRecord
 from apps.partner.forms import StockRecordForm
 
@@ -158,7 +158,12 @@ class ProductRecommendationAdmin(ImportExportMixin, ImportExportActionModelAdmin
     form = forms.ProductRecommendationForm
 
 
+class ProductQuestionAdmin(admin.ModelAdmin):
+    form = forms.ProductQuestionForm
+
+
 admin.site.register(Feature, FeatureAdmin)
+admin.site.register(ProductQuestion, ProductQuestionAdmin)
 admin.site.unregister(Product)
 admin.site.register(Product, ProductAdmin)
 admin.site.unregister(Category)
@@ -167,7 +172,7 @@ admin.site.unregister(ProductImage)
 admin.site.register(ProductImage, ProductImageAdmin)
 admin.site.register(ProductRecommendation, ProductRecommendationAdmin)
 admin.site.unregister(ProductAttribute)
-# admin.site.unregister(ProductClass)
+admin.site.unregister(ProductClass)
 admin.site.unregister(ProductAttributeValue)
 admin.site.unregister(AttributeOptionGroup)
 admin.site.unregister(Option)

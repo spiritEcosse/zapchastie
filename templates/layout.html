@@ -57,7 +57,7 @@
 
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
-        <div class="container-fluid page">
+        <div class="container-fluid page" {% block ngController%}{% endblock ngController %}>
             <div class="page_inner">
                 {% block breadcrumbs %}{% endblock %}
                 {% block header %}
@@ -103,9 +103,10 @@
 
 {# Local scripts #}
 {% block scripts %}
+    <script src="{% static "build/js/script.min.js" %}" type="text/javascript" charset="utf-8"></script>
     {{ block.super }}
     <!-- Twitter Bootstrap -->
-    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
+{#    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>#}
     <!-- Oscar -->
     <script src="{% static "oscar/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script>
 

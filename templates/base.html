@@ -44,7 +44,7 @@
     {% endblock %}
 </head>
 
-<body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}">
+<body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}" {% block ngApp %}ng-app="zapchastie"{% endblock ngApp %}>
 {# Main content goes in this 'layout' block #}
 {% block layout %}{% endblock %}
 

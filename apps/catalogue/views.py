@@ -5,7 +5,15 @@ import logging
 from apps.catalogue.models import Category, Feature, Product
 from django.http import HttpResponsePermanentRedirect, Http404
 from django.utils.http import urlquote
+from apps.catalogue.forms import ProductQuestionNgForm
 from oscar.core.loading import get_class
+from braces import views
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.translation import ugettext_lazy as _
+from django.views.generic.edit import FormMixin
+from django.core.mail import send_mail
+from django.views.generic import FormView
+import json
 get_product_search_handler_class = get_class('catalogue.search_handlers', 'get_product_search_handler_class')
 
 logger = logging.getLogger(__name__)
@@ -64,8 +72,50 @@ class ProductCategoryView(CoreProductCategoryView):
         return super(ProductCategoryView, self).get_search_handler(*args, **kwargs)
 
 
-class ProductDetailView(CoreProductDetailView):
+class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin):
+    form_class = ProductQuestionNgForm
+    form_valid_message = str(_('You question has been sent!'))
+
     def get_object(self, queryset=None):
         self.kwargs['slug'] = self.kwargs['product_slug']
         queryset = self.model.objects.filter(enable=True)
         return super(ProductDetailView, self).get_object(queryset=queryset)
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        initial_data = {}
+
+        if self.request.user.is_authenticated():
+            initial_data['name'] = self.request.user.username
+            initial_data['email'] = self.request.user.email
+
+        context['product_question_form'] = self.form_class(initial=initial_data)
+        return context
+
+    def post(self, request, **kwargs):
+        if request.is_ajax():
+            return self.ajax(request)
+        return super(ProductDetailView, self).post(request, **kwargs)
+
+    def ajax(self, request):
+        form = self.form_class(data=json.loads(request.body))
+
+        if not form.errors:
+            email_to = get_current_site(request).info.email
+            form_email = form.cleaned_data['email']
+            self.send_email(form, form_email, email_to)
+
+            response_data = {'msg': self.form_valid_message}
+        else:
+            response_data = {'errors': form.errors}
+
+        return self.render_json_response(response_data)
+
+    def send_email(self, form, form_email, email_to):
+        send_mail(
+            str(_('You received a letter from the site %s'.format(get_current_site(self.request).domain))),
+            u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']),
+            form.cleaned_data['email'],
+            [email_to],
+            fail_silently=False
+        )
