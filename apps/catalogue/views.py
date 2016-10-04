@@ -74,7 +74,7 @@ class ProductCategoryView(CoreProductCategoryView):
 
 class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin):
     form_class = ProductQuestionNgForm
-    form_valid_message = str(_('You question has been sent!'))
+    form_valid_message = unicode(_('You question has been sent!'))
 
     def get_object(self, queryset=None):
         self.kwargs['slug'] = self.kwargs['product_slug']
@@ -113,8 +113,8 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
 
     def send_email(self, form, form_email, email_to):
         send_mail(
-            str(_('You received a letter from the site %s'.format(get_current_site(self.request).domain))),
-            u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']),
+            unicode(_('You received a letter from the site {}'.format(get_current_site(self.request).domain))),
+            unicode(_(u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']))),
             form.cleaned_data['email'],
             [email_to],
             fail_silently=False

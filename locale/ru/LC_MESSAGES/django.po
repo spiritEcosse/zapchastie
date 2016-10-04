@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 13:34+0000\n"
+"POT-Creation-Date: 2016-10-04 14:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -436,12 +436,21 @@ msgstr ""
 
 #: apps/catalogue/views.py:77
 msgid "You question has been sent!"
-msgstr ""
+msgstr "Ваш вопрос был отправлен!"
 
 #: apps/catalogue/views.py:116
-#, python-format
-msgid "You received a letter from the site %s"
+msgid "You received a letter from the site {}"
+msgstr "Вы получили письмо с сайта {}"
+
+#: apps/catalogue/views.py:117
+msgid ""
+"User name: {}.\n"
+"Email: {}.\n"
+"Question: {}"
 msgstr ""
+"Имя пользователя: {}.\n"
+"Email: {}.\n"
+"Вопрос: {}"
 
 #: apps/ex_sites/models.py:11
 msgid "Phone numbers"
@@ -1069,7 +1078,7 @@ msgstr "Задать вопрос об этом товаре"
 
 #: templates/catalogue/detail.html:144 templates/catalogue/detail.html:150
 msgid "Send"
-msgstr ""
+msgstr "Отправить"
 
 #: templates/catalogue/detail.html:144 templates/dashboard/comms/detail.html:83
 #: templates/dashboard/users/detail.html:92
