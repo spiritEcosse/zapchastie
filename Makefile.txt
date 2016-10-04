@@ -1,6 +1,9 @@
 # These targets are not files
 .PHONY: install sandbox docs coverage lint travis messages compiledmessages css clean preflight sandbox_image
 
+# scp -r filer_public h5782c@zapchastie.com.ua:zapchastie/media/
+# local("./manage.py dumpdata --indent 4 --natural-primary --natural-foreign -e contenttypes -e auth.Permission -e sessions -e admin > db.json")
+
 install:
 	pip install -e . -r requirements.txt
 
@@ -8,7 +11,7 @@ build_sandbox:
 	# Create database
 	./manage.py migrate
 	# Import some fixtures. Order is important as JSON fixtures include primary keys
-	./manage.py loaddata fixtures/child_products.json
+	./manage.py loaddata fixtures
 	./manage.py oscar_import_catalogue fixtures/*.csv
 	./manage.py oscar_import_catalogue_images fixtures/images.tar.gz
 	./manage.py oscar_populate_countries
