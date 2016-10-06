@@ -14,8 +14,7 @@
         "email": "",
         "date_joined": "2016-06-24T19:48:09.007Z"
     },
-    "model": "auth.user",
-    "pk": 1
+    "model": "auth.user"
 },
 {
     "fields": {
@@ -32,8 +31,7 @@
         "email": "shevchenkcoigor@gmail.com",
         "date_joined": "2016-09-05T20:27:05Z"
     },
-    "model": "auth.user",
-    "pk": 2
+    "model": "auth.user"
 },
 {
     "fields": {
