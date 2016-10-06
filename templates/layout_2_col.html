@@ -39,8 +39,8 @@ main content area to split it into a sidebar and a content block
                     {% include "partials/alert_messages.html" %}
 
                     <div id="promotions">
-                        {% for promotion in promotions_page %}
-                            {% render_promotion promotion %}
+                        {% for promotion_page in promotions_page %}
+                            {% render_promotion promotion_page %}
                         {% endfor %}
                     </div>
 
