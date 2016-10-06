@@ -53,6 +53,7 @@ INSTALLED_APPS = \
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
         'django.contrib.redirects',
+        'django.contrib.sitemaps',
         'apps.seo',
         'compressor',
         'djmoney_rates',
@@ -99,6 +100,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.request',
+                'django.core.context_processors.static',
 
                 'oscar.apps.search.context_processors.search_form',
                 'apps.promotions.context_processors.promotions',

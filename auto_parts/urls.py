@@ -18,8 +18,17 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 import settings
+from django.contrib.sitemaps.views import sitemap
+from apps.sitemap import ProductSitemap, CategorySitemap
+
+sitemaps = {
+    'products': ProductSitemap,
+    'categories': CategorySitemap,
+}
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'', include(application.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  url(r'^admin/', admin.site.urls),
+                  url(r'', include(application.urls)),
+                  url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
