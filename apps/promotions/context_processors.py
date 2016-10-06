@@ -1,8 +1,6 @@
 from itertools import chain
 from oscar.apps.promotions.models import KeywordPromotion, PagePromotion
-from oscar.core.loading import get_model
-
-Promotion = get_model('promotion', 'Promotion')
+from apps.promotions.models import AbstractPromotion
 
 
 def promotions(request):
@@ -48,7 +46,7 @@ def split_by_position(linked_promotions, context):
     for linked_promotion in linked_promotions:
         promotion = False
 
-        if isinstance(linked_promotion.content_object, Promotion):
+        if isinstance(linked_promotion.content_object, AbstractPromotion):
             promotion = linked_promotion.content_object
 
         if not promotion:
