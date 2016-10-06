@@ -44548,9 +44548,7 @@
         "modified_at": "2016-09-17T19:13:15.369Z",
         "lft": 1,
         "tree_id": 1,
-        "owner": [
-            "igor_1"
-        ]
+        "owner": 2
     },
     "model": "filer.folder",
     "pk": 2
@@ -44565,16 +44563,11 @@
         "_file_size": 39216,
         "uploaded_at": "2016-09-29T21:56:20.804Z",
         "file": "filer_public/5d/58/5d58db21-6fff-4d8a-bbcd-d52978dabd02/bamper-zadniy-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1470
@@ -44589,16 +44582,11 @@
         "_file_size": 47954,
         "uploaded_at": "2016-09-29T21:56:21.259Z",
         "file": "filer_public/fc/d7/fcd77c7b-639a-4c67-8074-358d5f71f038/bamper-peredniy-universal-7401-w7-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1471
@@ -44613,16 +44601,11 @@
         "_file_size": 36915,
         "uploaded_at": "2016-09-29T21:56:21.698Z",
         "file": "filer_public/65/9b/659b57d2-062f-40b0-a764-211a63ae6fab/block-abs-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1472
@@ -44637,16 +44620,11 @@
         "_file_size": 41735,
         "uploaded_at": "2016-09-29T21:56:22.251Z",
         "file": "filer_public/35/59/3559b8e8-5baf-4deb-a1c0-f4f0fe0167fb/blok-dvigatelya-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1473
@@ -44661,16 +44639,11 @@
         "_file_size": 57648,
         "uploaded_at": "2016-09-29T21:56:22.774Z",
         "file": "filer_public/d0/18/d0185536-e71f-490f-8696-5dc99e227ff5/blok-dvigatelya-v-sbore-1-6-benzin-16k-nfu-kv-4h-porshni-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1474
@@ -44685,16 +44658,11 @@
         "_file_size": 52938,
         "uploaded_at": "2016-09-29T21:56:23.350Z",
         "file": "filer_public/18/05/18052dfd-cc53-4e9b-820d-09f14f47ca50/blok-dvigatelya-v-sbore-1-6-benzin-16k-nfu-kv-4h-porshni-poddon-nasos-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1475
@@ -44709,16 +44677,11 @@
         "_file_size": 39720,
         "uploaded_at": "2016-09-29T21:56:24.102Z",
         "file": "filer_public/d0/25/d02597f0-15b7-4b90-83c9-2a1632af00b4/blok_upravleniya_dvigatelem_citroen_berlingo_16_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1476
@@ -44733,16 +44696,11 @@
         "_file_size": 70392,
         "uploaded_at": "2016-09-29T21:56:24.737Z",
         "file": "filer_public/94/d6/94d659a2-efcb-4997-bcb0-24fc4c29e6e0/control-unit-windows-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1477
@@ -44757,16 +44715,11 @@
         "_file_size": 38279,
         "uploaded_at": "2016-09-29T21:56:25.367Z",
         "file": "filer_public/cb/bc/cbbc7b2c-d9c7-45f8-ba91-00e8691e0099/blok-tsilindrov-1-6-b-11g-berlingo-ep6-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1478
@@ -44781,16 +44734,11 @@
         "_file_size": 43097,
         "uploaded_at": "2016-09-29T21:56:27.369Z",
         "file": "filer_public/a3/da/a3da136d-5e53-442d-ae17-52f797c13821/blok-elektronik-simens_-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1479
@@ -44805,16 +44753,11 @@
         "_file_size": 34954,
         "uploaded_at": "2016-09-29T21:56:27.928Z",
         "file": "filer_public/1e/1f/1e1fc560-1d1f-4967-ad3b-6477c0414c7c/vakuumny-inasos-tormaznoiy-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1480
@@ -44829,16 +44772,11 @@
         "_file_size": 111352,
         "uploaded_at": "2016-09-29T21:56:28.442Z",
         "file": "filer_public/53/c4/53c4e36b-1f9a-4907-b06e-9774c48edbc4/vakuumnyiy-nasos-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1481
@@ -44853,16 +44791,11 @@
         "_file_size": 37336,
         "uploaded_at": "2016-09-29T21:56:28.897Z",
         "file": "filer_public/b1/9d/b19d7cdd-fc66-40f6-82e5-742b37b2bc4c/vodonagrevate-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1482
@@ -44877,16 +44810,11 @@
         "_file_size": 40219,
         "uploaded_at": "2016-09-29T21:56:29.521Z",
         "file": "filer_public/c4/9e/c49e4b06-451b-40f9-a2ef-555ff0979507/vodyanoy-shlang-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1483
@@ -44901,16 +44829,11 @@
         "_file_size": 36752,
         "uploaded_at": "2016-09-29T21:56:30.146Z",
         "file": "filer_public/13/74/13743f46-c425-45b7-924b-160b4552599d/vsasyivayuschii-kollektor-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1484
@@ -44925,16 +44848,11 @@
         "_file_size": 49871,
         "uploaded_at": "2016-09-29T21:56:31.030Z",
         "file": "filer_public/dd/9d/dd9d499e-e2b7-4db2-8140-fb45d3b6a4d5/vyipusknoy-kollektor-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1485
@@ -44949,16 +44867,11 @@
         "_file_size": 49506,
         "uploaded_at": "2016-09-29T21:56:31.575Z",
         "file": "filer_public/58/93/5893f638-e62c-447a-a696-54c159ff5e53/generator-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1486
@@ -44973,16 +44886,11 @@
         "_file_size": 65285,
         "uploaded_at": "2016-09-29T21:56:32.101Z",
         "file": "filer_public/b1/92/b1921811-3148-41cb-9a0b-b848db2c3c38/gennerator-valeo-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1487
@@ -44997,16 +44905,11 @@
         "_file_size": 55574,
         "uploaded_at": "2016-09-29T21:56:32.585Z",
         "file": "filer_public/fa/fc/fafc6d6b-9adf-4a71-86e4-20b308c3848e/golovka-1-6b-8-klapanov-fnz-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1488
@@ -45021,16 +44924,11 @@
         "_file_size": 33415,
         "uploaded_at": "2016-09-29T21:56:33.033Z",
         "file": "filer_public/7a/4d/7a4dc0a5-ac96-4281-a1ec-1c30ab1d90de/golovka-bloka-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1489
@@ -45045,16 +44943,11 @@
         "_file_size": 58443,
         "uploaded_at": "2016-09-29T21:56:33.522Z",
         "file": "filer_public/af/99/af99dd70-cc0a-4f13-ba19-95eda33de8ab/golovk-bloka-tsilindrov-gbts-v-sbore-citroen_berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1490
@@ -45069,16 +44962,11 @@
         "_file_size": 61309,
         "uploaded_at": "2016-09-29T21:56:33.970Z",
         "file": "filer_public/c2/f5/c2f5315f-d7fd-48d4-8c15-fe18d5ab3d16/golovka-bloka-tsilindrov-v-sbore-nfu-16k-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1491
@@ -45093,16 +44981,11 @@
         "_file_size": 38712,
         "uploaded_at": "2016-09-29T21:56:34.481Z",
         "file": "filer_public/f5/16/f516a858-8f5c-451d-a3a8-1662c659d032/golovka-bloka-tsilindrov-v-sbore-nfu-16k-tu5-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1492
@@ -45117,16 +45000,11 @@
         "_file_size": 42393,
         "uploaded_at": "2016-09-29T21:56:34.932Z",
         "file": "filer_public/e2/28/e228c5f4-3a3b-4cd0-b367-f453601b6ff2/golovka-pezho-1-6b-8k-1-6-0135-1s-nfz-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1493
@@ -45141,16 +45019,11 @@
         "_file_size": 42965,
         "uploaded_at": "2016-09-29T21:56:35.374Z",
         "file": "filer_public/bb/0c/bb0c26ae-0e02-43cf-9a26-11dec5693894/datchik-davleniya-topliva-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1494
@@ -45165,16 +45038,11 @@
         "_file_size": 29133,
         "uploaded_at": "2016-09-29T21:56:35.817Z",
         "file": "filer_public/2c/4e/2c4e9aa0-8f8a-4a52-a332-61d0d2e0aa84/datchik_raspredvala9628559980__citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1495
@@ -45189,16 +45057,11 @@
         "_file_size": 42340,
         "uploaded_at": "2016-09-29T21:56:36.297Z",
         "file": "filer_public/4d/5e/4d5e104d-9b88-484f-995c-7f109fc9cd4c/datchik-urovnya-topliva-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1496
@@ -45213,16 +45076,11 @@
         "_file_size": 74314,
         "uploaded_at": "2016-09-29T21:56:36.739Z",
         "file": "filer_public/b7/26/b72605f7-2437-48b1-bdec-15ba76abb67f/dve-poluosi-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1497
@@ -45237,16 +45095,11 @@
         "_file_size": 74314,
         "uploaded_at": "2016-09-29T21:56:37.213Z",
         "file": "filer_public/38/fc/38fc4f6b-9185-49a3-b0f3-31c5603cecbe/dve-poluosi-peugeot-partner-1-6-hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1498
@@ -45261,16 +45114,11 @@
         "_file_size": 58542,
         "uploaded_at": "2016-09-29T21:56:40.899Z",
         "file": "filer_public/d6/7a/d67a6dcf-6d51-4ff8-9156-aa03fb87de77/engine_for_the_peugeot_partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1499
@@ -45285,16 +45133,11 @@
         "_file_size": 47687,
         "uploaded_at": "2016-09-29T21:56:46.378Z",
         "file": "filer_public/91/a4/91a42bc2-2ceb-4063-8ef4-d85822e0f9e8/motor-dw8-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1500
@@ -45309,16 +45152,11 @@
         "_file_size": 49991,
         "uploaded_at": "2016-09-29T21:56:47.291Z",
         "file": "filer_public/73/aa/73aaff93-c037-48cc-9af9-e53015f96bd1/klapan-9638111480-egr_-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1501
@@ -45333,16 +45171,11 @@
         "_file_size": 82420,
         "uploaded_at": "2016-09-29T21:56:47.790Z",
         "file": "filer_public/bc/79/bc792d1a-a8c4-4366-8d79-55b46a6ea924/komplektnyiy-motor-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1502
@@ -45357,16 +45190,11 @@
         "_file_size": 57197,
         "uploaded_at": "2016-09-29T21:56:48.401Z",
         "file": "filer_public/d4/75/d475001d-668f-4f73-a979-25ec7214ac98/pezho-motor-mehanicheskaya-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1503
@@ -45381,16 +45209,11 @@
         "_file_size": 57197,
         "uploaded_at": "2016-09-29T21:56:48.875Z",
         "file": "filer_public/e1/39/e1394a2c-043f-4acf-bc13-ab1328035910/motor-komplektnyiy-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1504
@@ -45405,16 +45228,11 @@
         "_file_size": 64167,
         "uploaded_at": "2016-09-29T21:56:49.402Z",
         "file": "filer_public/2e/52/2e52d6b3-a47d-4837-bf8c-c3bdd313cf19/motor_rhy_dw10_citroen_berlingo_2_0_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1505
@@ -45429,16 +45247,11 @@
         "_file_size": 57910,
         "uploaded_at": "2016-09-29T21:56:49.875Z",
         "file": "filer_public/68/9c/689c164d-0292-4854-a0ed-901c163cb84e/motor-golyiy-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1506
@@ -45453,16 +45266,11 @@
         "_file_size": 63181,
         "uploaded_at": "2016-09-29T21:56:50.479Z",
         "file": "filer_public/9e/3b/9e3bd472-1c9f-463d-a01b-0b6097a74c23/motor-c-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1507
@@ -45477,16 +45285,11 @@
         "_file_size": 60925,
         "uploaded_at": "2016-09-29T21:56:50.976Z",
         "file": "filer_public/ad/c1/adc13555-e17a-4246-8c00-d8ee02d5f75e/motor-ot-peugeot-partner-1-9hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1508
@@ -45501,16 +45304,11 @@
         "_file_size": 24292,
         "uploaded_at": "2016-09-29T21:56:52.431Z",
         "file": "filer_public/d2/50/d2503816-09e2-4126-bde6-25e940613368/brake-flui-reservoir-citroen-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1509
@@ -45525,16 +45323,11 @@
         "_file_size": 43516,
         "uploaded_at": "2016-09-29T21:56:54.055Z",
         "file": "filer_public/47/29/472936ab-e97e-4d47-8871-81483c94916f/citroen_berlingo1_6_0265231522-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1510
@@ -45549,16 +45342,11 @@
         "_file_size": 33352,
         "uploaded_at": "2016-09-29T21:56:54.733Z",
         "file": "filer_public/5e/60/5e60ec78-f035-4090-b2a9-736d63881b3e/block-abs-citroen-1-6_-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1511
@@ -45573,16 +45361,11 @@
         "_file_size": 42996,
         "uploaded_at": "2016-09-29T21:56:55.846Z",
         "file": "filer_public/2f/24/2f246009-49dd-4e05-8ed4-c091df2f0301/block-abs-citroen-1-6-0265231522-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1512
@@ -45597,16 +45380,11 @@
         "_file_size": 40497,
         "uploaded_at": "2016-09-29T21:56:57.788Z",
         "file": "filer_public/cb/ef/cbef073a-90d1-447e-8d92-0897758df13d/blok_abs_nasosa_citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1513
@@ -45621,16 +45399,11 @@
         "_file_size": 45468,
         "uploaded_at": "2016-09-29T21:56:58.423Z",
         "file": "filer_public/dc/b7/dcb749d8-6713-4b40-87f4-35492ff81ae4/blok_abs_citroen_berlingo_2_0_hdi_0273004439-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1514
@@ -45645,16 +45418,11 @@
         "_file_size": 35524,
         "uploaded_at": "2016-09-29T21:56:59.549Z",
         "file": "filer_public/70/c0/70c0c7bf-daeb-45d2-91cc-50dca66d9b5b/blok_motora_nasosa_citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1515
@@ -45669,16 +45437,11 @@
         "_file_size": 49218,
         "uploaded_at": "2016-09-29T21:57:00.730Z",
         "file": "filer_public/8e/5e/8e5e54ab-66d9-4bfb-9f2a-c97fefb8a57c/blok-dvigatelya-kfx-1-4-b-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1516
@@ -45693,16 +45456,11 @@
         "_file_size": 34654,
         "uploaded_at": "2016-09-29T21:57:01.952Z",
         "file": "filer_public/b7/b3/b7b320db-9735-4d6c-b5af-dc63461ff61a/siemens-s118085320a-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1517
@@ -45717,16 +45475,11 @@
         "_file_size": 64470,
         "uploaded_at": "2016-09-29T21:57:03.226Z",
         "file": "filer_public/ab/ae/abae0136-45cd-457f-b6a5-6f902976fa73/fuse_box_toplivnogo_nasosa_citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1518
@@ -45741,16 +45494,11 @@
         "_file_size": 38934,
         "uploaded_at": "2016-09-29T21:57:04.348Z",
         "file": "filer_public/93/9c/939c4afa-74ad-4773-a182-e8e318671069/blok-silindrov-1-6-b-ep6-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1519
@@ -45765,16 +45513,11 @@
         "_file_size": 49281,
         "uploaded_at": "2016-09-29T21:57:05.478Z",
         "file": "filer_public/75/83/75832e56-ec36-4d26-91fa-13cffbed4c70/vacuum_pump_citroen-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1520
@@ -45789,16 +45532,11 @@
         "_file_size": 30496,
         "uploaded_at": "2016-09-29T21:57:06.540Z",
         "file": "filer_public/58/0e/580e9aa6-c4e1-4548-bf3d-1a3338556176/bosch_vacuum_pump_berlingo_3-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1521
@@ -45813,16 +45551,11 @@
         "_file_size": 50152,
         "uploaded_at": "2016-09-29T21:57:08.278Z",
         "file": "filer_public/7f/b2/7fb2608b-a002-4fd7-a818-53f66a238e21/vakuumnyi_nasos_boshsh_citroen_berlingo_2_0_hdi_1-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1522
@@ -45837,16 +45570,11 @@
         "_file_size": 54099,
         "uploaded_at": "2016-09-29T21:57:08.803Z",
         "file": "filer_public/b4/d3/b4d30590-f722-4496-a708-35899e133605/the_vacuum_brake_booster_0204024860_bosch-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1523
@@ -45861,16 +45589,11 @@
         "_file_size": 40109,
         "uploaded_at": "2016-09-29T21:57:09.227Z",
         "file": "filer_public/86/e7/86e70b5d-5a14-4690-927d-de4bc8080782/cooling_fan_motor_citroen-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1524
@@ -45885,16 +45608,11 @@
         "_file_size": 79325,
         "uploaded_at": "2016-09-29T21:57:09.824Z",
         "file": "filer_public/65/89/658907ea-18ec-4f85-91d0-39822a944151/intake_manifold_16_hdi_citroen_berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1525
@@ -45909,16 +45627,11 @@
         "_file_size": 34260,
         "uploaded_at": "2016-09-29T21:57:10.290Z",
         "file": "filer_public/b1/85/b185700e-8d12-4ae6-b100-9e949a712758/generator_16_hdi_citroen_berlingo_9646321780-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1526
@@ -45933,16 +45646,11 @@
         "_file_size": 52533,
         "uploaded_at": "2016-09-29T21:57:11.349Z",
         "file": "filer_public/5f/37/5f37d984-527f-4283-b24c-7a953477d261/golovka-1-6b-tu5-nfz-16-klap-benzin-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1527
@@ -45957,16 +45665,11 @@
         "_file_size": 50636,
         "uploaded_at": "2016-09-29T21:57:12.128Z",
         "file": "filer_public/85/7a/857ae5af-b21b-4d5a-a7d5-9c78f5b2c569/golovka_komplektnaya_nasos_boshsh_citroen_berlingo_2_0_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1528
@@ -45981,16 +45684,11 @@
         "_file_size": 42773,
         "uploaded_at": "2016-09-29T21:57:13.503Z",
         "file": "filer_public/1d/48/1d48cb70-21d6-410f-a628-e4af52719514/datchik_davleniya_topleva_v_top_reyke_5ws40006_51hp01-01_citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1529
@@ -46005,16 +45703,11 @@
         "_file_size": 23924,
         "uploaded_at": "2016-09-29T21:57:19.463Z",
         "file": "filer_public/d2/b8/d2b8af9d-6d88-4ea8-aed1-838f4ee23f90/amortizatoryi-vw-lt-2-5-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1530
@@ -46029,16 +45722,11 @@
         "_file_size": 53354,
         "uploaded_at": "2016-09-29T21:57:19.943Z",
         "file": "filer_public/cf/52/cf5242df-feb9-401f-a41c-4c4b5b3694f9/bendiks-vw-lt-2-5-tdi-23429399-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1531
@@ -46053,16 +45741,11 @@
         "_file_size": 53354,
         "uploaded_at": "2016-09-29T21:57:20.408Z",
         "file": "filer_public/2f/e1/2fe1522d-4920-4518-a693-cc5c0c298359/bendiks-vw-lt-2-5-tdi-23429399-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1532
@@ -46077,16 +45760,11 @@
         "_file_size": 36113,
         "uploaded_at": "2016-09-29T21:57:20.841Z",
         "file": "filer_public/ff/a0/ffa0877f-05c2-40de-acb2-c13831d7df6e/vakuumnyiy-klapan-vw-lt-2-8-tdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1533
@@ -46101,16 +45779,11 @@
         "_file_size": 45869,
         "uploaded_at": "2016-09-29T21:57:21.270Z",
         "file": "filer_public/3d/43/3d435c4a-de05-40a6-a03e-19ab8c8cb961/vakuumnyiy-tormoznoy-tsilindr-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1534
@@ -46125,16 +45798,11 @@
         "_file_size": 43141,
         "uploaded_at": "2016-09-29T21:57:21.707Z",
         "file": "filer_public/c5/13/c513c90a-a569-411b-8e8a-9f139927a9e4/vsasyivayuschiiy-kollektor-egr-klapan-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1535
@@ -46149,16 +45817,11 @@
         "_file_size": 26661,
         "uploaded_at": "2016-09-29T21:57:22.148Z",
         "file": "filer_public/6b/ee/6bee0afe-8e47-416e-8c76-37c8f988e93e/vyipusknaya-truba-defis-2-5-tdi-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1536
@@ -46173,16 +45836,11 @@
         "_file_size": 50822,
         "uploaded_at": "2016-09-29T21:57:22.630Z",
         "file": "filer_public/db/6b/db6b149d-d722-475d-8c52-b202dd2300fe/vyipusknaya-truba-komponovschik-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1537
@@ -46197,16 +45855,11 @@
         "_file_size": 49133,
         "uploaded_at": "2016-09-29T21:57:23.228Z",
         "file": "filer_public/f8/64/f8642b8f-c2f3-49d4-8681-8c6f5da85d65/vyipusknoy-kollektor-98r-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1538
@@ -46221,16 +45874,11 @@
         "_file_size": 42995,
         "uploaded_at": "2016-09-29T21:57:23.658Z",
         "file": "filer_public/89/8b/898ba3a7-d757-4686-9b47-d21c7ba18fb5/vyipusknoy-kollektor-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1539
@@ -46245,16 +45893,11 @@
         "_file_size": 54414,
         "uploaded_at": "2016-09-29T21:57:24.165Z",
         "file": "filer_public/08/76/087649cb-4c0b-4175-853f-7bc4991bf14c/vyipusknoiy-kollektor-lt35-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1540
@@ -46269,16 +45912,11 @@
         "_file_size": 43057,
         "uploaded_at": "2016-09-29T21:57:24.612Z",
         "file": "filer_public/79/31/7931e276-e5e7-4aee-a6f1-54ccde060903/vyihlopnaya-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1541
@@ -46293,16 +45931,11 @@
         "_file_size": 48041,
         "uploaded_at": "2016-09-29T21:57:25.039Z",
         "file": "filer_public/59/3f/593fc315-039e-423f-a441-6810c796384d/generator-vw-lt-2-8-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1542
@@ -46317,16 +45950,11 @@
         "_file_size": 46753,
         "uploaded_at": "2016-09-29T21:57:25.513Z",
         "file": "filer_public/33/a8/33a81224-7871-4904-8b56-d77a7dd0ac09/golovka-bloka-folksvagen-lt-2-8-tdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1543
@@ -46341,16 +45969,11 @@
         "_file_size": 60807,
         "uploaded_at": "2016-09-29T21:57:25.960Z",
         "file": "filer_public/ce/cb/cecb14ab-0b01-4d92-9855-c34d3045a65e/dvigatel-folksvagen-lt-2-5-tdi-sdi-serii-agx-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1544
@@ -46365,16 +45988,11 @@
         "_file_size": 60202,
         "uploaded_at": "2016-09-29T21:57:26.380Z",
         "file": "filer_public/76/ea/76eaf684-062b-49f6-a158-a38f4905827c/dvigatel-folksvagen-lt-2-5-tdi-ahd-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1545
@@ -46389,16 +46007,11 @@
         "_file_size": 45607,
         "uploaded_at": "2016-09-29T21:57:26.811Z",
         "file": "filer_public/1a/eb/1aeb8501-7433-45dd-a9ca-6f8bef3a70e3/dvigatel-folksvagen-lt-2-5-tdi-serii-anj-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1546
@@ -46413,16 +46026,11 @@
         "_file_size": 63158,
         "uploaded_at": "2016-09-29T21:57:27.297Z",
         "file": "filer_public/5a/f8/5af86a57-a3a2-4559-93a6-da8b7a9781fa/dvigatel-folksvagen-lt-2-5-tdi-serii-apa-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1547
@@ -46437,16 +46045,11 @@
         "_file_size": 45607,
         "uploaded_at": "2016-09-29T21:57:27.905Z",
         "file": "filer_public/50/45/5045bd5b-7563-4615-a98e-9781740ab842/dvigatel-folksvagen-lt-2-5-tdi-serii-avr-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1548
@@ -46461,16 +46064,11 @@
         "_file_size": 63841,
         "uploaded_at": "2016-09-29T21:57:28.387Z",
         "file": "filer_public/e7/bc/e7bc13ce-04d1-4865-a0c3-50b8f437e655/dvigatel-folksvagen-lt-2-8-tdi-serii-agk-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1549
@@ -46485,16 +46083,11 @@
         "_file_size": 54620,
         "uploaded_at": "2016-09-29T21:57:28.879Z",
         "file": "filer_public/41/60/41606057-a40d-4212-a797-20ec65e0c8ae/dempfe-mahovik-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1550
@@ -46509,16 +46102,11 @@
         "_file_size": 40604,
         "uploaded_at": "2016-09-29T21:57:29.376Z",
         "file": "filer_public/87/b2/87b2218e-16c3-4b2f-bf4a-6cea5b4a8d79/kivachka-rolik-vw-lt-2-5-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1551
@@ -46533,16 +46121,11 @@
         "_file_size": 43308,
         "uploaded_at": "2016-09-29T21:57:29.847Z",
         "file": "filer_public/06/25/0625ac45-d1e8-43e6-b94c-3243bb0696b1/klapan-retsirkulyatsii-vw-lt-2-5-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1552
@@ -46557,16 +46140,11 @@
         "_file_size": 37220,
         "uploaded_at": "2016-09-29T21:57:30.361Z",
         "file": "filer_public/06/d5/06d5975d-5e58-4bf8-b38a-32e1c5a237bf/klapan-retsirkulyatsii-vyihlopnyih-gazov_-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1553
@@ -46581,16 +46159,11 @@
         "_file_size": 51485,
         "uploaded_at": "2016-09-29T21:57:30.871Z",
         "file": "filer_public/d7/33/d73357b2-83c6-47b3-b42d-3fde9e364d96/129254053_w640_h640_kolenval_vw_lt_25_tdi_avr-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1554
@@ -46605,16 +46178,11 @@
         "_file_size": 242720,
         "uploaded_at": "2016-09-29T21:57:31.398Z",
         "file": "filer_public/28/e3/28e3d854-15da-4f8d-b5b1-9a3e01800424/shatun-vw-lt-2-5-tdi-500x500.png",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1555
@@ -46629,16 +46197,11 @@
         "_file_size": 27622,
         "uploaded_at": "2016-09-29T21:57:31.870Z",
         "file": "filer_public/fd/75/fd7557b3-7402-445b-ae17-1a9ee6143a52/kollektor-shassi-2-5-tdi-500x500.jpeg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1556
@@ -46653,16 +46216,11 @@
         "_file_size": 40482,
         "uploaded_at": "2016-09-29T21:57:32.645Z",
         "file": "filer_public/65/b6/65b642c5-3093-41f3-954c-ac48a12849ab/korobka-peredach-vw-lt-2-5-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1557
@@ -46677,16 +46235,11 @@
         "_file_size": 54303,
         "uploaded_at": "2016-09-29T21:57:33.554Z",
         "file": "filer_public/ad/1d/ad1dfd67-5582-4276-84a1-f86ba1c07c96/korobka_peredach-vw-lt-2-8-td-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1558
@@ -46701,16 +46254,11 @@
         "_file_size": 36805,
         "uploaded_at": "2016-09-29T21:57:34.084Z",
         "file": "filer_public/bb/91/bb913621-ce1e-4a41-85ca-f3a8e286ec0d/korpus-maslyanogo-filtra-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1559
@@ -46725,16 +46273,11 @@
         "_file_size": 49589,
         "uploaded_at": "2016-09-29T21:57:35.574Z",
         "file": "filer_public/9c/63/9c636bd2-f158-4912-9943-5f7a1c544484/blok-dvigatelya-master-25dtsi-05g-v-sbore-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1560
@@ -46749,16 +46292,11 @@
         "_file_size": 52842,
         "uploaded_at": "2016-09-29T21:57:36.164Z",
         "file": "filer_public/6f/09/6f09d6e0-f54c-4c37-957c-200d832c5ff0/dvigatel-motor-reno-kengo-e7j-renault-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1561
@@ -46773,16 +46311,11 @@
         "_file_size": 65628,
         "uploaded_at": "2016-09-29T21:57:36.931Z",
         "file": "filer_public/4b/d9/4bd9fb6e-d392-43e2-8fe3-291e0d6ca01c/dvigatel-15dci-renault-kangoo-2011-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1562
@@ -46797,16 +46330,11 @@
         "_file_size": 75710,
         "uploaded_at": "2016-09-29T21:57:39.520Z",
         "file": "filer_public/7a/c5/7ac5354e-9846-4d71-ade5-55fdef0b1a3c/pezho-partner-2-8dti-bokser-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1563
@@ -46821,16 +46349,11 @@
         "_file_size": 77180,
         "uploaded_at": "2016-09-29T21:57:40.993Z",
         "file": "filer_public/e4/32/e432510d-4463-4979-ae62-bbb2373a15cc/partner-1-9d-xud9-1996-2000-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1564
@@ -46845,16 +46368,11 @@
         "_file_size": 63118,
         "uploaded_at": "2016-09-29T21:57:42.364Z",
         "file": "filer_public/61/03/610305e4-da3b-4e77-8f1f-6dba7cba25c1/dvigatel-pezho-partner-1-6shdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1565
@@ -46869,16 +46387,11 @@
         "_file_size": 43036,
         "uploaded_at": "2016-09-29T21:57:44.000Z",
         "file": "filer_public/32/52/32527e31-1bf6-4a18-ad1c-924995e2bddf/dvigatel-19d-pezho-partner-peugeot-partner-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1566
@@ -46893,16 +46406,11 @@
         "_file_size": 60156,
         "uploaded_at": "2016-09-29T21:57:45.047Z",
         "file": "filer_public/45/11/4511138f-fa55-45ed-ae5f-7084f73465b7/dvigatel-sitroen-berlingo-20hdi-pezho-partner-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1567
@@ -46917,16 +46425,11 @@
         "_file_size": 42009,
         "uploaded_at": "2016-09-29T21:57:47.536Z",
         "file": "filer_public/74/be/74be600a-f3b8-45ff-a741-77f9a4d1a617/dvigatel-14b-k7j-renault-kangoo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1568
@@ -46941,16 +46444,11 @@
         "_file_size": 51291,
         "uploaded_at": "2016-09-29T21:57:48.071Z",
         "file": "filer_public/e3/ca/e3ca9163-b895-4606-bd39-03880ab01a37/dvigate-15dci-renault-kangoo-2007-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1569
@@ -46965,16 +46463,11 @@
         "_file_size": 58530,
         "uploaded_at": "2016-09-29T21:57:48.882Z",
         "file": "filer_public/7f/8a/7f8a98af-04f1-4e6a-9ac8-cfed00c6d89d/reno-kengo-1-5-dizel-pod-toplivnuyu-simens-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1570
@@ -46989,16 +46482,11 @@
         "_file_size": 53151,
         "uploaded_at": "2016-09-29T21:57:49.571Z",
         "file": "filer_public/0b/bb/0bbb4f38-9b39-41f7-b8c4-79b9acbe947c/reno-kengo-k7m-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1571
@@ -47013,16 +46501,11 @@
         "_file_size": 57445,
         "uploaded_at": "2016-09-29T21:57:51.048Z",
         "file": "filer_public/c4/91/c491014b-01cc-4f89-bc54-0811dcb961f3/dvigatel-reno-kengo-19td-f8t-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1572
@@ -47037,16 +46520,11 @@
         "_file_size": 50174,
         "uploaded_at": "2016-09-29T21:57:51.601Z",
         "file": "filer_public/c4/c9/c4c99e91-86f0-461e-9704-661a82d0064c/dvigatel-19dci-renault-trafic-vivaro-primastar-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1573
@@ -47061,16 +46539,11 @@
         "_file_size": 74958,
         "uploaded_at": "2016-09-29T21:57:52.059Z",
         "file": "filer_public/4b/84/4b84ad63-8b7d-465e-bc22-dd5f3638d88d/reno-trafik-2-0dci-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1574
@@ -47085,16 +46558,11 @@
         "_file_size": 51175,
         "uploaded_at": "2016-09-29T21:57:52.524Z",
         "file": "filer_public/d9/cc/d9ccb829-d134-4346-a960-4c8905a7792f/dvigatel-motor-reno-trafik-20dci-renault-trafic-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1575
@@ -47109,16 +46577,11 @@
         "_file_size": 55979,
         "uploaded_at": "2016-09-29T21:57:52.985Z",
         "file": "filer_public/9a/20/9a206d4b-ddc7-4652-9d99-bc40ac496517/dvigatel-1-4b_-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1576
@@ -47133,16 +46596,11 @@
         "_file_size": 70796,
         "uploaded_at": "2016-09-29T21:57:53.452Z",
         "file": "filer_public/45/0f/450ff15a-cb1d-438d-9095-c48e3ecaf197/dvigatel_citroen_berlingo_1_6_hdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1577
@@ -47157,16 +46615,11 @@
         "_file_size": 77639,
         "uploaded_at": "2016-09-29T21:57:53.945Z",
         "file": "filer_public/5c/ab/5cab5bb7-12d5-41d5-b6c6-b16d25a19b77/dvigatel-folksvagen-2-5tdi-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1578
@@ -47181,16 +46634,11 @@
         "_file_size": 61266,
         "uploaded_at": "2016-09-29T21:58:05.574Z",
         "file": "filer_public/d4/5e/d45ec376-2b58-49c1-9562-527b58237631/dvigatel-reno-master-renault-master-opel-movano-laguna-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1579
@@ -47205,16 +46653,11 @@
         "_file_size": 56101,
         "uploaded_at": "2016-09-29T21:58:11.583Z",
         "file": "filer_public/f1/c3/f1c30f99-0765-43af-ba67-46508db2efcb/dvigatel-folksvagen-lt-2-8tdi-serii-ata-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1580
@@ -47229,16 +46672,11 @@
         "_file_size": 42810,
         "uploaded_at": "2016-09-29T21:58:14.485Z",
         "file": "filer_public/08/6a/086a3d50-116d-4819-998b-68b43422847b/bamper-zadniy-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1581
@@ -47253,16 +46691,11 @@
         "_file_size": 45151,
         "uploaded_at": "2016-09-29T21:58:15.409Z",
         "file": "filer_public/d4/8b/d48bba22-5c56-4444-bbd3-c8fb06009a07/bamper-peredniy-citroen-berlingo-universal-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1582
@@ -47277,16 +46710,11 @@
         "_file_size": 46779,
         "uploaded_at": "2016-09-29T21:58:17.836Z",
         "file": "filer_public/00/31/0031c331-7294-48e2-b2f3-ae81c977068f/bamper-peredniy-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1583
@@ -47301,16 +46729,11 @@
         "_file_size": 48734,
         "uploaded_at": "2016-09-29T21:58:20.991Z",
         "file": "filer_public/42/52/4252800b-b834-40b2-8bf8-15cb74163682/podushka-dvigatelya-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1584
@@ -47325,16 +46748,11 @@
         "_file_size": 63451,
         "uploaded_at": "2016-09-29T21:58:22.857Z",
         "file": "filer_public/c7/0f/c70f80bf-23b4-4410-9f8f-814cb4f24a43/teploobmennik-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1585
@@ -47349,25 +46767,18 @@
         "_file_size": 55986,
         "uploaded_at": "2016-09-29T21:58:24.319Z",
         "file": "filer_public/d2/ee/d2eeb2bc-b105-42a8-a331-633503434468/shkiv-kolenchatogo-vala-citroen-berlingo-500x500.jpg",
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "is_public": true,
         "folder": null,
         "has_all_mandatory_data": false,
-        "polymorphic_ctype": [
-            "filer",
-            "image"
-        ]
+        "polymorphic_ctype": 100
     },
     "model": "filer.file",
     "pk": 1586
 },
 {
     "fields": {
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "filer.clipboard",
     "pk": 1
@@ -49226,7 +48637,7 @@
         "product": 1899,
         "num_basket_additions": 0,
         "num_purchases": 0,
-        "num_views": 8
+        "num_views": 10
     },
     "model": "analytics.productrecord",
     "pk": 23
@@ -49250,9 +48661,7 @@
         "num_order_lines": 0,
         "num_product_views": 1,
         "num_basket_additions": 0,
-        "user": [
-            "igor"
-        ],
+        "user": 1,
         "date_last_order": null
     },
     "model": "analytics.userrecord",
@@ -49264,11 +48673,9 @@
         "num_order_items": 10,
         "num_orders": 4,
         "num_order_lines": 8,
-        "num_product_views": 193,
+        "num_product_views": 195,
         "num_basket_additions": 10,
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_last_order": "2016-09-30T21:15:14.142Z"
     },
     "model": "analytics.userrecord",
@@ -49278,9 +48685,7 @@
     "fields": {
         "date_created": "2016-09-30T18:38:05.012Z",
         "product": 1888,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 82
@@ -49289,9 +48694,7 @@
     "fields": {
         "date_created": "2016-09-30T18:42:01.444Z",
         "product": 1888,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 83
@@ -49300,9 +48703,7 @@
     "fields": {
         "date_created": "2016-09-30T18:49:05.435Z",
         "product": 1888,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 84
@@ -49311,9 +48712,7 @@
     "fields": {
         "date_created": "2016-09-30T18:49:09.769Z",
         "product": 1864,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 85
@@ -49322,9 +48721,7 @@
     "fields": {
         "date_created": "2016-09-30T18:56:13.993Z",
         "product": 1903,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 86
@@ -49333,9 +48730,7 @@
     "fields": {
         "date_created": "2016-09-30T21:16:39.657Z",
         "product": 1903,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 89
@@ -49344,9 +48739,7 @@
     "fields": {
         "date_created": "2016-09-30T21:16:53.379Z",
         "product": 1903,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 90
@@ -49355,9 +48748,7 @@
     "fields": {
         "date_created": "2016-09-30T21:24:26.340Z",
         "product": 1903,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 91
@@ -49366,9 +48757,7 @@
     "fields": {
         "date_created": "2016-09-30T21:24:31.222Z",
         "product": 1838,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 92
@@ -49377,9 +48766,7 @@
     "fields": {
         "date_created": "2016-10-04T07:46:03.328Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 93
@@ -49388,9 +48775,7 @@
     "fields": {
         "date_created": "2016-10-04T10:30:30.892Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 94
@@ -49399,9 +48784,7 @@
     "fields": {
         "date_created": "2016-10-04T10:33:08.707Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 95
@@ -49410,9 +48793,7 @@
     "fields": {
         "date_created": "2016-10-04T10:34:26.175Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 96
@@ -49421,9 +48802,7 @@
     "fields": {
         "date_created": "2016-10-04T10:36:15.164Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 97
@@ -49432,9 +48811,7 @@
     "fields": {
         "date_created": "2016-10-04T10:38:16.387Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 98
@@ -49443,9 +48820,7 @@
     "fields": {
         "date_created": "2016-10-04T10:38:43.712Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 99
@@ -49454,9 +48829,7 @@
     "fields": {
         "date_created": "2016-10-04T10:39:16.744Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 100
@@ -49465,9 +48838,7 @@
     "fields": {
         "date_created": "2016-10-04T10:39:47.756Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 101
@@ -49476,9 +48847,7 @@
     "fields": {
         "date_created": "2016-10-04T10:46:10.074Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 102
@@ -49487,9 +48856,7 @@
     "fields": {
         "date_created": "2016-10-04T10:46:39.858Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 103
@@ -49498,9 +48865,7 @@
     "fields": {
         "date_created": "2016-10-04T10:50:01.207Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 104
@@ -49509,9 +48874,7 @@
     "fields": {
         "date_created": "2016-10-04T10:51:37.664Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 105
@@ -49520,9 +48883,7 @@
     "fields": {
         "date_created": "2016-10-04T10:52:08.344Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 106
@@ -49531,9 +48892,7 @@
     "fields": {
         "date_created": "2016-10-04T10:52:08.790Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 107
@@ -49542,9 +48901,7 @@
     "fields": {
         "date_created": "2016-10-04T10:56:30.011Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 108
@@ -49553,9 +48910,7 @@
     "fields": {
         "date_created": "2016-10-04T10:58:05.944Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 109
@@ -49564,9 +48919,7 @@
     "fields": {
         "date_created": "2016-10-04T10:58:17.118Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 110
@@ -49575,9 +48928,7 @@
     "fields": {
         "date_created": "2016-10-04T10:59:41.023Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 111
@@ -49586,9 +48937,7 @@
     "fields": {
         "date_created": "2016-10-04T11:01:06.008Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 112
@@ -49597,9 +48946,7 @@
     "fields": {
         "date_created": "2016-10-04T11:04:27.900Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 113
@@ -49608,9 +48955,7 @@
     "fields": {
         "date_created": "2016-10-04T11:05:50.322Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 114
@@ -49619,9 +48964,7 @@
     "fields": {
         "date_created": "2016-10-04T11:08:03.861Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 115
@@ -49630,9 +48973,7 @@
     "fields": {
         "date_created": "2016-10-04T11:08:30.526Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 116
@@ -49641,9 +48982,7 @@
     "fields": {
         "date_created": "2016-10-04T11:09:39.345Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 117
@@ -49652,9 +48991,7 @@
     "fields": {
         "date_created": "2016-10-04T11:10:37.999Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 118
@@ -49663,9 +49000,7 @@
     "fields": {
         "date_created": "2016-10-04T11:12:44.594Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 119
@@ -49674,9 +49009,7 @@
     "fields": {
         "date_created": "2016-10-04T11:13:46.693Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 120
@@ -49685,9 +49018,7 @@
     "fields": {
         "date_created": "2016-10-04T11:23:49.647Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 121
@@ -49696,9 +49027,7 @@
     "fields": {
         "date_created": "2016-10-04T11:24:45.445Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 122
@@ -49707,9 +49036,7 @@
     "fields": {
         "date_created": "2016-10-04T11:25:02.949Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 123
@@ -49718,9 +49045,7 @@
     "fields": {
         "date_created": "2016-10-04T11:27:28.310Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 124
@@ -49729,9 +49054,7 @@
     "fields": {
         "date_created": "2016-10-04T11:29:46.701Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 125
@@ -49740,9 +49063,7 @@
     "fields": {
         "date_created": "2016-10-04T11:53:26.042Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 126
@@ -49751,9 +49072,7 @@
     "fields": {
         "date_created": "2016-10-04T11:54:06.455Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 127
@@ -49762,9 +49081,7 @@
     "fields": {
         "date_created": "2016-10-04T11:54:15.704Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 128
@@ -49773,9 +49090,7 @@
     "fields": {
         "date_created": "2016-10-04T11:55:42.260Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 129
@@ -49784,9 +49099,7 @@
     "fields": {
         "date_created": "2016-10-04T11:56:04.525Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 130
@@ -49795,9 +49108,7 @@
     "fields": {
         "date_created": "2016-10-04T12:00:32.938Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 131
@@ -49806,9 +49117,7 @@
     "fields": {
         "date_created": "2016-10-04T12:01:07.880Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 132
@@ -49817,9 +49126,7 @@
     "fields": {
         "date_created": "2016-10-04T12:02:25.006Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 133
@@ -49828,9 +49135,7 @@
     "fields": {
         "date_created": "2016-10-04T12:03:21.543Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 134
@@ -49839,9 +49144,7 @@
     "fields": {
         "date_created": "2016-10-04T12:05:28.741Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 135
@@ -49850,9 +49153,7 @@
     "fields": {
         "date_created": "2016-10-04T12:09:41.308Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 136
@@ -49861,9 +49162,7 @@
     "fields": {
         "date_created": "2016-10-04T12:13:19.001Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 137
@@ -49872,9 +49171,7 @@
     "fields": {
         "date_created": "2016-10-04T12:13:42.800Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 138
@@ -49883,9 +49180,7 @@
     "fields": {
         "date_created": "2016-10-04T12:15:12.097Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 139
@@ -49894,9 +49189,7 @@
     "fields": {
         "date_created": "2016-10-04T12:15:41.377Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 140
@@ -49905,9 +49198,7 @@
     "fields": {
         "date_created": "2016-10-04T12:19:26.168Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 141
@@ -49916,9 +49207,7 @@
     "fields": {
         "date_created": "2016-10-04T12:20:39.872Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 142
@@ -49927,9 +49216,7 @@
     "fields": {
         "date_created": "2016-10-04T12:20:46.522Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 143
@@ -49938,9 +49225,7 @@
     "fields": {
         "date_created": "2016-10-04T12:21:07.820Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 144
@@ -49949,9 +49234,7 @@
     "fields": {
         "date_created": "2016-10-04T12:21:32.601Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 145
@@ -49960,9 +49243,7 @@
     "fields": {
         "date_created": "2016-10-04T12:22:58.776Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 146
@@ -49971,9 +49252,7 @@
     "fields": {
         "date_created": "2016-10-04T12:23:57.636Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 147
@@ -49982,9 +49261,7 @@
     "fields": {
         "date_created": "2016-10-04T12:25:29.936Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 148
@@ -49993,9 +49270,7 @@
     "fields": {
         "date_created": "2016-10-04T12:26:05.617Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 149
@@ -50004,9 +49279,7 @@
     "fields": {
         "date_created": "2016-10-04T12:26:29.593Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 150
@@ -50015,9 +49288,7 @@
     "fields": {
         "date_created": "2016-10-04T12:28:13.575Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 151
@@ -50026,9 +49297,7 @@
     "fields": {
         "date_created": "2016-10-04T12:28:37.522Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 152
@@ -50037,9 +49306,7 @@
     "fields": {
         "date_created": "2016-10-04T12:29:32.703Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 153
@@ -50048,9 +49315,7 @@
     "fields": {
         "date_created": "2016-10-04T12:30:59.131Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 154
@@ -50059,9 +49324,7 @@
     "fields": {
         "date_created": "2016-10-04T13:06:47.791Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 155
@@ -50070,9 +49333,7 @@
     "fields": {
         "date_created": "2016-10-04T13:07:33.335Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 156
@@ -50081,9 +49342,7 @@
     "fields": {
         "date_created": "2016-10-04T13:08:01.094Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 157
@@ -50092,9 +49351,7 @@
     "fields": {
         "date_created": "2016-10-04T13:09:44.962Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 158
@@ -50103,9 +49360,7 @@
     "fields": {
         "date_created": "2016-10-04T13:17:54.427Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 159
@@ -50114,9 +49369,7 @@
     "fields": {
         "date_created": "2016-10-04T13:18:19.850Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 160
@@ -50125,9 +49378,7 @@
     "fields": {
         "date_created": "2016-10-04T13:18:19.878Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 161
@@ -50136,9 +49387,7 @@
     "fields": {
         "date_created": "2016-10-04T13:22:47.126Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 162
@@ -50147,9 +49396,7 @@
     "fields": {
         "date_created": "2016-10-04T13:33:10.633Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 163
@@ -50158,9 +49405,7 @@
     "fields": {
         "date_created": "2016-10-04T13:34:18.184Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 164
@@ -50169,9 +49414,7 @@
     "fields": {
         "date_created": "2016-10-04T13:37:06.408Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 165
@@ -50180,9 +49423,7 @@
     "fields": {
         "date_created": "2016-10-04T13:45:29.140Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 166
@@ -50191,9 +49432,7 @@
     "fields": {
         "date_created": "2016-10-04T13:45:54.406Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 167
@@ -50202,9 +49441,7 @@
     "fields": {
         "date_created": "2016-10-04T13:46:25.886Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 168
@@ -50213,9 +49450,7 @@
     "fields": {
         "date_created": "2016-10-04T13:46:58.845Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 169
@@ -50224,9 +49459,7 @@
     "fields": {
         "date_created": "2016-10-04T13:48:50.874Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 170
@@ -50235,9 +49468,7 @@
     "fields": {
         "date_created": "2016-10-04T13:49:10.780Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 171
@@ -50246,9 +49477,7 @@
     "fields": {
         "date_created": "2016-10-04T13:49:55.960Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 172
@@ -50257,9 +49486,7 @@
     "fields": {
         "date_created": "2016-10-04T13:50:48.340Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 173
@@ -50268,9 +49495,7 @@
     "fields": {
         "date_created": "2016-10-04T13:51:56.835Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 174
@@ -50279,9 +49504,7 @@
     "fields": {
         "date_created": "2016-10-04T13:52:29.446Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 175
@@ -50290,9 +49513,7 @@
     "fields": {
         "date_created": "2016-10-04T13:53:14.143Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 176
@@ -50301,9 +49522,7 @@
     "fields": {
         "date_created": "2016-10-04T13:53:45.902Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 177
@@ -50312,9 +49531,7 @@
     "fields": {
         "date_created": "2016-10-04T13:55:24.133Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 178
@@ -50323,9 +49540,7 @@
     "fields": {
         "date_created": "2016-10-04T13:55:38.329Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 179
@@ -50334,9 +49549,7 @@
     "fields": {
         "date_created": "2016-10-04T13:56:09.912Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 180
@@ -50345,9 +49558,7 @@
     "fields": {
         "date_created": "2016-10-04T13:56:47.996Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 181
@@ -50356,9 +49567,7 @@
     "fields": {
         "date_created": "2016-10-04T13:58:45.136Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 182
@@ -50367,9 +49576,7 @@
     "fields": {
         "date_created": "2016-10-04T13:58:58.371Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 183
@@ -50378,9 +49585,7 @@
     "fields": {
         "date_created": "2016-10-04T14:00:04.459Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 184
@@ -50389,9 +49594,7 @@
     "fields": {
         "date_created": "2016-10-04T14:03:27.260Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 185
@@ -50400,9 +49603,7 @@
     "fields": {
         "date_created": "2016-10-04T14:04:25.989Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 186
@@ -50411,9 +49612,7 @@
     "fields": {
         "date_created": "2016-10-04T14:04:45.321Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 187
@@ -50422,9 +49621,7 @@
     "fields": {
         "date_created": "2016-10-04T14:05:22.019Z",
         "product": 1780,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 188
@@ -50433,9 +49630,7 @@
     "fields": {
         "date_created": "2016-10-04T15:46:20.021Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 189
@@ -50444,9 +49639,7 @@
     "fields": {
         "date_created": "2016-10-04T15:56:56.715Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 190
@@ -50455,9 +49648,7 @@
     "fields": {
         "date_created": "2016-10-04T15:58:16.721Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 191
@@ -50466,9 +49657,7 @@
     "fields": {
         "date_created": "2016-10-04T15:59:42.700Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 192
@@ -50477,9 +49666,7 @@
     "fields": {
         "date_created": "2016-10-04T16:03:00.272Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 193
@@ -50488,19 +49675,33 @@
     "fields": {
         "date_created": "2016-10-04T16:03:33.186Z",
         "product": 1899,
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "analytics.userproductview",
     "pk": 194
 },
 {
     "fields": {
+        "date_created": "2016-10-06T08:27:18.164Z",
+        "product": 1899,
+        "user": 2
+    },
+    "model": "analytics.userproductview",
+    "pk": 195
+},
+{
+    "fields": {
+        "date_created": "2016-10-06T08:27:21.869Z",
+        "product": 1899,
+        "user": 2
+    },
+    "model": "analytics.userproductview",
+    "pk": 196
+},
+{
+    "fields": {
         "query": "hack",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-05T20:40:16.488Z"
     },
     "model": "analytics.usersearch",
@@ -50509,9 +49710,7 @@
 {
     "fields": {
         "query": "hackers",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-05T20:40:27.959Z"
     },
     "model": "analytics.usersearch",
@@ -50520,9 +49719,7 @@
 {
     "fields": {
         "query": "ha",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-05T20:41:07.358Z"
     },
     "model": "analytics.usersearch",
@@ -50531,9 +49728,7 @@
 {
     "fields": {
         "query": "ha",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-05T20:41:13.159Z"
     },
     "model": "analytics.usersearch",
@@ -50542,9 +49737,7 @@
 {
     "fields": {
         "query": "ha",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-05T20:41:18.815Z"
     },
     "model": "analytics.usersearch",
@@ -50553,9 +49746,7 @@
 {
     "fields": {
         "query": "work",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-09-26T19:08:53.692Z"
     },
     "model": "analytics.usersearch",
@@ -50581,9 +49772,7 @@
         "postcode": "32323",
         "is_default_for_billing": false,
         "date_created": "2016-09-23T20:34:39.448Z",
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "address.useraddress",
     "pk": 1
@@ -50608,9 +49797,7 @@
         "postcode": "1212",
         "is_default_for_billing": false,
         "date_created": "2016-09-26T20:15:28.389Z",
-        "user": [
-            "igor_1"
-        ]
+        "user": 2
     },
     "model": "address.useraddress",
     "pk": 2
@@ -58924,9 +58111,7 @@
         "product": 1899,
         "name": "igor_1",
         "question": "sdsd",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "date_created": "2016-10-04T16:11:09.367Z",
         "email": "shevchenkcoigor@gmail.com"
     },
@@ -61153,9 +60338,7 @@
         "date_merged": null,
         "date_submitted": null,
         "vouchers": [],
-        "owner": [
-            "igor"
-        ],
+        "owner": 1,
         "date_created": "2016-07-19T20:15:00.495Z"
     },
     "model": "basket.basket",
@@ -61167,9 +60350,7 @@
         "date_merged": null,
         "date_submitted": "2016-09-23T20:34:39.561Z",
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-05T20:36:29.692Z"
     },
     "model": "basket.basket",
@@ -61229,9 +60410,7 @@
         "date_merged": null,
         "date_submitted": "2016-09-26T20:15:28.462Z",
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-23T20:35:33.130Z"
     },
     "model": "basket.basket",
@@ -61243,9 +60422,7 @@
         "date_merged": null,
         "date_submitted": "2016-09-27T18:31:01.912Z",
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-26T20:15:31.441Z"
     },
     "model": "basket.basket",
@@ -61281,9 +60458,7 @@
         "date_merged": null,
         "date_submitted": "2016-09-30T21:15:14.198Z",
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-27T18:31:11.150Z"
     },
     "model": "basket.basket",
@@ -61307,9 +60482,7 @@
         "date_merged": null,
         "date_submitted": null,
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-30T21:14:55.792Z"
     },
     "model": "basket.basket",
@@ -61321,9 +60494,7 @@
         "date_merged": null,
         "date_submitted": null,
         "vouchers": [],
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-30T21:15:29.146Z"
     },
     "model": "basket.basket",
@@ -61536,9 +60707,7 @@
         "currency": "GBP",
         "total_excl_tax": "7.99",
         "shipping_excl_tax": "0.00",
-        "user": [
-            "igor"
-        ],
+        "user": 1,
         "shipping_address": 1,
         "basket": null,
         "shipping_code": "free-shipping",
@@ -61560,9 +60729,7 @@
         "currency": "GBP",
         "total_excl_tax": "33.98",
         "shipping_excl_tax": "0.00",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "shipping_address": 2,
         "basket": 7,
         "shipping_code": "free-shipping",
@@ -61584,9 +60751,7 @@
         "currency": "GBP",
         "total_excl_tax": "1.99",
         "shipping_excl_tax": "0.00",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "shipping_address": 3,
         "basket": 12,
         "shipping_code": "free-shipping",
@@ -61608,9 +60773,7 @@
         "currency": "GBP",
         "total_excl_tax": "71.97",
         "shipping_excl_tax": "0.00",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "shipping_address": 4,
         "basket": 13,
         "shipping_code": "free-shipping",
@@ -61632,9 +60795,7 @@
         "currency": "USD",
         "total_excl_tax": "2450.00",
         "shipping_excl_tax": "0.00",
-        "user": [
-            "igor_1"
-        ],
+        "user": 2,
         "shipping_address": null,
         "basket": 16,
         "shipping_code": "no-shipping-required",
@@ -62113,10 +61274,7 @@
     "fields": {
         "display_order": 0,
         "object_id": 1,
-        "content_type": [
-            "promotions",
-            "multiimage"
-        ],
+        "content_type": 82,
         "date_created": "2016-09-24T11:42:33.962Z",
         "position": "page",
         "clicks": 0,
@@ -62129,10 +61287,7 @@
     "fields": {
         "display_order": 0,
         "object_id": 2,
-        "content_type": [
-            "promotions",
-            "rawhtml"
-        ],
+        "content_type": 80,
         "date_created": "2016-09-24T11:49:19.655Z",
         "position": "page",
         "clicks": 0,
@@ -62145,10 +61300,7 @@
     "fields": {
         "display_order": 0,
         "object_id": 4,
-        "content_type": [
-            "promotions",
-            "automaticproductlist"
-        ],
+        "content_type": 86,
         "date_created": "2016-09-24T11:55:05.071Z",
         "position": "right",
         "clicks": 0,
@@ -62161,10 +61313,7 @@
     "fields": {
         "display_order": 0,
         "object_id": 5,
-        "content_type": [
-            "promotions",
-            "automaticproductlist"
-        ],
+        "content_type": 86,
         "date_created": "2016-09-24T18:44:41.826Z",
         "position": "page",
         "clicks": 0,
@@ -62300,9 +61449,7 @@
 },
 {
     "fields": {
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-27T18:31:24.761Z",
         "visibility": "Private",
         "name": "\u041f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e",
@@ -62313,9 +61460,7 @@
 },
 {
     "fields": {
-        "owner": [
-            "igor_1"
-        ],
+        "owner": 2,
         "date_created": "2016-09-27T18:37:11.477Z",
         "visibility": "Private",
         "name": "test",
