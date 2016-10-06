@@ -1,0 +1,35 @@
+[
+{
+    "fields": {
+        "track_stock": true,
+        "options": [],
+        "requires_shipping": true,
+        "name": "T-shirt",
+        "slug": "t-shirt"
+    },
+    "model": "catalogue.productclass",
+    "pk": 1
+},
+{
+    "fields": {
+        "track_stock": true,
+        "options": [],
+        "requires_shipping": true,
+        "name": "Book",
+        "slug": "book"
+    },
+    "model": "catalogue.productclass",
+    "pk": 2
+},
+{
+    "fields": {
+        "track_stock": false,
+        "options": [],
+        "requires_shipping": false,
+        "name": "\u041e\u0431\u0449\u0438\u0439",
+        "slug": "obshchii"
+    },
+    "model": "catalogue.productclass",
+    "pk": 3
+}
+]
