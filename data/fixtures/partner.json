@@ -1,0 +1,2216 @@
+[
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1733,
+        "partner_sku": "415926051492",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:20.703Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:20.703Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1566
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1734,
+        "partner_sku": "82459738977134",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:21.192Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:21.192Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1567
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1735,
+        "partner_sku": "55462441630794",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:21.631Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:21.631Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1568
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1736,
+        "partner_sku": "86594255652878",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:22.183Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:22.183Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1569
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1737,
+        "partner_sku": "69690011016649",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:22.686Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:22.686Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1570
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1738,
+        "partner_sku": "6306991117295",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:23.232Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:23.231Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1571
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1739,
+        "partner_sku": "60302364932161",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:24.009Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:24.008Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1572
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1740,
+        "partner_sku": "1223594535664",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:24.636Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:24.636Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1573
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1741,
+        "partner_sku": "31722735470956",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:25.240Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:25.240Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1574
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1742,
+        "partner_sku": "91049604715952",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:27.263Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:27.263Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1575
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1743,
+        "partner_sku": "52460561195469",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:27.864Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:27.864Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1576
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1744,
+        "partner_sku": "2375583455323",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:28.357Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:28.357Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1577
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1745,
+        "partner_sku": "53390017113904",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:28.830Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:28.830Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1578
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1746,
+        "partner_sku": "26470422802971",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:29.367Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:29.367Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1579
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1747,
+        "partner_sku": "27688999561374",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:30.078Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:30.078Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1580
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1749,
+        "partner_sku": "91826107060857",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:30.957Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:30.957Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1581
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1750,
+        "partner_sku": "88973497590288",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:31.503Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:31.503Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1582
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1751,
+        "partner_sku": "84062001364699",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:31.991Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:31.991Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1583
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1752,
+        "partner_sku": "40739266724516",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:32.497Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:32.497Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1584
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1753,
+        "partner_sku": "93716235515028",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:32.974Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:32.974Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1585
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1754,
+        "partner_sku": "49124966109975",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:33.451Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:33.451Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1586
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1755,
+        "partner_sku": "62075077099339",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:33.904Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:33.904Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1587
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1756,
+        "partner_sku": "14413327880618",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:34.422Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:34.421Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1588
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1757,
+        "partner_sku": "97346931634050",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:34.871Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:34.871Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1589
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1758,
+        "partner_sku": "22686165084416",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:35.311Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:35.311Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1590
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1759,
+        "partner_sku": "71978528423737",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:35.754Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:35.754Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1591
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1760,
+        "partner_sku": "93810269851084",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:36.225Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:36.225Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1592
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1761,
+        "partner_sku": "79517131767698",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:36.673Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:36.673Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1593
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1762,
+        "partner_sku": "64913680407517",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:37.141Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:37.141Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1594
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1770,
+        "partner_sku": "18675937526802",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:40.837Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:40.837Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1595
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1771,
+        "partner_sku": "33659551539890",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:41.304Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:41.304Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1596
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1772,
+        "partner_sku": "39319392297885",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:46.797Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:46.797Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1597
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1773,
+        "partner_sku": "4764804255688",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:47.225Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:47.225Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1598
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1774,
+        "partner_sku": "56140865559689",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:47.713Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:47.713Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1599
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1775,
+        "partner_sku": "77988264689761",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:48.332Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:48.331Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1600
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1776,
+        "partner_sku": "600739828450",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:48.799Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:48.799Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1601
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1777,
+        "partner_sku": "69624776954678",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:49.325Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:49.325Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1602
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1778,
+        "partner_sku": "30287005847854",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:49.798Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:49.798Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1603
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1779,
+        "partner_sku": "43143578390860",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:50.400Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:50.400Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1604
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1780,
+        "partner_sku": "66018300987981",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:50.909Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:50.909Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1605
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1781,
+        "partner_sku": "3065244567983",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:52.352Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:52.352Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1606
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1782,
+        "partner_sku": "70877892451206",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:53.859Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:53.859Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1607
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1783,
+        "partner_sku": "63081774175382",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:54.605Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:54.605Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1608
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1784,
+        "partner_sku": "59146286657581",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:55.533Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:55.533Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1609
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1785,
+        "partner_sku": "7953477880503",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:57.632Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:57.632Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1610
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1786,
+        "partner_sku": "51091385647225",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:58.338Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:58.337Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1611
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1787,
+        "partner_sku": "9257783485210",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:56:59.325Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:56:59.325Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1612
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1788,
+        "partner_sku": "94701262281650",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:00.645Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:00.645Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1613
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1791,
+        "partner_sku": "26264157957662",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:01.866Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:01.866Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1614
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1792,
+        "partner_sku": "88525620918637",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:03.033Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:03.033Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1615
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1794,
+        "partner_sku": "74397322877376",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:04.194Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:04.193Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1616
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1796,
+        "partner_sku": "95058244039502",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:05.258Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:05.257Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1617
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1797,
+        "partner_sku": "4142674620410",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:06.409Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:06.409Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1618
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1798,
+        "partner_sku": "34401501037480",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:08.106Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:08.106Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1619
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1799,
+        "partner_sku": "16451645316140",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:08.733Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:08.733Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1620
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1800,
+        "partner_sku": "88995761042847",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:09.163Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:09.163Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1621
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1801,
+        "partner_sku": "75945048383049",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:09.752Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:09.752Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1622
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1802,
+        "partner_sku": "97564894319208",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:10.225Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:10.225Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1623
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1804,
+        "partner_sku": "96400369805042",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:11.285Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:11.285Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1624
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1806,
+        "partner_sku": "78888798195778",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:12.057Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:12.057Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1625
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1810,
+        "partner_sku": "66022833015269",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:13.438Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:13.438Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1626
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1811,
+        "partner_sku": "78739887649641",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:19.401Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:19.401Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1627
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1812,
+        "partner_sku": "64136128807791",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:19.870Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:19.870Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1628
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1813,
+        "partner_sku": "25473442693497",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:20.336Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:20.336Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1629
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1814,
+        "partner_sku": "85216959676425",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:20.785Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:20.785Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1630
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1815,
+        "partner_sku": "71876942883310",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:21.210Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:21.210Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1631
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1816,
+        "partner_sku": "95945977005903",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:21.634Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:21.634Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1632
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1817,
+        "partner_sku": "39336505505259",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:22.086Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:22.086Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1633
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1818,
+        "partner_sku": "40807566767583",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:22.544Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:22.544Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1634
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1819,
+        "partner_sku": "29541103025932",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:23.157Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:23.157Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1635
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1820,
+        "partner_sku": "5168097775922",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:23.594Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:23.594Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1636
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1821,
+        "partner_sku": "20057652445249",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:24.089Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:24.089Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1637
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1822,
+        "partner_sku": "80491128799324",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:24.553Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:24.553Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1638
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1823,
+        "partner_sku": "98152708074444",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:24.976Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:24.976Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1639
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1824,
+        "partner_sku": "57712511196595",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:25.452Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:25.452Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1640
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1825,
+        "partner_sku": "37597085729316",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:25.882Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:25.882Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1641
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1826,
+        "partner_sku": "59133563060790",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:26.316Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:26.316Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1642
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1827,
+        "partner_sku": "41743720869462",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:26.747Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:26.747Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1643
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1828,
+        "partner_sku": "98125314761167",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:27.225Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:27.225Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1644
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1829,
+        "partner_sku": "2997623083336",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:27.841Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:27.841Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1645
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1830,
+        "partner_sku": "22718135501751",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:28.308Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:28.308Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1646
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1831,
+        "partner_sku": "51427589098666",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:28.811Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:28.811Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1647
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1832,
+        "partner_sku": "38869064108448",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:29.310Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:29.310Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1648
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1833,
+        "partner_sku": "8027612928822",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:29.781Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:29.781Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1649
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1834,
+        "partner_sku": "82026648182488",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:30.295Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:30.294Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1650
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1835,
+        "partner_sku": "45689315942308",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:30.774Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:30.774Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1651
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1836,
+        "partner_sku": "83275752746753",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:31.271Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:31.271Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1652
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1837,
+        "partner_sku": "86491942348978",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:31.806Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:31.806Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1653
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1838,
+        "partner_sku": "52651777971841",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:32.577Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:32.577Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1654
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1839,
+        "partner_sku": "18140431314971",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:33.472Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:33.472Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1655
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1840,
+        "partner_sku": "23766070415549",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:33.998Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:33.998Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1656
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1841,
+        "partner_sku": "16199753519417",
+        "price_retail": "700.00",
+        "date_updated": "2016-09-29T21:57:35.469Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:35.469Z",
+        "partner": 3,
+        "price_excl_tax": "700.00",
+        "cost_price": "700.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1657
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1842,
+        "partner_sku": "59792448615227",
+        "price_retail": "450.00",
+        "date_updated": "2016-09-29T21:57:36.066Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:36.066Z",
+        "partner": 3,
+        "price_excl_tax": "450.00",
+        "cost_price": "450.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1658
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1843,
+        "partner_sku": "79054451163272",
+        "price_retail": "650.00",
+        "date_updated": "2016-09-29T21:57:36.702Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:36.702Z",
+        "partner": 3,
+        "price_excl_tax": "650.00",
+        "cost_price": "650.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1659
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1844,
+        "partner_sku": "66434481600823",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:38.383Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:38.383Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1660
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1845,
+        "partner_sku": "96147528511740",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:38.861Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:38.861Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1661
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1846,
+        "partner_sku": "77611256262355",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:39.424Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:39.424Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1662
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1847,
+        "partner_sku": "28632873113571",
+        "price_retail": "600.00",
+        "date_updated": "2016-09-29T21:57:40.703Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:40.703Z",
+        "partner": 3,
+        "price_excl_tax": "600.00",
+        "cost_price": "600.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1663
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1849,
+        "partner_sku": "66366089965672",
+        "price_retail": "650.00",
+        "date_updated": "2016-09-29T21:57:42.266Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:42.266Z",
+        "partner": 3,
+        "price_excl_tax": "650.00",
+        "cost_price": "650.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1664
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1850,
+        "partner_sku": "28173845168484",
+        "price_retail": "600.00",
+        "date_updated": "2016-09-29T21:57:43.626Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:43.625Z",
+        "partner": 3,
+        "price_excl_tax": "600.00",
+        "cost_price": "600.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1665
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1851,
+        "partner_sku": "17947300353166",
+        "price_retail": "550.00",
+        "date_updated": "2016-09-29T21:57:44.947Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:44.947Z",
+        "partner": 3,
+        "price_excl_tax": "550.00",
+        "cost_price": "550.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1666
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1852,
+        "partner_sku": "37496592531932",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:45.485Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:45.485Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1667
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1853,
+        "partner_sku": "62458394940645",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:45.944Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:45.944Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1668
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1854,
+        "partner_sku": "20540427717570",
+        "price_retail": "550.00",
+        "date_updated": "2016-09-29T21:57:47.336Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:47.336Z",
+        "partner": 3,
+        "price_excl_tax": "550.00",
+        "cost_price": "550.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1669
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1855,
+        "partner_sku": "92602041030720",
+        "price_retail": "550.00",
+        "date_updated": "2016-09-29T21:57:48.014Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:48.014Z",
+        "partner": 3,
+        "price_excl_tax": "550.00",
+        "cost_price": "550.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1670
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1856,
+        "partner_sku": "34059992730320",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:48.773Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:48.773Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1671
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1857,
+        "partner_sku": "59782831321353",
+        "price_retail": "600.00",
+        "date_updated": "2016-09-29T21:57:49.390Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:49.389Z",
+        "partner": 3,
+        "price_excl_tax": "600.00",
+        "cost_price": "600.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1672
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1858,
+        "partner_sku": "28790229009355",
+        "price_retail": "600.00",
+        "date_updated": "2016-09-29T21:57:50.892Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:50.892Z",
+        "partner": 3,
+        "price_excl_tax": "600.00",
+        "cost_price": "600.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1673
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1859,
+        "partner_sku": "15946252738603",
+        "price_retail": "700.00",
+        "date_updated": "2016-09-29T21:57:51.520Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:51.520Z",
+        "partner": 3,
+        "price_excl_tax": "700.00",
+        "cost_price": "700.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1674
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1860,
+        "partner_sku": "67909452408887",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:51.987Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:51.987Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1675
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1861,
+        "partner_sku": "68877328084743",
+        "price_retail": "1300.00",
+        "date_updated": "2016-09-29T21:57:52.456Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:52.456Z",
+        "partner": 3,
+        "price_excl_tax": "1300.00",
+        "cost_price": "1300.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1676
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1862,
+        "partner_sku": "20526752322296",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:57:52.906Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:52.906Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1677
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1863,
+        "partner_sku": "27663926580578",
+        "price_retail": "700.00",
+        "date_updated": "2016-09-29T21:57:53.370Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:53.370Z",
+        "partner": 3,
+        "price_excl_tax": "700.00",
+        "cost_price": "700.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1678
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1864,
+        "partner_sku": "41834165202867",
+        "price_retail": "1150.00",
+        "date_updated": "2016-09-29T21:57:53.864Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:57:53.864Z",
+        "partner": 3,
+        "price_excl_tax": "1150.00",
+        "cost_price": "1150.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1679
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1888,
+        "partner_sku": "74028986131272",
+        "price_retail": "900.00",
+        "date_updated": "2016-09-30T18:41:57.490Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:05.504Z",
+        "partner": 3,
+        "price_excl_tax": "900.00",
+        "cost_price": "900.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1680
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1899,
+        "partner_sku": "57113574138187",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:11.480Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:11.480Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1681
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1900,
+        "partner_sku": "27534918366626",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:14.262Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:14.261Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1682
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1901,
+        "partner_sku": "73431582169151",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:15.281Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:15.281Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1683
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1903,
+        "partner_sku": "32409775673872",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:17.656Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:17.656Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1684
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1904,
+        "partner_sku": "64876495469769",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:20.875Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:20.875Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1685
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1906,
+        "partner_sku": "70885472519263",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:22.467Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:22.467Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1686
+},
+{
+    "fields": {
+        "price_currency": "USD",
+        "product": 1907,
+        "partner_sku": "31158769823478",
+        "price_retail": "0.00",
+        "date_updated": "2016-09-29T21:58:24.195Z",
+        "num_in_stock": null,
+        "num_allocated": null,
+        "low_stock_threshold": null,
+        "date_created": "2016-09-29T21:58:24.195Z",
+        "partner": 3,
+        "price_excl_tax": "0.00",
+        "cost_price": "0.00"
+    },
+    "model": "partner.stockrecord",
+    "pk": 1687
+},
+{
+    "fields": {
+        "code": "clothing-partner",
+        "name": "Clothing partner",
+        "users": []
+    },
+    "model": "partner.partner",
+    "pk": 2
+},
+{
+    "fields": {
+        "code": "book-partner",
+        "name": "Book partner",
+        "users": []
+    },
+    "model": "partner.partner",
+    "pk": 3
+}
+]
