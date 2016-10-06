@@ -19,6 +19,7 @@ import os
 from auto_parts.settings import MEDIA_ROOT
 from django.template.defaultfilters import truncatechars
 from django.contrib.auth.models import User
+from django.contrib.staticfiles.finders import find
 
 
 ProductManager, BrowsableProductManager = get_classes(
