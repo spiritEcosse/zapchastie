@@ -273,4 +273,4 @@ USE_ETAGS = not DEBUG
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
-FIXTURE_DIRS = os.path.join(BASE_DIR, 'data/fixtures')
+FIXTURE_DIRS = (os.path.join(BASE_DIR, 'data/fixtures'), )
