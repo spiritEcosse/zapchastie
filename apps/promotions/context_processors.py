@@ -1,6 +1,8 @@
 from itertools import chain
-
 from oscar.apps.promotions.models import KeywordPromotion, PagePromotion
+from oscar.core.loading import get_model
+
+Promotion = get_model('promotion', 'Promotion')
 
 
 def promotions(request):
@@ -44,11 +46,14 @@ def split_by_position(linked_promotions, context):
     by position, and write these lists to the context dict.
     """
     for linked_promotion in linked_promotions:
-        promotion = linked_promotion.content_object
-        print promotion
+        promotion = False
+
+        if isinstance(linked_promotion.content_object, Promotion):
+            promotion = linked_promotion.content_object
 
         if not promotion:
             continue
+
         key = 'promotions_%s' % linked_promotion.position.lower()
         if key not in context:
             context[key] = []
