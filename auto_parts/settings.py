@@ -56,9 +56,9 @@ INSTALLED_APPS = \
         'django.contrib.sitemaps',
         'apps.seo',
         'compressor',
-        'djmoney_rates',
         'widget_tweaks',
         'mptt',
+        'djmoney_rates',
         'easy_thumbnails',
         'filer',
         'djng',
@@ -267,8 +267,10 @@ DJANGO_MONEY_RATES = {
     'DEFAULT_BACKEND': 'djmoney_rates.backends.OpenExchangeBackend',
     'OPENEXCHANGE_URL': 'http://openexchangerates.org/api/latest.json',
     'OPENEXCHANGE_APP_ID': 'a4157eac5336497e963212eeee2e1b14',
-    'OPENEXCHANGE_BASE_CURRENCY': 'UAH',
+    'OPENEXCHANGE_BASE_CURRENCY': 'USD',
 }
+
+BASE_CURRENCY = 'UAH'
 
 HTML_MINIFY = not DEBUG
 KEEP_COMMENTS_ON_MINIFYING = False
