@@ -69,7 +69,11 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
-    ] + get_core_apps(['apps.catalogue', 'apps.promotions', 'apps.partner'])
+    ] + get_core_apps(
+        [
+            'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions'
+        ]
+    )
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
 
