@@ -60,17 +60,20 @@
         <div class="container-fluid page" {% block ngController%}{% endblock ngController %}>
             <div class="page_inner">
                 {% block breadcrumbs %}{% endblock %}
-                {% block header %}
-                    <div class="page-header action">
-                        <h1>
-                            {% if meta_tags %}
-                                {{ meta_tags.h1 }}
-                            {% else %}
+                {% if meta_tags %}
+                    <h1>
+                        {{ meta_tags.h1 }}
+                    </h1>
+                {% else %}
+                    {% block header %}
+                        <div class="page-header action">
+                            <h1>
                                 {% block headertext %}{% endblock %}
-                            {% endif %}
-                        </h1>
-                    </div>
-                {% endblock %}
+                            </h1>
+                        </div>
+                    {% endblock %}
+                {% endif %}
+
                 {% include "partials/alert_messages.html" %}
                 {% block subnavigation %}{% endblock %}
                 <div class="content">
@@ -106,7 +109,7 @@
     <script src="{% static "build/js/script.min.js" %}" type="text/javascript" charset="utf-8"></script>
     {{ block.super }}
     <!-- Twitter Bootstrap -->
-{#    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>#}
+    {#    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>#}
     <!-- Oscar -->
     <script src="{% static "oscar/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script>
 
