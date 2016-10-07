@@ -471,11 +471,11 @@ msgstr ""
 
 #: apps/ex_sites/models.py:13
 msgid "Short description of shop"
-msgstr ""
+msgstr "Краткое описание магазина"
 
 #: apps/ex_sites/models.py:19 apps/ex_sites/models.py:20
 msgid "Information"
-msgstr ""
+msgstr "Доп. информация"
 
 #: apps/ex_sites/models.py:24
 msgid "Phone number"

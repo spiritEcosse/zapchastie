@@ -86,13 +86,11 @@
                             {% endblock %}
                         </ul>
                     </li>
-                    {% if current_site.flatpage_set.exists %}
-                        {% for page in current_site.flatpage_set.all %}
-                            <li>
-                                <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
+                    {% for page in current_site.flatpage_set.all %}
+                        <li>
+                            <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                        </li>
+                    {% endfor %}
 
                     {% block nav_extra %}
                     {% endblock %}

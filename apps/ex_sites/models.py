@@ -8,7 +8,7 @@ from oscar.models.fields import PhoneNumberField
 @python_2_unicode_compatible
 class Info(models.Model):
     site = models.OneToOneField(Site, on_delete=models.CASCADE, related_name='info')
-    # phone_numbers = models.ManyToManyField('ex_sites.PhoneNumber', verbose_name=_('Phone numbers'), blank=True)
+    phone_numbers = models.ManyToManyField('sites.PhoneNumber', verbose_name=_('Phone numbers'), blank=True)
     email = models.EmailField(verbose_name=_('Email'), max_length=200)
     shop_short_desc = models.CharField(verbose_name=_('Short description of shop'), max_length=200, blank=True)
 
@@ -16,12 +16,19 @@ class Info(models.Model):
         return self.site.domain
 
     class Meta:
+        app_label = 'sites'
         verbose_name = _('Information')
         verbose_name_plural = _('Information')
 
 
-# class PhoneNumber(models.Model):
-#     phone_number = PhoneNumberField(verbose_name=_('Phone number'), blank=True)
-#
-#     class Meta:
-#         app_label = 'sites'
+@python_2_unicode_compatible
+class PhoneNumber(models.Model):
+    phone_number = PhoneNumberField(verbose_name=_('Phone number'), blank=True)
+
+    class Meta:
+        app_label = 'sites'
+        verbose_name = _('Phone number')
+        verbose_name_plural = _('Phone numbers')
+
+    def __str__(self):
+        return self.phone_number.as_international
