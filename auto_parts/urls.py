@@ -20,10 +20,12 @@ from django.conf.urls.static import static
 import settings
 from django.contrib.sitemaps.views import sitemap
 from apps.sitemap import ProductSitemap, CategorySitemap
+from django.contrib.flatpages.sitemaps import FlatPageSitemap
 
 sitemaps = {
     'products': ProductSitemap,
     'categories': CategorySitemap,
+    'flatpages': FlatPageSitemap,
 }
 
 

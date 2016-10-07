@@ -63,6 +63,7 @@ INSTALLED_APPS = \
         'filer',
         'djng',
         'apps.ex_sites',
+        'apps.ex_flatpages',
         # 'feincms',
         # 'feincms.module.page',
         # 'feincms.module.medialibrary',

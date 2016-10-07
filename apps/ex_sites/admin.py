@@ -1,7 +1,7 @@
 from django.contrib.sites.admin import SiteAdmin
 from django.contrib import admin
 from django.contrib.sites.models import Site
-from models import Info, PhoneNumber
+from models import Info
 
 
 class InfoInline(admin.StackedInline):
@@ -19,4 +19,4 @@ class PhoneNumberAdmin(admin.ModelAdmin):
 
 admin.site.unregister(Site)
 admin.site.register(Site, InfoAdmin)
-admin.site.register(PhoneNumber, PhoneNumberAdmin)
+# admin.site.register(PhoneNumber, PhoneNumberAdmin)
