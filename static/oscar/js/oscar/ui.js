@@ -114,6 +114,16 @@ var oscar = (function(o, $) {
             });
             // Tooltips
             $('[rel="tooltip"]').tooltip();
+
+            $('li.dropdown-submenu').on('click', function(event) {
+                event.stopPropagation();
+                if ($(this).hasClass('open')){
+                    $(this).removeClass('open');
+                }else{
+                    $('li.dropdown-submenu').removeClass('open');
+                    $(this).addClass('open');
+                }
+            });
         }
     };
 
@@ -304,8 +314,8 @@ var oscar = (function(o, $) {
                 $datetimes.each(function(ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatetimepickerConfig, {
-                          'format': $ele.data('datetimeformat'),
-                          'minuteStep': $ele.data('stepminute')
+                            'format': $ele.data('datetimeformat'),
+                            'minuteStep': $ele.data('stepminute')
                         });
                     $ele.datetimepicker(config);
                 });
@@ -320,11 +330,11 @@ var oscar = (function(o, $) {
                 $times.each(function(ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultTimepickerConfig, {
-                          'format': $ele.data('timeformat'),
-                          'minuteStep': $ele.data('stepminute'),
-                          'startView': 1,
-                          'maxView': 1,
-                          'formatViewType': 'time'
+                            'format': $ele.data('timeformat'),
+                            'minuteStep': $ele.data('stepminute'),
+                            'startView': 1,
+                            'maxView': 1,
+                            'formatViewType': 'time'
                         });
                     $ele.datetimepicker(config);
                 });
