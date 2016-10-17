@@ -62,10 +62,19 @@
                     {% endif %}
                     <h1>{{ product.get_h1 }}</h1>
 
-                    {% block product_stock_record %}
-                        {% include "catalogue/partials/stock_record.html" with verbose=1 %}
-                    {% endblock %}
+                    <div class="row">
+                        <div class="col-xs-6">
+                            {% block product_stock_record %}
+                                {% include "catalogue/partials/stock_record.html" with verbose=1 %}
+                            {% endblock %}
 
+                        </div>
+                        <div class="col-xs-6">
+                            {% for phone in current_site.info.phone_numbers.all %}
+                                <a class="lead" href="tel:{{ phone }}">{{ phone.phone_number.as_international }}</a><br>
+                            {% endfor %}
+                        </div>
+                    </div>
                     {% iffeature "reviews" %}
                         {% include "catalogue/reviews/partials/review_stars.html" %}
                     {% endiffeature %}
@@ -83,7 +92,7 @@
         {% block product_description %}
             {% if product.description %}
                 <div id="product_description" class="sub-header">
-                    <h2>{% trans "Product Description" %}</h2>
+                    <div class="h2">{% trans "Product Description" %}</div>
                 </div>
                 <p>{{ product.description|safe }}</p>
             {% endif %}
@@ -99,28 +108,15 @@
                         <th>{% trans "UPC" %}</th><td>{{ product.upc }}</td>
                     </tr>
                 {% endif %}
-                <tr>
-                    <th>{% trans "Product Type" %}</th><td>{{ product.get_product_class.name }}</td>
-                </tr>
 
                 {% purchase_info_for_product request product as session %}
                 {% if session.price.exists %}
                     <tr>
-                        <th>{% trans "Price (excl. tax)" %}</th>
+                        <th>{% trans "Price" %}</th>
                         <td>{{ session.price.excl_tax|currency:session.price.currency }}</td>
                     </tr>
-                    {% if session.price.is_tax_known %}
-                        <tr>
-                            <th>{% trans "Price (incl. tax)" %}</th>
-                            <td>{{ session.price.incl_tax|currency:session.price.currency }}</td>
-                        </tr>
-                        <tr>
-                            <th>{% trans "Tax" %}</th><td>{{ session.price.tax|currency:session.price.currency }}</td>
-                        </tr>
-                    {% endif %}
-                    <tr>
-                        <th>{% trans "Availability" %}</th>
-                        <td>{{ session.availability.message }}</td>
+                    <th>{% trans "Availability" %}</th>
+                    <td>{{ session.availability.message }}</td>
                     </tr>
                 {% endif %}
                 {% for av in product.attribute_values.all %}
