@@ -109,6 +109,10 @@ class ProductAdmin(ImportExportMixin, ImportExportActionModelAdmin):
     resource_class = resources.ProductResource
     list_attr = ('pk', 'title', 'enable', 'date_updated', 'slug', )
 
+    class Media:
+        js = ("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js")
+
     def get_queryset(self, request):
         qs = super(ProductAdmin, self).get_queryset(request)
         return qs.only(*self.list_attr).order_by('-date_updated', 'title').prefetch_related(
