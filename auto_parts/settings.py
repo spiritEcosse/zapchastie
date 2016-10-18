@@ -293,8 +293,8 @@ FIXTURE_DIRS = (os.path.join(BASE_DIR, 'data/fixtures'), )
 OSCAR_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
 
 
-AKISMET_API_KEY = "b155a97b1337"
-# AKISMET_BLOG_URL = "http://example.com"        # Optional, to override auto detection
+AKISMET_API_KEY = "f3cb7c3927b3"
+AKISMET_BLOG_URL = "zapchastie.com.ua"        # Optional, to override auto detection
 AKISMET_IS_TEST = True                        # Enable to make test runs
 
 FLUENT_CONTENTS_USE_AKISMET = True             # Enabled by default when AKISMET_API_KEY is set.
