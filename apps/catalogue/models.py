@@ -20,6 +20,36 @@ from auto_parts.settings import MEDIA_ROOT
 from django.template.defaultfilters import truncatechars
 from django.contrib.auth.models import User
 from django.contrib.staticfiles.finders import find
+import logging
+import os
+from datetime import date, datetime
+
+from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.staticfiles.finders import find
+from django.core.cache import cache
+from django.core.exceptions import ImproperlyConfigured, ValidationError
+from django.core.files.base import File
+from django.core.urlresolvers import reverse
+from django.core.validators import RegexValidator
+from django.db import models
+from django.db.models import Count, Sum
+from django.utils import six
+from django.utils.encoding import python_2_unicode_compatible
+from django.utils.functional import cached_property
+from django.utils.html import strip_tags
+from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import get_language, pgettext_lazy
+
+from treebeard.mp_tree import MP_Node
+
+from oscar.core.decorators import deprecated
+from oscar.core.loading import get_class, get_classes, get_model
+from oscar.core.utils import slugify
+from oscar.core.validators import non_python_keyword
+from oscar.models.fields import AutoSlugField, NullCharField
 
 
 ProductManager, BrowsableProductManager = get_classes(
@@ -904,6 +934,9 @@ class Product(models.Model, CommonFeatureProduct):
             return not self.has_review_by(user)
         else:
             return False
+
+    def get_approved_reviews(self):
+        return self.reviews.filter(status=self.reviews.model.APPROVED)
 
     @cached_property
     def num_approved_reviews(self):
