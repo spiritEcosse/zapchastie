@@ -74,7 +74,8 @@ INSTALLED_APPS = \
         'django_comments',
     ] + get_core_apps(
         [
-            'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions'
+            'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
+            'apps.catalogue.reviews',
         ]
     )
 

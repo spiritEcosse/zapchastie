@@ -100,7 +100,7 @@
 
         {% block product_info %}
             <div class="sub-header">
-                <h2>{% trans "Product Information" %}</h2>
+                <div class="h2">{% trans "Product Information" %}</div>
             </div>
             <table class="table table-striped">
                 {% if product.upc %}
@@ -134,7 +134,7 @@
             </table>
         {% endblock %}
 
-        <div class="sub-header"><h2>{% trans 'Question about this item' %}</h2></div>
+        <div class="sub-header"><div class="h2">{% trans 'Question about this item' %}</div></div>
 
         <form name="{{ product_question_form.form_name }}" method="post" novalidate action="." ng-init="button.send='{% trans "Send" %}'; button.actual=button.send; button.sending='{% trans "Sending..." %}'">
             {% csrf_token %}
@@ -163,7 +163,7 @@
                         {% if product.num_approved_reviews > 3 %}
                             <a href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.id %}" class="btn pull-right">{% trans "See all reviews" %}</a>
                         {% endif %}
-                        <h2>{% trans "Customer Reviews" %}</h2>
+                        <div class="h2">{% trans "Customer Reviews" %}</div>
                     </div>
 
                     {% if product.num_approved_reviews == 0 %}
@@ -179,7 +179,7 @@
                         </p>
                     {% else %}
                         <ol class="list-unstyled review-list">
-                            {% for review in product.reviews.approved.all|slice:":3" %}
+                            {% for review in product.get_approved_reviews|slice:":3" %}
                                 <li>
                                     {% include 'catalogue/partials/review.html' %}
                                 </li>
@@ -193,7 +193,7 @@
         {% with recommended_products=product.recommended_products.all|slice:":6" %}
             {% if recommended_products %}
                 <div class="sub-header">
-                    <h2>{% trans "Recommended items" %}</h2>
+                    <div class="h2">{% trans "Recommended items" %}</div>
                 </div>
                 <ul class="row">
                     {% for product in recommended_products %}
