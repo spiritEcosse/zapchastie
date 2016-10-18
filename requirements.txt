@@ -1,3 +1,4 @@
+akismet==0.2.0
 Babel==2.3.4
 BabelDjango==0.2.2
 backports.shutil-get-terminal-size==1.0.0
@@ -11,10 +12,13 @@ django-autocomplete-light==3.1.8
 django-braces==1.9.0
 django-ckeditor==5.1.1
 django-compressor==2.0
+django-contrib-comments==1.7.3
+django-crispy-forms==1.6.1
 django-debug-toolbar==1.5
 django-extra-views==0.6.4
 django-filer==1.2.5
 django-flat-theme==1.1.3
+django-fluent-comments==1.2.2
 django-haystack==2.4.1
 django-htmlmin==0.9.1
 django-import-export==0.5.0
@@ -27,6 +31,7 @@ django-prices==0.4.13
 django-prices-openexchangerates==0.1.11
 django-smart-load-tag==0.3.2
 django-tables2==1.0.7
+django-tag-parser==3.0
 django-treebeard==4.0.1
 django-widget-tweaks==1.4.1
 easy-thumbnails==2.3
@@ -48,6 +53,7 @@ pickleshare==0.7.4
 Pillow==3.3.1
 prices==0.5.8
 prompt-toolkit==1.0.7
+psycopg2==2.6.1
 ptyprocess==0.5.1
 purl==1.3
 py-moneyed==0.6.0
