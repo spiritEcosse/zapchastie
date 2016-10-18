@@ -21,6 +21,7 @@ import settings
 from django.contrib.sitemaps.views import sitemap
 from apps.sitemap import ProductSitemap, CategorySitemap
 from django.contrib.flatpages.sitemaps import FlatPageSitemap
+from apps.ex_flatpages import views
 
 sitemaps = {
     'products': ProductSitemap,
@@ -32,5 +33,7 @@ sitemaps = {
 urlpatterns = [
                   url(r'^admin/', admin.site.urls),
                   url(r'', include(application.urls)),
+                  url(r'^blog/comments/', include('fluent_comments.urls')),
                   url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+                  url(r'^(?P<url>.*)/$', views.flatpage),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
