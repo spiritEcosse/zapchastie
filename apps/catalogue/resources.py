@@ -70,7 +70,7 @@ class ProductResource(ModelResource):
         model = Product
         fields = (
             'id', 'delete', 'title', 'slug', 'enable', 'h1', 'meta_title', 'meta_description', 'meta_keywords',
-            'filters', 'categories'
+            'filters', 'categories', 'description',
         )
         export_order = fields
 
