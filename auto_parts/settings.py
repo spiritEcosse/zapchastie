@@ -69,6 +69,9 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
+        'fluent_comments',
+        'crispy_forms',
+        'django_comments',
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions'
@@ -76,6 +79,8 @@ INSTALLED_APPS = \
     )
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
+
+COMMENTS_APP = 'fluent_comments'
 
 AUTHENTICATION_BACKENDS = (
     'oscar.apps.customer.auth_backends.EmailBackend',
