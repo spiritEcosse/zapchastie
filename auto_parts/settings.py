@@ -294,8 +294,8 @@ OSCAR_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
 
 
 AKISMET_API_KEY = "f3cb7c3927b3"
-AKISMET_BLOG_URL = "zapchastie.com.ua"        # Optional, to override auto detection
-AKISMET_IS_TEST = True                        # Enable to make test runs
+# AKISMET_BLOG_URL = "zapchastie.com.ua"        # Optional, to override auto detection
+AKISMET_IS_TEST = False                        # Enable to make test runs
 
 FLUENT_CONTENTS_USE_AKISMET = True             # Enabled by default when AKISMET_API_KEY is set.
 FLUENT_COMMENTS_CLOSE_AFTER_DAYS = None        # Auto-close comments after N days
