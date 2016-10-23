@@ -81,6 +81,9 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
         queryset = self.model.objects.filter(enable=True)
         return super(ProductDetailView, self).get_object(queryset=queryset)
 
+    # def get_queryset(self):
+    #     super()
+
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         initial_data = {}
