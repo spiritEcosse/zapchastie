@@ -45,7 +45,6 @@ INSTALLED_APPS = \
         'dal_select2',
         'django.contrib.admin',
         'django.contrib.auth',
-        'debug_toolbar',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.sites',
@@ -54,6 +53,7 @@ INSTALLED_APPS = \
         'django.contrib.flatpages',
         'django.contrib.redirects',
         'django.contrib.sitemaps',
+        'debug_toolbar',
         'apps.seo',
         'compressor',
         'widget_tweaks',
@@ -72,7 +72,7 @@ INSTALLED_APPS = \
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
-            'apps.catalogue.reviews',
+            'apps.catalogue.reviews', 'apps.basket',
         ]
     )
 

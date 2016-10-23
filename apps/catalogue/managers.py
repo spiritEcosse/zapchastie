@@ -9,12 +9,13 @@ class ProductQuerySet(models.query.QuerySet):
         models to save on queries
         """
         return self.select_related('product_class')\
-            .prefetch_related('children',
-                              'product_options',
-                              'product_class__options',
-                              'stockrecords',
-                              'images',
-                              )
+            .prefetch_related(
+            'children',
+            'product_options',
+            'product_class__options',
+            'stockrecords',
+            'images',
+        )
 
     def browsable(self):
         """

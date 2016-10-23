@@ -888,7 +888,7 @@ class Product(models.Model, CommonFeatureProduct):
         Returns the primary image for a product. Usually used when one can
         only display one product image, e.g. in a list of products.
         """
-        return self.images.all()[0].image if self.images.exists() else self.get_missing_image()
+        return self.images.all()[0].image if self.images.all() else self.get_missing_image()
 
     # Updating methods
 

@@ -14,6 +14,7 @@ from django.views.generic.edit import FormMixin
 from django.core.mail import send_mail
 from django.views.generic import FormView
 import json
+from django.db.models import Prefetch
 get_product_search_handler_class = get_class('catalogue.search_handlers', 'get_product_search_handler_class')
 
 logger = logging.getLogger(__name__)
@@ -78,11 +79,14 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
 
     def get_object(self, queryset=None):
         self.kwargs['slug'] = self.kwargs['product_slug']
-        queryset = self.model.objects.filter(enable=True)
-        return super(ProductDetailView, self).get_object(queryset=queryset)
+        return super(ProductDetailView, self).get_object()
 
-    # def get_queryset(self):
-    #     super()
+    def get_queryset(self):
+        return super(ProductDetailView, self).get_queryset().filter(enable=True).select_related(
+            'product_class'
+        ).prefetch_related(
+            'filters__parent', 'stockrecords', 'images__original', 'product_class__options', 'recommended_products'
+        )
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
