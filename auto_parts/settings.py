@@ -69,9 +69,6 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
-        'fluent_comments',
-        'crispy_forms',
-        'django_comments',
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
@@ -81,8 +78,6 @@ INSTALLED_APPS = \
 
 
 MIDDLEWARE_CLASSES = settings_local.MIDDLEWARE_CLASSES
-
-COMMENTS_APP = 'fluent_comments'
 
 AUTHENTICATION_BACKENDS = (
     'oscar.apps.customer.auth_backends.EmailBackend',
@@ -291,13 +286,3 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'data/fixtures'), )
 OSCAR_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
-
-
-AKISMET_API_KEY = "f3cb7c3927b3"
-# AKISMET_BLOG_URL = "zapchastie.com.ua"        # Optional, to override auto detection
-AKISMET_IS_TEST = False                        # Enable to make test runs
-
-FLUENT_CONTENTS_USE_AKISMET = True             # Enabled by default when AKISMET_API_KEY is set.
-FLUENT_COMMENTS_CLOSE_AFTER_DAYS = None        # Auto-close comments after N days
-FLUENT_COMMENTS_MODERATE_AFTER_DAYS = 0     # Auto-moderate comments after N days.
-FLUENT_COMMENTS_AKISMET_ACTION = 'moderate'    # Set to 'moderate' or 'delete'
