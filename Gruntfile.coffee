@@ -21,6 +21,8 @@ module.exports = (grunt) ->
                         'static/bower_components/angular-route/angular-route.min.js',
                         'static_root/djng/js/django-angular.js',
                         'static/oscar/js/oscar/ui.js',
+                        "static/oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js",
+                        "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js",
                         "static/src/js/**/*.js",
                     ]
         imagemin:

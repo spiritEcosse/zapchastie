@@ -102,13 +102,6 @@
 {% block scripts %}
     <script src="{% static "build/js/script.min.js" %}" type="text/javascript" charset="utf-8"></script>
     {{ block.super }}
-    <!-- Twitter Bootstrap -->
-    {#    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>#}
-    <!-- Oscar -->
-    <script src="{% static "oscar/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script>
-
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}" type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 
 {% block extrascripts %}
