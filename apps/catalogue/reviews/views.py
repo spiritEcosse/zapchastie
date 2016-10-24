@@ -55,8 +55,11 @@ class CreateProductReview(CreateView):
         return response
 
     def get_success_url(self):
-        messages.success(
-            self.request, _("Thank you for reviewing this product"))
+        if self.object.status == self.model.FOR_MODERATION:
+            messages.success(self.request, _("Your review appear after moderation by the administrator"))
+        else:
+            messages.success(self.request, _("Thank you for reviewing this product"))
+
         return self.product.get_absolute_url()
 
     def send_signal(self, request, response, review):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-24 14:59+0000\n"
+"POT-Creation-Date: 2016-10-24 19:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,7 +242,7 @@ msgstr ""
 msgid "Product structure"
 msgstr ""
 
-#: apps/catalogue/models.py:499 templates/catalogue/detail.html:168
+#: apps/catalogue/models.py:499 templates/catalogue/detail.html:150
 #: templates/dashboard/orders/line_detail.html:50
 #: templates/dashboard/orders/order_detail.html:110
 #: templates/dashboard/ranges/range_product_list.html:94
@@ -594,10 +594,14 @@ msgid "You can't leave a review for this product."
 msgstr ""
 
 #: apps/catalogue/reviews/views.py:59
+msgid "Your review appear after moderation by the administrator"
+msgstr "Ваш отзыв появится после модерации администрацией сайта"
+
+#: apps/catalogue/reviews/views.py:61
 msgid "Thank you for reviewing this product"
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:97
+#: apps/catalogue/reviews/views.py:100
 msgid "Thanks for voting!"
 msgstr ""
 
@@ -836,7 +840,7 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:31
 #: templates/basket/partials/basket_content.html:172
-#: templates/catalogue/detail.html:175
+#: templates/catalogue/detail.html:157
 msgid "Price"
 msgstr ""
 
@@ -899,6 +903,7 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
 #: templates/catalogue/review_form.html:45
+#: templates/catalogue/reviews/review_form.html:61
 #: templates/checkout/shipping_address.html:80
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
@@ -946,6 +951,7 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
 #: templates/catalogue/review_form.html:46
+#: templates/catalogue/reviews/review_form.html:62
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
 #: templates/customer/address/address_delete.html:20
@@ -1204,13 +1210,13 @@ msgstr ""
 msgid "Product Description"
 msgstr ""
 
-#: templates/catalogue/detail.html:106 templates/catalogue/detail.html:145
-msgid "Characteristics"
-msgstr "Характеристики"
-
-#: templates/catalogue/detail.html:112
+#: templates/catalogue/detail.html:105
 msgid "Product Information"
 msgstr ""
+
+#: templates/catalogue/detail.html:111 templates/catalogue/detail.html:186
+msgid "Characteristics"
+msgstr "Характеристики"
 
 #: templates/catalogue/detail.html:117
 #: templates/catalogue/reviews/review_detail.html:5
@@ -1235,15 +1241,15 @@ msgstr "Задать вопрос об этом товаре"
 msgid "Description of product "
 msgstr "Описание "
 
-#: templates/catalogue/detail.html:163
+#: templates/catalogue/detail.html:145
 msgid "Information of product "
 msgstr "Информация о "
 
-#: templates/catalogue/detail.html:178
+#: templates/catalogue/detail.html:160
 msgid "Availability"
 msgstr ""
 
-#: templates/catalogue/detail.html:191
+#: templates/catalogue/detail.html:173
 msgid "Number of reviews"
 msgstr ""
 
@@ -1411,7 +1417,17 @@ msgid "No"
 msgstr ""
 
 #: templates/catalogue/partials/review.html:56
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
+#| "customer found this useful\n"
+#| "                "
+#| msgid_plural ""
+#| "\n"
+#| "                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
+#| "customers found this useful\n"
+#| "                "
 msgid ""
 "\n"
 "                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
@@ -1419,7 +1435,7 @@ msgid ""
 "                "
 msgid_plural ""
 "\n"
-"                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
+"                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
 "customers found this useful\n"
 "                "
 msgstr[0] ""
@@ -1451,6 +1467,7 @@ msgid "Leave review"
 msgstr "Оставить отзыв"
 
 #: templates/catalogue/review_form.html:44
+#: templates/catalogue/reviews/review_form.html:60
 #: templates/checkout/shipping_address.html:41
 #: templates/checkout/shipping_address.html:43
 #: templates/checkout/user_address_form.html:26
@@ -1476,6 +1493,7 @@ msgid "Saving..."
 msgstr ""
 
 #: templates/catalogue/review_form.html:44
+#: templates/catalogue/reviews/review_form.html:60
 msgid "Save review"
 msgstr ""
 
@@ -1515,6 +1533,12 @@ msgstr[2] ""
 #: templates/customer/order/order_detail.html:36
 msgid "Write a review"
 msgstr ""
+
+#: templates/catalogue/reviews/review_form.html:21
+#, fuzzy
+#| msgid "Leave review"
+msgid "Leave a product review"
+msgstr "Оставить отзыв"
 
 #: templates/catalogue/reviews/review_list.html:44
 #: templates/partials/nav_accounts.html:29

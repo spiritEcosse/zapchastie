@@ -144,6 +144,11 @@ class ReviewsView(edit.CreateView, list.MultipleObjectMixin):
     context_object_name = 'reviews'
     success_url = reverse_lazy('catalogue:list-reviews')
 
+    def get_form_kwargs(self):
+        kwargs = super(ReviewsView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
     def dispatch(self, request, *args, **kwargs):
         self.object_list = self.get_queryset()
         return super(ReviewsView, self).dispatch(request, *args, **kwargs)
