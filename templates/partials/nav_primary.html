@@ -81,12 +81,14 @@
                             {% endblock %}
                         </ul>
                     </li>
+                    <li>
+                        <a href="{% url 'catalogue:list-reviews' %}">{% trans 'Reviews' %}</a>
+                    </li>
                     {% for page in current_site.flatpage_set.all %}
                         <li>
                             <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
                         </li>
                     {% endfor %}
-
                     {% block nav_extra %}{% endblock %}
                 </ul>
             {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 17:46+0000\n"
+"POT-Creation-Date: 2016-10-24 14:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,7 +102,7 @@ msgid "Features"
 msgstr "Особенности"
 
 #: apps/catalogue/models.py:150 apps/catalogue/reviews/forms.py:11
-#: templates/customer/profile/profile.html:9
+#: apps/catalogue/reviews/forms.py:28 templates/customer/profile/profile.html:9
 #: templates/customer/wishlists/wishlists_list.html:9
 #: templates/dashboard/catalogue/product_class_form.html:96
 #: templates/dashboard/catalogue/product_class_list.html:26
@@ -436,7 +436,7 @@ msgid "Questions about the products"
 msgstr "Вопросы по товарам"
 
 #: apps/catalogue/reviews/abstract_models.py:30
-#: apps/catalogue/reviews/forms.py:51
+#: apps/catalogue/reviews/forms.py:69
 #: templates/dashboard/reviews/review_delete.html:39
 #: templates/dashboard/reviews/review_list.html:59
 #: templates/dashboard/users/detail.html:177
@@ -463,8 +463,9 @@ msgid "Name"
 msgstr ""
 
 #: apps/catalogue/reviews/abstract_models.py:47
-#: apps/catalogue/reviews/forms.py:12 apps/ex_sites/models.py:12
-#: templates/checkout/checkout.html:49 templates/checkout/thank_you.html:52
+#: apps/catalogue/reviews/forms.py:12 apps/catalogue/reviews/forms.py:29
+#: apps/ex_sites/models.py:12 templates/checkout/checkout.html:49
+#: templates/checkout/thank_you.html:52
 #: templates/dashboard/partners/partner_manage.html:41
 #: templates/dashboard/partners/partner_user_list.html:43
 #: templates/dashboard/partners/partner_user_select.html:49
@@ -574,11 +575,11 @@ msgstr ""
 msgid "You can only vote once on a review"
 msgstr ""
 
-#: apps/catalogue/reviews/forms.py:52
+#: apps/catalogue/reviews/forms.py:70
 msgid "Recency"
 msgstr ""
 
-#: apps/catalogue/reviews/forms.py:57
+#: apps/catalogue/reviews/forms.py:75
 #, fuzzy
 #| msgid "Sort"
 msgid "Sort by"
@@ -600,15 +601,15 @@ msgstr ""
 msgid "Thanks for voting!"
 msgstr ""
 
-#: apps/catalogue/views.py:77
+#: apps/catalogue/views.py:82
 msgid "You question has been sent!"
 msgstr "Ваш вопрос был отправлен!"
 
-#: apps/catalogue/views.py:123
+#: apps/catalogue/views.py:131
 msgid "You received a letter from the site {}"
 msgstr "Вы получили письмо с сайта {}"
 
-#: apps/catalogue/views.py:124
+#: apps/catalogue/views.py:132
 msgid ""
 "User name: {}.\n"
 "Email: {}.\n"
@@ -708,6 +709,7 @@ msgstr ""
 
 #: templates/basket/basket.html:12 templates/catalogue/browse.html:26
 #: templates/catalogue/category.html:14 templates/catalogue/detail.html:21
+#: templates/catalogue/review_list.html:13
 #: templates/catalogue/reviews/review_detail.html:11
 #: templates/catalogue/reviews/review_list.html:13
 #: templates/customer/baseaccountpage.html:14
@@ -896,7 +898,7 @@ msgid "Add voucher"
 msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
-#: templates/catalogue/reviews/review_form.html:48
+#: templates/catalogue/review_form.html:45
 #: templates/checkout/shipping_address.html:80
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
@@ -943,7 +945,7 @@ msgid "or"
 msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
-#: templates/catalogue/reviews/review_form.html:49
+#: templates/catalogue/review_form.html:46
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
 #: templates/customer/address/address_delete.html:20
@@ -1202,6 +1204,10 @@ msgstr ""
 msgid "Product Description"
 msgstr ""
 
+#: templates/catalogue/detail.html:106 templates/catalogue/detail.html:145
+msgid "Characteristics"
+msgstr "Характеристики"
+
 #: templates/catalogue/detail.html:112
 msgid "Product Information"
 msgstr ""
@@ -1217,6 +1223,7 @@ msgstr ""
 #: templates/dashboard/reviews/review_update.html:17
 #: templates/dashboard/users/detail.html:108
 #: templates/dashboard/users/detail.html:173
+#: templates/partials/nav_primary.html:85
 msgid "Reviews"
 msgstr ""
 
@@ -1227,10 +1234,6 @@ msgstr "Задать вопрос об этом товаре"
 #: templates/catalogue/detail.html:134
 msgid "Description of product "
 msgstr "Информация о "
-
-#: templates/catalogue/detail.html:145
-msgid "Characteristics"
-msgstr "Характеристики"
 
 #: templates/catalogue/detail.html:163
 msgid "Information of product "
@@ -1253,12 +1256,7 @@ msgid "Customer Reviews of "
 msgstr "Отзывы пользователей о "
 
 #: templates/catalogue/detail.html:217
-#, fuzzy, python-format
-#| msgid ""
-#| "This product does not have any reviews yet -\n"
-#| "                                    <a href=\"%(add_review_url)s#addreview"
-#| "\">be the first to write one</a>.\n"
-#| "                                "
+#, python-format
 msgid ""
 "This product does not have any reviews yet -\n"
 "                                                        <a href="
@@ -1312,8 +1310,8 @@ msgid "You can get an email alert when this product is back in stock."
 msgstr ""
 
 #: templates/catalogue/partials/add_to_basket_form.html:26
-#: templates/catalogue/partials/review.html:40
-#: templates/catalogue/partials/review.html:45
+#: templates/catalogue/partials/review.html:44
+#: templates/catalogue/partials/review.html:49
 #: templates/checkout/preview.html:35
 #: templates/checkout/shipping_methods.html:58
 #: templates/checkout/user_address_delete.html:29
@@ -1370,15 +1368,15 @@ msgstr ""
 msgid "Please login to add products to a wish list."
 msgstr ""
 
-#: templates/catalogue/partials/review.html:23
+#: templates/catalogue/partials/review.html:25
 #, python-format
 msgid ""
 "\n"
-"                Reviewed by you on %(review_date)s\n"
+"                    Reviewed by you on %(review_date)s\n"
 "                "
 msgstr ""
 
-#: templates/catalogue/partials/review.html:27
+#: templates/catalogue/partials/review.html:29
 #, python-format
 msgid ""
 "\n"
@@ -1387,45 +1385,45 @@ msgid ""
 "                "
 msgstr ""
 
-#: templates/catalogue/partials/review.html:31
+#: templates/catalogue/partials/review.html:34
 msgid "Permalink"
 msgstr ""
 
-#: templates/catalogue/partials/review.html:36
+#: templates/catalogue/partials/review.html:40
 msgid "Is this review helpful?"
 msgstr ""
 
-#: templates/catalogue/partials/review.html:40
+#: templates/catalogue/partials/review.html:44
 #: templates/dashboard/offers/offer_list.html:65
 #: templates/dashboard/ranges/range_list.html:55
 #: templates/dashboard/ranges/range_product_list.html:108
 msgid "Yes"
 msgstr ""
 
-#: templates/catalogue/partials/review.html:45
+#: templates/catalogue/partials/review.html:49
 #: templates/dashboard/offers/offer_list.html:67
 #: templates/dashboard/ranges/range_list.html:57
 #: templates/dashboard/ranges/range_product_list.html:108
 msgid "No"
 msgstr ""
 
-#: templates/catalogue/partials/review.html:52
+#: templates/catalogue/partials/review.html:56
 #, python-format
 msgid ""
 "\n"
-"            <strong>%(num_up_votes)s</strong> of %(num_votes)s customer "
-"found this useful\n"
-"            "
+"                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
+"customer found this useful\n"
+"                "
 msgid_plural ""
 "\n"
-"            <strong>%(num_up_votes)s</strong> of %(num_votes)s customers "
-"found this useful\n"
-"            "
+"                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
+"customers found this useful\n"
+"                "
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: templates/catalogue/partials/review.html:58
+#: templates/catalogue/partials/review.html:62
 msgid "This review has no votes."
 msgstr ""
 
@@ -1433,36 +1431,11 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: templates/catalogue/reviews/partials/review_stars.html:13
-#, python-format
-msgid ""
-"\n"
-"                    %(num_reviews)s customer review\n"
-"                "
-msgid_plural ""
-"\n"
-"                    %(num_reviews)s customer reviews\n"
-"                "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+#: templates/catalogue/review_form.html:6
+msgid "Leave review"
+msgstr "Оставить отзыв"
 
-#: templates/catalogue/reviews/partials/review_stars.html:26
-#: templates/customer/anon_order.html:79
-#: templates/customer/order/order_detail.html:36
-msgid "Write a review"
-msgstr ""
-
-#: templates/catalogue/reviews/review_detail.html:31
-#: templates/catalogue/reviews/review_list.html:30
-msgid "Customer reviews"
-msgstr ""
-
-#: templates/catalogue/reviews/review_form.html:8
-msgid "Leave a product review"
-msgstr ""
-
-#: templates/catalogue/reviews/review_form.html:47
+#: templates/catalogue/review_form.html:44
 #: templates/checkout/shipping_address.html:41
 #: templates/checkout/shipping_address.html:43
 #: templates/checkout/user_address_form.html:26
@@ -1487,13 +1460,45 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: templates/catalogue/reviews/review_form.html:47
+#: templates/catalogue/review_form.html:44
 msgid "Save review"
 msgstr ""
 
+#: templates/catalogue/review_list.html:7
+#: templates/catalogue/review_list.html:15
 #: templates/catalogue/reviews/review_list.html:7
 #: templates/catalogue/reviews/review_list.html:25
 msgid "All reviews"
+msgstr ""
+
+#: templates/catalogue/review_list.html:20
+#: templates/catalogue/reviews/review_detail.html:31
+#: templates/catalogue/reviews/review_list.html:30
+msgid "Customer reviews"
+msgstr "Отзывы клиентов"
+
+#: templates/catalogue/review_list.html:33
+msgid "No reviews yet."
+msgstr ""
+
+#: templates/catalogue/reviews/partials/review_stars.html:13
+#, python-format
+msgid ""
+"\n"
+"                    %(num_reviews)s customer review\n"
+"                "
+msgid_plural ""
+"\n"
+"                    %(num_reviews)s customer reviews\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: templates/catalogue/reviews/partials/review_stars.html:26
+#: templates/customer/anon_order.html:79
+#: templates/customer/order/order_detail.html:36
+msgid "Write a review"
 msgstr ""
 
 #: templates/catalogue/reviews/review_list.html:44
@@ -1503,7 +1508,7 @@ msgstr ""
 
 #: templates/catalogue/reviews/review_list.html:53
 msgid "This product does not have any reviews yet."
-msgstr ""
+msgstr "Этот товар пока не имеет ни одного отзыва."
 
 #: templates/checkout/checkout.html:34 templates/checkout/checkout.html:65
 #: templates/checkout/checkout.html:88

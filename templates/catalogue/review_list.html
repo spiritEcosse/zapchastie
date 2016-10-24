@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% load history_tags %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "All reviews" %} | {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+        </li>
+        <li class="active">{% trans "All reviews" %}</li>
+    </ul>
+{% endblock %}
+
+{% block headertext %}
+    {% trans "Customer reviews" %}
+{% endblock  %}
+
+{% block content %}
+    <section>
+        {% include 'catalogue/review_form.html' %}
+
+        {% if reviews %}
+            {% for review in reviews %}
+                {% include 'catalogue/partials/review.html' with product=review.product %}
+            {% endfor %}
+            {% include 'partials/pagination.html' %}
+        {% else %}
+            <p>{% trans "No reviews yet." %}</p>
+        {% endif %}
+    </section>
+{% endblock %}

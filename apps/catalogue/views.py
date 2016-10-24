@@ -2,7 +2,7 @@ from oscar.apps.catalogue.views import ProductCategoryView as CoreProductCategor
     ProductDetailView as CoreProductDetailView
 from django.utils.functional import cached_property
 import logging
-from apps.catalogue.models import Category, Feature, Product
+from apps.catalogue.models import Category, Feature
 from django.http import HttpResponsePermanentRedirect, Http404
 from django.utils.http import urlquote
 from apps.catalogue.forms import ProductQuestionNgForm
@@ -10,11 +10,15 @@ from oscar.core.loading import get_class
 from braces import views
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic.edit import FormMixin
+from django.views.generic import edit
+from django.views.generic import detail
+from django.views.generic import list
 from django.core.mail import send_mail
 from django.views.generic import FormView
 import json
-from django.db.models import Prefetch
+from apps.catalogue.reviews.forms import ReviewForm
+from apps.catalogue.reviews.models import ProductReview
+from django.core.urlresolvers import reverse_lazy
 get_product_search_handler_class = get_class('catalogue.search_handlers', 'get_product_search_handler_class')
 
 logger = logging.getLogger(__name__)
@@ -130,3 +134,18 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
             [email_to],
             fail_silently=False
         )
+
+
+class ReviewsView(edit.CreateView, list.MultipleObjectMixin):
+    form_class = ReviewForm
+    model = ProductReview
+    paginate_by = 20
+    template_name = 'catalogue/review_list.html'
+    context_object_name = 'reviews'
+    success_url = reverse_lazy('catalogue:list-reviews')
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object_list = self.get_queryset()
+        return super(ReviewsView, self).dispatch(request, *args, **kwargs)
+
+

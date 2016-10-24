@@ -50,7 +50,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                     {% with image=all_images.0 %}
-                        {% thumbnail image.original "440x400" upscale=False as thumb %}
+                        {% thumbnail image.name "440x400" upscale=False as thumb %}
                         <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
                     {% endwith %}
                     </div>

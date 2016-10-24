@@ -24,6 +24,24 @@ class ProductReviewForm(forms.ModelForm):
         fields = ('title', 'score', 'body', 'name', 'email')
 
 
+class ReviewForm(forms.ModelForm):
+    name = forms.CharField(label=_('Name'), required=True)
+    email = forms.EmailField(label=_('Email'), required=True)
+
+    def __init__(self, product=None, user=None, *args, **kwargs):
+        super(ReviewForm, self).__init__(*args, **kwargs)
+        self.instance.product = product
+
+        if user and user.is_authenticated():
+            self.instance.user = user
+            del self.fields['name']
+            del self.fields['email']
+
+    class Meta:
+        model = ProductReview
+        fields = ('title', 'score', 'body', 'name', 'email')
+
+
 class VoteForm(forms.ModelForm):
 
     class Meta:
