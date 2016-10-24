@@ -42,7 +42,7 @@
 
                         {% full_tree_for_model catalogue.Category as categories %}
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="menu">
                             <li><a href="{% url 'catalogue:index' %}">{% trans "All products" %}</a></li>
 
                             {% if categories %}
@@ -52,7 +52,7 @@
                                         {% recursetree categories %}
                                             {% if node.enable %}
                                                 {% with name=node.name|capfirst|truncatechars:30 url=node.get_absolute_url %}
-                                                    {% if not node.is_leaf_node %}
+                                                    {% if children %}
                                                         <li class="dropdown dropdown-submenu">
                                                             <a tabindex="-1" class="dropdown-toggle" data-toggle="dropdown" href="{{ url }}">
                                                                 {{ name }}
@@ -74,11 +74,6 @@
                                     </ul>
                                 </li>
                             {% endif %}
-
-                            <li class="divider"></li>
-                            {% block nav_dropdown_extra_items %}
-                                <li><a href="{% url 'offer:list' %}">{% trans "Offers" %}</a></li>
-                            {% endblock %}
                         </ul>
                     </li>
                     <li>
