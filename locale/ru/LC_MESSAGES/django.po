@@ -1233,7 +1233,7 @@ msgstr "Задать вопрос об этом товаре"
 
 #: templates/catalogue/detail.html:134
 msgid "Description of product "
-msgstr "Информация о "
+msgstr "Описание "
 
 #: templates/catalogue/detail.html:163
 msgid "Information of product "
@@ -1375,6 +1375,9 @@ msgid ""
 "                    Reviewed by you on %(review_date)s\n"
 "                "
 msgstr ""
+"\n"
+"                    Ваш отзыв %(review_date)s\n"
+"                "
 
 #: templates/catalogue/partials/review.html:29
 #, python-format
@@ -1416,12 +1419,24 @@ msgid ""
 "                "
 msgid_plural ""
 "\n"
-"                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
+"                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
 "customers found this useful\n"
 "                "
 msgstr[0] ""
+"\n"
+"                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
+"клиент считает этот отзыв полезным\n"
+"                "
 msgstr[1] ""
+"\n"
+"                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
+"клиент считает этот отзыв полезным\n"
+"                "
 msgstr[2] ""
+"\n"
+"                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
+"клиента считают этот отзыв полезным\n"
+"                "
 
 #: templates/catalogue/partials/review.html:62
 msgid "This review has no votes."

@@ -99,6 +99,11 @@
                         </a>
                     </li>
                 {% endif %}
+                <li role="presentation" {% if not product.description %}class="active"{% endif %}>
+                    <a href="#info" aria-controls="info" role="tab" data-toggle="tab">
+                        {% trans "Product Information" %}
+                    </a>
+                </li>
                 {% if product.filters.all %}
                     <li role="presentation">
                         <a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">
@@ -106,11 +111,6 @@
                         </a>
                     </li>
                 {% endif %}
-                <li role="presentation">
-                    <a href="#info" aria-controls="info" role="tab" data-toggle="tab">
-                        {% trans "Product Information" %}
-                    </a>
-                </li>
                 <li role="presentation">
                     <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
                         {% trans "Reviews" %}
@@ -125,37 +125,19 @@
 
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="description">
-                    {% block product_description %}
-                        {% if product.description %}
+                {% if product.description %}
+                    <div role="tabpanel" class="tab-pane active" id="description">
+                        {% block product_description %}
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <h2>{% trans "Description of product " %}{{ product.get_h1 }}</h2>
                                     <p>{{ product.description|safe }}</p>
                                 </div>
                             </div>
-                        {% endif %}
-                    {% endblock %}
-                </div>
-                <div role="tabpanel" class="tab-pane" id="characteristics">
-                    {% if product.filters.all %}
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <h2>{% trans "Characteristics" %} {{ product.get_h1 }}</h2>
-                                <ul class="list-group">
-                                    {% for filter in product.filters.all %}
-                                        <li class="list-group-item">
-                                            {% if filter.parent %}
-                                                {{ filter.parent.title }}:
-                                            {% endif %}
-                                            {{ filter.title }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-                <div role="tabpanel" class="tab-pane" id="info">
+                        {% endblock %}
+                    </div>
+                {% endif %}
+                <div role="tabpanel" class="tab-pane {% if not product.description %}active{% endif %}" id="info">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             {% block product_info %}
@@ -196,6 +178,24 @@
                         </div>
                     </div>
                 </div>
+                {% if product.filters.all %}
+                    <div role="tabpanel" class="tab-pane" id="characteristics">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h2>{% trans "Characteristics" %} {{ product.get_h1 }}</h2>
+                                <ul class="list-group">
+                                    {% for filter in product.filters.all %}
+                                        <li class="list-group-item">
+                                            {% if filter.parent %}
+                                                {{ filter.parent.title }}:
+                                            {% endif %}
+                                            {{ filter.title }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
                 <div role="tabpanel" class="tab-pane" id="reviews">
                     <div class="panel panel-default">
                         <div class="panel-body">
