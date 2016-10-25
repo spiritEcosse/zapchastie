@@ -41,6 +41,7 @@ conf
 .project
 .pydevproject
 .settings
+image_not_found.jpg
 
 # Docs
 /docs/build/*
