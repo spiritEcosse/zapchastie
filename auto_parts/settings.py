@@ -35,7 +35,7 @@ ALLOWED_HOSTS = settings_local.ALLOWED_HOSTS
 DEBUG_TOOLBAR_CONFIG = settings_local.DEBUG_TOOLBAR_CONFIG
 
 SITE_ID = 1
-
+SHOP_NAME = 'zapchastie.com.ua'
 # Application definition
 
 INSTALLED_APPS = \
@@ -69,6 +69,7 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
+        'easy_thumbnails_watermark',
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
@@ -243,16 +244,23 @@ THUMBNAIL_HIGH_RESOLUTION = True
 FILER_CANONICAL_URL = 'sharing/'
 FILER_DEBUG = DEBUG
 FILER_ENABLE_LOGGING = DEBUG
+
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
-    # 'easy_thumbnails.processors.scale_and_crop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
+    'easy_thumbnails.processors.background',
+    'easy_thumbnails_watermark.thumbnail_processors.watermark_processor',
 )
 
 THUMBNAIL_DUMMY = True
 THUMBNAIL_FORCE_OVERWRITE = True
+
+WATERMARK = {
+    'image': os.path.join(STATIC_ROOT, 'oscar/img/ui/dashboard/logo_oscar.png'),
+    'transparency': 0.51
+}
 
 THUMBNAIL_ALIASES = {
     '': {
@@ -262,6 +270,7 @@ THUMBNAIL_ALIASES = {
         'basket_content': {'size': (150, 150), 'crop': True},
         'checkout': {'size': (150, 150), 'crop': True},
         'home_thumb_slide': {'size': (1170, 392), 'crop': True},
+        'product_main': {'size': (440, 400), 'crop': True},
     },
 }
 

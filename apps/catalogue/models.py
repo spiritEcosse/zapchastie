@@ -50,8 +50,11 @@ from oscar.core.loading import get_class, get_classes, get_model
 from oscar.core.utils import slugify
 from oscar.core.validators import non_python_keyword
 from oscar.models.fields import AutoSlugField, NullCharField
-
-
+from wand.image import Image as WandImage
+from filer.models.imagemodels import Image
+from auto_parts.settings import WATERMARK, SHOP_NAME
+from django.contrib.sites.models import Site
+from wand.compat import nested
 ProductManager, BrowsableProductManager = get_classes(
     'catalogue.managers', ['ProductManager', 'BrowsableProductManager'])
 
@@ -68,6 +71,21 @@ def get_product_class():
         product_class = ProductClass.objects.create(requires_shipping=False, track_stock=False, name='obshchii')
 
     return product_class
+
+
+def create_img_wm(source):
+    position = lambda param: getattr(background, param) / 2 - getattr(watermark, param) / 2
+
+    with nested(WandImage(filename=source.path), WandImage(filename=WATERMARK['image'])) as (background, watermark):
+        file_path, file_extension = os.path.splitext(source.path)
+        image_wm = u'{}_{}{}'.format(file_path, SHOP_NAME, file_extension)
+
+        background.watermark(
+            image=watermark, transparency=WATERMARK['transparency'], left=position('width'), top=position('height')
+        )
+
+        background.save(filename=image_wm)
+    return {'original': os.path.relpath(image_wm, start='media')}
 
 
 class CommonFeatureProduct(object):
@@ -358,9 +376,13 @@ class ProductImage(models.Model, CommonFeatureProduct):
 
     @property
     def image(self):
-        return self.check_exist_image()
+        return create_img_wm(source=self.exist_image())
 
-    def check_exist_image(self):
+    @property
+    def admin_image(self):
+        return self.exist_image()
+
+    def exist_image(self):
         current_path = os.getcwd()
         os.chdir(MEDIA_ROOT)
         abs_path = os.path.abspath(self.name)
@@ -372,6 +394,10 @@ class ProductImage(models.Model, CommonFeatureProduct):
         os.chdir(current_path)
         return image
 
+    @property
+    def path(self):
+        return self.original.path
+
     def is_primary(self):
         """
         Return bool if image display order is 0
@@ -379,7 +405,7 @@ class ProductImage(models.Model, CommonFeatureProduct):
         return self.display_order == 0
 
     def thumb(self, image=None):
-        return super(ProductImage, self).thumb(image=self.image)
+        return super(ProductImage, self).thumb(image=self.admin_image)
 
     def delete(self, *args, **kwargs):
         """
@@ -432,14 +458,18 @@ class MissingProductImage(object):
 
     def __init__(self, name=None):
         self.name = name if name else settings.OSCAR_MISSING_IMAGE_URL
-        media_file_path = os.path.join(settings.MEDIA_ROOT, self.name)
+        self.media_file_path = os.path.join(settings.MEDIA_ROOT, self.name)
         # don't try to symlink if MEDIA_ROOT is not set (e.g. running tests)
-        if settings.MEDIA_ROOT and not os.path.exists(media_file_path):
-            self.symlink_missing_image(media_file_path)
+        if settings.MEDIA_ROOT and not os.path.exists(self.media_file_path):
+            self.symlink_missing_image(self.media_file_path)
 
     @property
     def is_missing(self):
         return True
+
+    @property
+    def path(self):
+        return self.media_file_path
 
     @property
     def original(self):
@@ -881,7 +911,8 @@ class Product(models.Model, CommonFeatureProduct):
         return MissingProductImage()
 
     def thumb(self, image=None):
-        return super(Product, self).thumb(image=self.primary_image())
+        image = self.images.all()[0].admin_image if self.images.all() else self.get_missing_image()
+        return super(Product, self).thumb(image=image)
 
     def primary_image(self):
         """

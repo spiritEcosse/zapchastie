@@ -1512,7 +1512,7 @@ msgstr "Отзывы клиентов"
 
 #: templates/catalogue/review_list.html:33
 msgid "No reviews yet."
-msgstr ""
+msgstr "Нет отзывов."
 
 #: templates/catalogue/reviews/partials/review_stars.html:13
 #, python-format
