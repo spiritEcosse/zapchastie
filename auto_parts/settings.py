@@ -69,7 +69,6 @@ INSTALLED_APPS = \
         # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
-        'easy_thumbnails_watermark',
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
@@ -251,7 +250,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
     'easy_thumbnails.processors.background',
-    'easy_thumbnails_watermark.thumbnail_processors.watermark_processor',
 )
 
 THUMBNAIL_DUMMY = True
