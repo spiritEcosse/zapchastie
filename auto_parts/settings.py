@@ -272,6 +272,10 @@ THUMBNAIL_ALIASES = {
     },
 }
 
+# OPENEXCHANGE
+# login -evgenij.bodnya@gmail.com
+# pass - nNEeR?XCmH$UIkNwQFq}
+
 DJANGO_MONEY_RATES = {
     'DEFAULT_BACKEND': 'djmoney_rates.backends.OpenExchangeBackend',
     'OPENEXCHANGE_URL': 'http://openexchangerates.org/api/latest.json',
