@@ -30,12 +30,6 @@
         <link rel="shortcut icon" href="{% static "src/image/icon.ico" %}" />
     {% endblock %}
 
-    {# Block where global CSS will go. #}
-    {% block styles %}{% endblock %}
-
-    {# Additional CSS - specific to certain pages #}
-    {% block extrastyles %}{% endblock %}
-
     {% block extrahead %}{% endblock %}
 
     {% block tracking %}
@@ -73,3 +67,9 @@
 <!-- {% trans "Version:" %} {{ version }} -->
 </body>
 </html>
+
+{# Block where global CSS will go. #}
+{% block styles %}{% endblock %}
+
+{# Additional CSS - specific to certain pages #}
+{% block extrastyles %}{% endblock %}
