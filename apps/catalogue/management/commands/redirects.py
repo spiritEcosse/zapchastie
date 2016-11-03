@@ -5,7 +5,7 @@ from django.contrib.sites.models import Site
 import urllib2, urllib
 from bs4 import BeautifulSoup
 from apps.catalogue.models import Category, Product, ProductImage, Feature, ProductClass
-from oscar.apps.partner.models import StockRecord, Partner
+from apps.partner.models import StockRecord, Partner
 import os
 from django.contrib.auth.models import User
 from django.core.files import File
@@ -14,13 +14,16 @@ from decimal import Decimal
 import random
 from django.db.utils import IntegrityError
 from oscar.core.utils import slugify
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import QueryDict
 
 timeout = 30
 
 current_site = Site.objects.get(pk=1)
 TRUNCATE_LINK = 24
-product_class = ProductClass.objects.get(pk=3)
-partner = Partner.objects.get(pk=3)
+
+product_class, created = ProductClass.objects.get_or_create(requires_shipping=False, track_stock=False, name='obshchii')
+partner, created = Partner.objects.get_or_create(name='partner', code='partner')
 
 
 class Command(BaseCommand):
@@ -30,13 +33,13 @@ class Command(BaseCommand):
         :param options:
         :return:
         """
-        Redirect.objects.all().delete()
-        Feature.objects.all().delete()
-        Image.objects.all().delete()
-        Category.objects.all().delete()
-        StockRecord.objects.all().delete()
-        ProductImage.objects.all().delete()
-        Product.objects.all().delete()
+        # Redirect.objects.all().delete()
+        # Feature.objects.all().delete()
+        # Image.objects.all().delete()
+        # Category.objects.all().delete()
+        # StockRecord.objects.all().delete()
+        # ProductImage.objects.all().delete()
+        # Product.objects.all().delete()
 
         url = 'http://zapchastie.com.ua/'
         request = urllib2.Request(url)
@@ -47,13 +50,20 @@ class Command(BaseCommand):
 
         for category_html in categories:
             category_link = category_html.attrs['href'].encode(encoding='UTF-8', errors='strict')
-            self.save_category(category_link)
+            category_page_soup = self.save_category(category_link, True)
+
+            pages = category_page_soup.select('.pagination a')
+
+            for page in pages[:-2]:
+                category_link = page.attrs['href'].encode(encoding='UTF-8', errors='strict')
+                self.save_category(category_link)
 
         self.stdout.write('Successfully write redirects.')
 
-    def save_category(self, category_link, parent_category=None):
+    def save_category(self, category_link, page=False, parent_category=None):
         relative_path = category_link[TRUNCATE_LINK:]
         print 'category =================='
+        print 'parent_category', parent_category
         print relative_path, '\n'
 
         request = urllib2.Request(category_link)
@@ -64,89 +74,146 @@ class Command(BaseCommand):
         meta_keywords = category_page_soup.find(attrs={"name": "keywords"})
 
         try:
+            category, created = Category.objects.get_or_create(
+                name=category_page_soup.h1.string, parent=parent_category
+            )
+        except IntegrityError:
             category = Category.objects.create(
                 name=category_page_soup.h1.string,
-                meta_title=category_page_soup.title.string,
-                h1=category_page_soup.h1.string,
-                meta_description=meta_description.get('content') if meta_description else '',
-                meta_keywords=meta_keywords.get('content') if meta_keywords else '',
-                description=' '.join(map(str, category_page_soup.find('div', 'col-sm-10').contents)),
                 parent=parent_category,
+                slug=slugify('{}-{}'.format(
+                    slugify(category_page_soup.h1.string),
+                    Category.objects.order_by('-id').first().pk + 1)
+                )
             )
-        except IntegrityError as e:
-            print e
-            print 'duplicated'
-        else:
-            Redirect.objects.create(old_path=relative_path, new_path=category.get_absolute_url(), site=current_site)
 
-            products = category_page_soup.select('#content .product-thumb > .image > a')
+        category.meta_title = category_page_soup.title.string
+        category.h1 = category_page_soup.h1.string
+        category.meta_description = meta_description.get('content') if meta_description else ''
+        category.meta_keywords = meta_keywords.get('content') if meta_keywords else ''
+        category.description = u' '.join(map(unicode, category_page_soup.find('div', 'col-sm-10').contents))
+        category.save()
 
-            print 'Products ========================'
-            for product_html in products:
-                product_link = product_html.attrs['href'].encode(encoding='UTF-8', errors='strict')
-                print product_link
+        products = category_page_soup.select('#content .product-thumb > .image > a')
 
-                request = urllib2.Request(product_link)
-                request.add_header('User-agent', 'Mozilla/5.0 (Linux i686)')
-                product_page = urllib2.urlopen(request, timeout=timeout)
-                product_page_soup = BeautifulSoup(product_page.read(), 'html5lib')
-                meta_description = product_page_soup.find(attrs={"name": "description"})
-                meta_keywords = product_page_soup.find(attrs={"name": "keywords"})
+        # print 'Products ========================'
+        for product_html in products:
+            product_link = product_html.attrs['href'].encode(encoding='UTF-8', errors='strict')
+            # print product_link
 
-                try:
-                    description = ''
+            request = urllib2.Request(product_link)
+            request.add_header('User-agent', 'Mozilla/5.0 (Linux i686)')
+            product_page = urllib2.urlopen(request, timeout=timeout)
+            product_page_soup = BeautifulSoup(product_page.read(), 'html5lib')
+            meta_description = product_page_soup.find(attrs={"name": "description"})
+            meta_keywords = product_page_soup.find(attrs={"name": "keywords"})
 
-                    product = Product.objects.create(
-                        title=product_page_soup.h1.string,
-                        h1=product_page_soup.h1.string,
-                        meta_title=product_page_soup.title.string,
-                        meta_description=meta_description.get('content') if meta_description else '',
-                        meta_keywords=meta_keywords.get('content') if meta_keywords else '',
-                        description=description,
-                        structure='standalone',
-                        product_class=product_class
-                    )
-                except IntegrityError as e:
-                    print e
-                    print 'duplicated'
-                else:
-                    if product_link != 'http://zapchastie.com.ua/Razborka-Citroen-Berlingo/Generator_1_6_HDI_Citroen_Berlingo' and product_link != 'http://zapchastie.com.ua/Razborka-Folksvagen-LT/Dvigatel-Folksvagen-Lt-2-5-tdi-AHD' and product_link != 'http://zapchastie.com.ua/dvigateli_bu/dvigatel-Pezho-Bokser-2.8jtd' and product_link != 'http://zapchastie.com.ua/dvigateli_bu/Dvigatel-1-4b -Citroen-Berlingo-1' and product_link != 'http://zapchastie.com.ua/dvigateli_bu/Dvigatel-Folksvagen-Lt-2-5-tdi-AHD' and product_link != 'http://zapchastie.com.ua/dvigateli_bu/dvigateli_bu_Peugeot/dvigatel-Pezho-Bokser-2.8jtd' and product_link != 'http://zapchastie.com.ua/dvigateli_bu/dvigateli_bu_Volkswagen/Dvigatel-Folksvagen-Lt-2-5-tdi-AHD':
-                        product.description = ' '.join(map(str, product_page_soup.select_one('#tab-description').contents))
-                        product.save()
+            description = ''
 
-                    product.categories.add(category)
-                    Redirect.objects.create(old_path=product_link, new_path=product.get_absolute_url(), site=current_site)
+            product, created = Product.objects.get_or_create(
+                slug=slugify(product_page_soup.h1.string),
+            )
 
-                    price = Decimal(product_page_soup.select_one('.list-unstyled h2').string[1:])
-                    StockRecord.objects.get_or_create(product=product, price_excl_tax=price, price_retail=price, cost_price=price, partner=partner, partner_sku=random.randint(1, 100000000000000))
-                    image_html = product_page_soup.find('a', 'thumbnail')
-                    full_path = os.path.join('media/images/', os.path.basename(image_html.attrs['href'].encode(encoding='UTF-8', errors='strict')))
-                    image, httplib = urllib.urlretrieve(image_html.attrs['href'].encode(encoding='UTF-8', errors='strict'), full_path)
+            product.title = product_page_soup.h1.string
+            product.h1 = product_page_soup.h1.string
+            product.meta_title = product_page_soup.title.string
+            product.meta_description = meta_description.get('content') if meta_description else ''
+            product.meta_keywords = meta_keywords.get('content') if meta_keywords else ''
+            product.description = description
+            product.structure = 'standalone'
+            product.product_class = product_class
+            product.description = u' '.join(map(unicode, product_page_soup.select_one('#tab-description').contents))
+            product.save()
+            product.categories.add(category)
 
-                    try:
-                        image = image.encode(encoding='UTF-8', errors='strict')
-                    except UnicodeDecodeError:
-                        pass
-                    else:
-                        filename = os.path.basename(image)
-                        filepath = image
+            try:
+                Redirect.objects.create(old_path=product_link[TRUNCATE_LINK:], new_path=product.get_absolute_url(), site=current_site)
+            except IntegrityError as e:
+                pass
+                # print e
+                # print 'duplicated'
 
-                        user = User.objects.first()
-                        with open(filepath, "rb") as f:
-                            file_obj = File(f, name=filename)
-                            original, created = Image.objects.get_or_create(owner=user, original_filename=filename,
-                                                                            file=file_obj)
+            price = Decimal(product_page_soup.select_one('.list-unstyled h2').string[1:])
 
-                        productimage = ProductImage.objects.filter(product=product).order_by('-display_order')
-                        display_order = 0
+            try:
+                StockRecord.objects.get(product=product)
+            except ObjectDoesNotExist:
+                StockRecord.objects.create(
+                    product=product, price_excl_tax=price, price_retail=price, cost_price=price, partner=partner,
+                    partner_sku=random.randint(1, 100000000000000)
+                )
 
-                        if productimage.exists():
-                            display_order = productimage.first().display_order + 1
+            image_html = product_page_soup.find('a', 'thumbnail')
 
-                        ProductImage.objects.get_or_create(product=product, original=original, display_order=display_order)
+            self.save_image(product, image_html)
+            images = product_page_soup.select('.thumbnails .image-additional a')
+
+            for image_html in images:
+                self.save_image(product, image_html)
+
+        if page:
+            try:
+                Redirect.objects.create(old_path=relative_path, new_path=category.get_absolute_url(), site=current_site)
+            except IntegrityError as e:
+                pass
+                # print e
+                # print 'duplicated'
 
             categories = category_page_soup.select('#content .col-sm-3 a')
 
             for category_html in categories:
                 category_link = category_html.attrs['href'].encode(encoding='UTF-8', errors='strict')
-                self.save_category(category_link, category)
+                self.save_category(category_link, page, category)
+        else:
+            querydict = QueryDict(relative_path.split('?')[1], mutable=True)
+            new_url = '{}?page={}'.format(category.get_absolute_url(), querydict['page'])
+
+            try:
+                Redirect.objects.create(
+                    old_path=relative_path, new_path=new_url, site=current_site
+                )
+            except IntegrityError as e:
+                pass
+                # print e
+                # print 'duplicated'
+            #
+        return category_page_soup
+
+    def save_image(self, product, image_html):
+        full_path = os.path.join('media/images/',
+                                 os.path.basename(image_html.attrs['href'].encode(encoding='UTF-8', errors='strict')))
+        image, httplib = urllib.urlretrieve(image_html.attrs['href'].encode(encoding='UTF-8', errors='strict'),
+                                            full_path)
+
+        try:
+            image = image.encode(encoding='UTF-8', errors='strict')
+        except UnicodeDecodeError:
+            pass
+            # print image
+            # print 'UnicodeDecodeError'
+        else:
+            filename = os.path.basename(image)
+            filepath = image
+
+            user = User.objects.first()
+            with open(filepath, "rb") as f:
+                file_obj = File(f, name=filename)
+                original, created = Image.objects.get_or_create(original_filename=filename)
+
+                if created:
+                    original.name = filename
+                    original.owner = user
+                    original.file = file_obj
+                    original.save()
+                    # print file_obj
+
+            productimage = ProductImage.objects.filter(product=product).order_by('-display_order')
+            display_order = 0
+
+            if productimage.exists():
+                display_order = productimage.first().display_order + 1
+
+            try:
+                ProductImage.objects.get(product=product, original=original)
+            except ObjectDoesNotExist:
+                ProductImage.objects.create(product=product, original=original, display_order=display_order)

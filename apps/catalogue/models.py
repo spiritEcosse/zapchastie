@@ -542,10 +542,10 @@ class Product(models.Model, CommonFeatureProduct):
 
     # Title is mandatory for canonical products but optional for child products
     title = models.CharField(pgettext_lazy(u'Product title', u'Title'),
-                             max_length=255, blank=True)
-    slug = models.SlugField(_('Slug'), max_length=255, unique=True)
-    h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=310)
-    meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=520)
+                             max_length=1000, blank=True)
+    slug = models.SlugField(_('Slug'), max_length=1000, unique=True)
+    h1 = models.CharField(verbose_name=_('h1'), blank=True, max_length=1000)
+    meta_title = models.CharField(verbose_name=_('Meta tag: title'), blank=True, max_length=1000)
     meta_description = models.TextField(verbose_name=_('Meta tag: description'), blank=True)
     meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
     description = RichTextUploadingField(_('Description'), blank=True)

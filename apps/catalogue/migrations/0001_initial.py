@@ -179,7 +179,6 @@ class Migration(migrations.Migration):
             name='ProductImage',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('original', models.ImageField(upload_to='images/products/%Y/%m/', max_length=255, verbose_name='Original')),
                 ('caption', models.CharField(max_length=200, verbose_name='Caption', blank=True)),
                 ('display_order', models.PositiveIntegerField(default=0, verbose_name='Display order', help_text='An image with a display order of zero will be the primary image for a product')),
                 ('date_created', models.DateTimeField(auto_now_add=True, verbose_name='Date created')),
