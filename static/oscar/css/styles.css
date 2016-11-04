@@ -8793,6 +8793,15 @@ form.flat {
   background-color: #f5f5f5;
   border-top: solid 1px #e5e5e5;
 }
+#wrapper {
+  display: table;
+}
+#footer {
+  display: table-footer-group;
+}
+#header {
+  display: table-header-group;
+}
 .header {
   position: relative;
   z-index: 2;

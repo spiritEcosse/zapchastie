@@ -62,68 +62,72 @@
 
             <div class="heading">{% trans 'Selection of parameters' %}</div>
             <div class="filter">
-            {% regroup filters by parent as filters %}
+                {% regroup filters by parent as filters %}
 
-            {% for filter in filters %}
-                {% if filter_parents %}
-                    {% assign filter_in_parents filter.grouper|in_list:filter_parents %}
-                {% endif %}
+                {% for filter in filters %}
+                    {% if filter_parents %}
+                        {% assign filter_in_parents filter.grouper|in_list:filter_parents %}
+                    {% endif %}
 
-                <div class="items">
-                    <div class="name text-center" title="{{ filter.grouper.title }}">
-                        {{ filter.grouper.title|truncatechars:trancate_filter }}
-                    </div>
-                    <div class="values">
-                        <ul class="list-group">
-                            {% for value in filter.list|dictsort:'title' %}
-                                {% assign add '' %}
+                    <div class="items">
+                        <div class="name text-center" title="{{ filter.grouper.title }}">
+                            {{ filter.grouper.title|truncatechars:trancate_filter }}
+                        </div>
+                        <div class="values">
+                            <ul class="list-group">
+                                {% for value in filter.list|dictsort:'title' %}
+                                    {% assign add '' %}
 
-                                {% if filter_in_parents and value.potential_products_count %}
-                                    {% assign add '+' %}
-                                {% endif %}
-
-                                <li class="list-group-item checkbox">
-                                    {% if value|in_list:selected_filters %}
-                                        {% assign clear_filter selected_filters|remove:value %}
-                                        {% trans 'Clear' as title %}
-                                    {% else %}
-                                        {% assign clear_filter selected_filters|append:value|dictsort:'pk' %}
-                                        {% trans 'Choose' as title %}
+                                    {% if filter_in_parents and value.potential_products_count %}
+                                        {% assign add '+' %}
                                     {% endif %}
 
-                                    <a href="{% reverse_url 'catalogue:category' url_extra_kwargs filter_slug=clear_filter|join_slug:"/"|default:None %}"
-                                       class="btn btn-default btn-block
+                                    <li class="list-group-item checkbox">
+                                        {% if value|in_list:selected_filters %}
+                                            {% assign clear_filter selected_filters|remove:value %}
+                                            {% trans 'Clear' as title %}
+                                        {% else %}
+                                            {% assign clear_filter selected_filters|append:value|dictsort:'pk' %}
+                                            {% trans 'Choose' as title %}
+                                        {% endif %}
+
+                                        <a href="{% reverse_url 'catalogue:category' url_extra_kwargs filter_slug=clear_filter|join_slug:"/"|default:None %}"
+                                           class="btn btn-default btn-block
                                        {% if value|in_list:selected_filters %}active
                                        {% elif not value.potential_products_count %} disabled{% endif %}"
-                                       title="{{ title }} {{ value.title|lower }}" aria-label="{{ title }} {{ value.title|lower }}">
-                                        {{ value.title|truncatechars:trancate_filter_value }}
-                                        {% if value|in_list:selected_filters %}
-                                            <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-                                        {% else %}
-                                            <span class="count">({{ add }}{{ value.potential_products_count }})</span>
-                                        {% endif %}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                           title="{{ title }} {{ value.title|lower }}" aria-label="{{ title }} {{ value.title|lower }}">
+                                            {{ value.title|truncatechars:trancate_filter_value }}
+                                            {% if value|in_list:selected_filters %}
+                                                <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
+                                            {% else %}
+                                                <span class="count">({{ add }}{{ value.potential_products_count }})</span>
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-        </div>
-    {% endif %}
-{% endblock %}
-
-{% block content %}
-    {% if category.description %}
-        <div class="row">
-            <div class="col-sm-9"><p>{{ category.description|safe }}</p></div>
-            {% if category.image %}
-                <div class="col-sm-3">
-                    <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive" />
-                </div>
-            {% endif %}
+                {% endfor %}
+            </div>
         </div>
     {% endif %}
     {{ block.super }}
 {% endblock %}
+
+{% block content %}
+    {% if category.description %}
+        <div id="footer">
+            <div class="row">
+                <div class="col-sm-9"><p>{{ category.description|safe }}</p></div>
+                {% if category.image %}
+                    <div class="col-sm-3">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive" />
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
+
