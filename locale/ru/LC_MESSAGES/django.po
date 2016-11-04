@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-04 16:58+0000\n"
+"POT-Creation-Date: 2016-11-04 20:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -655,6 +655,37 @@ msgstr "Доп. информация"
 msgid "Phone number"
 msgstr "Номер телефона"
 
+#: apps/partner/availability.py:42
+msgid "unavailable"
+msgstr "Нет в наличии"
+
+#: apps/partner/availability.py:53 apps/partner/availability.py:104
+#: apps/partner/availability.py:110
+msgid "Unavailable"
+msgstr "Нет в наличии"
+
+#: apps/partner/availability.py:64
+msgid "Available"
+msgstr "Есть в наличии"
+
+#: apps/partner/availability.py:87
+msgid "no stock available"
+msgstr "Нет в наличии"
+
+#: apps/partner/availability.py:89
+#, python-format
+msgid "a maximum of %(max)d can be bought"
+msgstr ""
+
+#: apps/partner/availability.py:103
+msgid "In stock"
+msgstr ""
+
+#: apps/partner/availability.py:109
+#, python-format
+msgid "In stock (%d available)"
+msgstr ""
+
 #: apps/seo/models.py:13 templates/dashboard/promotions/form.html:49
 msgid "Page URL"
 msgstr ""
@@ -1156,6 +1187,7 @@ msgid "Refine by"
 msgstr ""
 
 #: templates/catalogue/browse.html:82
+#, python-format
 msgid ""
 "\n"
 "                        <strong>%(num_results)s</strong> result - showing "
@@ -1168,21 +1200,22 @@ msgid_plural ""
 "                    "
 msgstr[0] ""
 "\n"
-"                        <strong>%(num_results)s</strong> результат - показано"
-"<strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
+"                        <strong>%(num_results)s</strong> результат - "
+"показано<strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
 "                    "
 msgstr[1] ""
 "\n"
-"                        <strong>%(num_results)s</strong> результатов - показано с "
-"<strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
+"                        <strong>%(num_results)s</strong> результатов - "
+"показано с <strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
 "                    "
 msgstr[2] ""
 "\n"
-"                        <strong>%(num_results)s</strong> результатов - показано с "
-"<strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
+"                        <strong>%(num_results)s</strong> результатов - "
+"показано с <strong>%(start)s</strong> по <strong>%(end)s</strong>.\n"
 "                    "
 
 #: templates/catalogue/browse.html:88
+#, python-format
 msgid ""
 "\n"
 "                        <strong>%(num_results)s</strong> result.\n"
