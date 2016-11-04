@@ -21,6 +21,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="created" content="{% now "jS M Y h:i" %}" />
 
+    {% block extra_meta %}
+        {{ current_site.info.yandex_verification|safe }}
+        {{ current_site.info.google_verification|safe }}
+    {% endblock %}
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
