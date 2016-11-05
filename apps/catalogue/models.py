@@ -85,7 +85,7 @@ def create_img_wm(source):
         )
 
         background.save(filename=image_wm)
-    return {'original': os.path.relpath(image_wm, start='media')}
+    return {'original': image_wm}
 
 
 class CommonFeatureProduct(object):
