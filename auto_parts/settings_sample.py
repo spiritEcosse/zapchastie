@@ -15,12 +15,17 @@ CACHES = {
         }
 }
 
+DEBUG_TOOLBAR_CONFIG = {
+    "INTERCEPT_REDIRECTS": False,
+    'MEDIA_URL': '/__debug__/m/',
+}
+
 CACHE_MIDDLEWARE_SECONDS = 24 * 60 * 60
 CACHE_MIDDLEWARE_KEY_PREFIX = 'auto_part_'
+KEY_PREFIX = CACHE_MIDDLEWARE_KEY_PREFIX
 
 MIDDLEWARE_CLASSES = (
     # 'django.middleware.cache.UpdateCacheMiddleware',
-    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.gzip.GZipMiddleware',
@@ -35,6 +40,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ALLOWED_HOSTS = ['*']

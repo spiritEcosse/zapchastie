@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_l+4+_0xt9j=8*xj%dml+i8rsoa73#e%09fw^m7+yr611b15y&pa'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run wiKEY_PREFIXth debug turned on in production!
 DEBUG = settings_local.DEBUG
 THUMBNAIL_DEBUG = settings_local.THUMBNAIL_DEBUG
 ALLOWED_HOSTS = settings_local.ALLOWED_HOSTS
@@ -64,9 +64,6 @@ INSTALLED_APPS = \
         'djng',
         'apps.ex_sites',
         'apps.ex_flatpages',
-        # 'feincms',
-        # 'feincms.module.page',
-        # 'feincms.module.medialibrary',
         'ckeditor',
         'import_export',
     ] + get_core_apps(

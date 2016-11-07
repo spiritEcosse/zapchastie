@@ -50,7 +50,6 @@ class Migration(migrations.Migration):
                 ('numchild', models.PositiveIntegerField(default=0)),
                 ('name', models.CharField(max_length=255, db_index=True, verbose_name='Name')),
                 ('description', models.TextField(verbose_name='Description', blank=True)),
-                ('image', models.ImageField(upload_to='categories', verbose_name='Image', max_length=255, blank=True, null=True)),
                 ('slug', models.SlugField(max_length=255, editable=False, verbose_name='Slug')),
                 ('full_name', models.CharField(max_length=255, editable=False, db_index=True, verbose_name='Full Name')),
             ],
@@ -234,12 +233,6 @@ class Migration(migrations.Migration):
             model_name='product',
             name='attributes',
             field=models.ManyToManyField(verbose_name='Attributes', help_text='A product attribute is something that this product may have, such as a size, as specified by its class', to='catalogue.ProductAttribute', through='catalogue.ProductAttributeValue'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='product',
-            name='categories',
-            field=models.ManyToManyField(through='catalogue.ProductCategory', verbose_name='Categories', to='catalogue.Category'),
             preserve_default=True,
         ),
         migrations.AddField(
