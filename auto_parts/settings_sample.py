@@ -16,8 +16,7 @@ CACHES = {
 }
 
 DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-    'MEDIA_URL': '/__debug__/m/',
+    'RENDER_PANELS': DEBUG,
 }
 
 CACHE_MIDDLEWARE_SECONDS = 24 * 60 * 60
@@ -47,8 +46,8 @@ ALLOWED_HOSTS = ['*']
 
 DB_BACKEND = 'django.db.backends.postgresql_psycopg2'
 DB_NAME = 'auto_part'
-DB_USER = 'auto_part'
-DB_PASSWORD = 1111
+DB_USER = 'postgres'
+DB_PASSWORD = ''
 DB_HOST = ''
 DB_PORT = ''
 DB_ATOMIC_REQUESTS = True

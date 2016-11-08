@@ -46,9 +46,9 @@ npm-debug.log
 !apps/basket/migrations/0005_auto_20150604_1450.py
 !apps/basket/migrations/0006_auto_20160111_1108.py
 !apps/basket/migrations/__init__.py
-!media/
 
 conf
+!media/
 *.toc
 # IDE files
 .project
@@ -88,7 +88,7 @@ settings_local.py
 /sites/us/logs/
 sites/puppet/modules/
 
-
+whoosh_index/
 *.iml
 
 ## Directory-based project format:
