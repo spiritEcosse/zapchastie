@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 from django import template
 from django.template import Node, Library, TemplateSyntaxError, VariableDoesNotExist, NodeList, resolve_variable
-from auto_parts.settings import DJANGO_MONEY_RATES, BASE_CURRENCY
+from zapchastie.settings import DJANGO_MONEY_RATES, BASE_CURRENCY
 register = Library()
 
 

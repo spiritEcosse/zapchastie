@@ -1,4 +1,4 @@
-"""auto_parts URL Configuration
+"""zapchastie URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from auto_parts.app import application
+from zapchastie.app import application
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static

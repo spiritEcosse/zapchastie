@@ -698,7 +698,7 @@ msgstr ""
 msgid "Meta tags on pages"
 msgstr ""
 
-#: auto_parts/settings.py:179
+#: zapchastie/settings.py:179
 msgid "Russia"
 msgstr ""
 

@@ -5,8 +5,8 @@ module.exports = (grunt) ->
         coffee:
             compile:
                 files:
-                    'static_root/src/js/coffee_common/app.js': ['auto_parts/src/coffee/*.coffee', 'apps/**/*.coffee'],
-                    'static/src/js/coffee_common/app.js': ['auto_parts/src/coffee/*.coffee', 'apps/**/*.coffee']
+                    'static_root/src/js/coffee_common/app.js': ['zapchastie/src/coffee/*.coffee', 'apps/**/*.coffee'],
+                    'static/src/js/coffee_common/app.js': ['zapchastie/src/coffee/*.coffee', 'apps/**/*.coffee']
         uglify:
             all_src:
                 options:

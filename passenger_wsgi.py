@@ -16,7 +16,7 @@ def application_this(environ, start_response):
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "auto_parts.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zapchastie.settings")
 
 application = get_wsgi_application()
 

@@ -16,7 +16,7 @@ from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.template import loader, Context
 from django.conf import settings
 import os
-from auto_parts.settings import MEDIA_ROOT
+from zapchastie.settings import MEDIA_ROOT
 from django.template.defaultfilters import truncatechars
 from django.contrib.auth.models import User
 from django.contrib.staticfiles.finders import find
@@ -52,7 +52,7 @@ from oscar.core.validators import non_python_keyword
 from oscar.models.fields import AutoSlugField, NullCharField
 from wand.image import Image as WandImage
 from filer.models.imagemodels import Image
-from auto_parts.settings import WATERMARK, SHOP_NAME
+from zapchastie.settings import WATERMARK, SHOP_NAME
 from django.contrib.sites.models import Site
 from wand.compat import nested
 ProductManager, BrowsableProductManager = get_classes(

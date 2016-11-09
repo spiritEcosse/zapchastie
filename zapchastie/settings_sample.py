@@ -1,3 +1,6 @@
+import os
+from settings import BASE_DIR
+
 DEFAULT_FROM_EMAIL = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
@@ -45,7 +48,7 @@ MIDDLEWARE_CLASSES = (
 ALLOWED_HOSTS = ['*']
 
 DB_BACKEND = 'django.db.backends.postgresql_psycopg2'
-DB_NAME = 'auto_part'
+DB_NAME = os.path.basename(BASE_DIR)
 DB_USER = 'postgres'
 DB_PASSWORD = ''
 DB_HOST = ''
