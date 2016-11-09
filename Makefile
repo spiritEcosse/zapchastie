@@ -19,8 +19,11 @@ install_pip:
 	sudo apt-get install python-pip
 	sudo pip install virtualenvwrapper
 
+devbuild: venv
+	venv/bin/python setup.py install
+
 create_venv:
-	./venv.sh auto_part
+	#./venv.sh auto_part
 	# echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bash_login
 	# /bin/bash -l -i -c source ~/.bashrc
     # Deactivate virtual env
@@ -34,24 +37,37 @@ create_venv:
 install:
 	pip install -r requirements.txt
 
-build_site:
+create_settings_local:
     # Create settings_local
 	cp auto_parts/settings_sample.py auto_parts/settings_local.py
+
+apply_migrations:
     # Update migrations
 	./manage.py makemigrations
 	# Apply migrate
-	./manage.py migrate auth
-	./manage.py migrate contenttypes
 	./manage.py migrate sites
+	./manage.py migrate contenttypes
 	./manage.py migrate catalogue
 	./manage.py migrate
-	# Import some fixtures.
-	./manage.py loaddata data/fixtures*
-	./manage.py oscar_populate_countries --initial-only
-	./manage.py clear_index --noinput
-	./manage.py update_index catalogue
 
-site: debian install_pip create_venv install build_site
+initial_data:
+	# Load initial data from fixtures.
+	./manage.py loaddata data/fixtures/sites.json
+	./manage.py loaddata data/fixtures/auth.json
+	./manage.py loaddata data/fixtures/category.json
+	./manage.py loaddata data/fixtures/product_class.json
+	./manage.py loaddata data/fixtures/product.json
+	./manage.py loaddata data/fixtures/partner.json
+	./manage.py loaddata data/fixtures/redirects.json
+	./manage.py loaddata data/fixtures/promotions.json
+	#./manage.py oscar_populate_countries --initial-only
+	#./manage.py clear_index --noinput
+	#./manage.py update_index catalogue
+
+update_rates:
+	./manage.py update_rates
+
+site: debian install_pip create_venv create_settings_local install apply_migrations initial_data update_rates
 
 sandbox_image:
     docker build -t django-oscar-sandbox:latest .
