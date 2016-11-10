@@ -8,7 +8,7 @@ workon $1
 #pip install -r requirements.txt
 
 # Update migrations
-#./manage.py makemigrations
+./manage.py makemigrations
 
 # Apply migrate
 ./manage.py migrate

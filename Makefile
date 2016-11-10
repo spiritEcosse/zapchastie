@@ -8,11 +8,20 @@ postgresql:
     # Restart postgresql
 	sudo service postgresql restart
 
-	# Drop db:
+    # Drop db:
 	sudo -u postgres dropdb $(current_dir) --if-exists
 
 	# Create db:
 	sudo -u postgres createdb $(current_dir)
+
+    # Drop user
+	sudo -u postgres dropuser $(current_dir) --if-exists
+
+    # Create user
+	sudo -u postgres psql -c "CREATE USER $(current_dir) WITH PASSWORD '$(current_dir)';"
+
+    # Grant privileges
+	sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $(current_dir) TO $(current_dir);"
 
 	# Install other libs
 	sudo apt-get install libpq-dev

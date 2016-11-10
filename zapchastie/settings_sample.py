@@ -48,9 +48,7 @@ MIDDLEWARE_CLASSES = (
 ALLOWED_HOSTS = ['*']
 
 DB_BACKEND = 'django.db.backends.postgresql_psycopg2'
-DB_NAME = os.path.basename(BASE_DIR)
-DB_USER = 'postgres'
-DB_PASSWORD = ''
-DB_HOST = ''
+DB_NAME, DB_USER, DB_PASSWORD = (os.path.basename(BASE_DIR), ) * 3
+DB_HOST = 'localhost'
 DB_PORT = ''
 DB_ATOMIC_REQUESTS = True
