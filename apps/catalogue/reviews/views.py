@@ -3,10 +3,13 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, ListView, View
-
+from django.contrib.sites.shortcuts import get_current_site
 from oscar.apps.catalogue.reviews.signals import review_added
 from oscar.core.loading import get_classes, get_model
 from oscar.core.utils import redirect_to_referrer
+from django.core.mail import send_mail
+import json
+from apps.catalogue.forms import ProductQuestionNgForm
 
 ProductReviewForm, VoteForm, SortReviewsForm = get_classes(
     'catalogue.reviews.forms',
@@ -22,10 +25,10 @@ class CreateProductReview(CreateView):
     product_model = Product
     form_class = ProductReviewForm
     view_signal = review_added
+    form_valid_message = unicode(_('You question has been sent!'))
 
     def dispatch(self, request, *args, **kwargs):
-        self.product = get_object_or_404(
-            self.product_model, pk=kwargs['product_pk'])
+        self.product = get_object_or_404(self.product_model, slug=kwargs['product_slug'])
         # check permission to leave review
         if not self.product.is_review_permitted(request.user):
             if self.product.has_review_by(request.user):
@@ -41,6 +44,13 @@ class CreateProductReview(CreateView):
     def get_context_data(self, **kwargs):
         context = super(CreateProductReview, self).get_context_data(**kwargs)
         context['product'] = self.product
+        initial_data = {}
+
+        if self.request.user.is_authenticated():
+            initial_data['name'] = self.request.user.username
+            initial_data['email'] = self.request.user.email
+
+        context['product_question_form'] = ProductQuestionNgForm(initial=initial_data)
         return context
 
     def get_form_kwargs(self):
@@ -66,16 +76,50 @@ class CreateProductReview(CreateView):
         self.view_signal.send(sender=self, review=review, user=request.user,
                               request=request, response=response)
 
+    def post(self, request, **kwargs):
+        if request.is_ajax():
+            return self.ajax(request)
+        return super(CreateProductReview, self).post(request, **kwargs)
+
+    def ajax(self, request):
+        form = self.form_class(data=json.loads(request.body))
+
+        if form.is_valid():
+            product_question = form.save(commit=False)
+            product_question.user = self.request.user
+            product_question.product = self.get_object()
+            product_question.save()
+            email_to = get_current_site(request).info.email
+            form_email = form.cleaned_data['email']
+            self.send_email(form, form_email, email_to)
+
+            response_data = {'msg': self.form_valid_message}
+        else:
+            response_data = {'errors': form.errors}
+
+        return self.render_json_response(response_data)
+
+    def send_email(self, form, form_email, email_to):
+        send_mail(
+            unicode(_('You received a letter from the site {}'.format(get_current_site(self.request).domain))),
+            unicode(_(u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']))),
+            form.cleaned_data['email'],
+            [email_to],
+            fail_silently=False
+        )
+
 
 class ProductReviewDetail(DetailView):
     template_name = "catalogue/reviews/review_detail.html"
     context_object_name = 'review'
     model = ProductReview
 
+    def get_queryset(self):
+        return super(ProductReviewDetail, self).get_queryset().exclude(status=self.model.FOR_MODERATION)
+
     def get_context_data(self, **kwargs):
         context = super(ProductReviewDetail, self).get_context_data(**kwargs)
-        context['product'] = get_object_or_404(
-            Product, pk=self.kwargs['product_pk'])
+        context['product'] = get_object_or_404(Product, slug=self.kwargs['product_slug'])
         return context
 
 
@@ -88,7 +132,7 @@ class AddVoteView(View):
     """
 
     def post(self, request, *args, **kwargs):
-        product = get_object_or_404(Product, pk=self.kwargs['product_pk'])
+        product = get_object_or_404(Product, slug=self.kwargs['product_slug'])
         review = get_object_or_404(ProductReview, pk=self.kwargs['pk'])
 
         form = VoteForm(review, request.user, request.POST)
@@ -116,7 +160,8 @@ class ProductReviewList(ListView):
     paginate_by = settings.OSCAR_REVIEWS_PER_PAGE
 
     def get_queryset(self):
-        qs = self.model.approved.filter(product=self.kwargs['product_pk'])
+        qs = self.model.approved.filter(product__slug=self.kwargs['product_slug'])
+
         self.form = SortReviewsForm(self.request.GET)
         if self.form.is_valid():
             sort_by = self.form.cleaned_data['sort_by']
@@ -126,7 +171,6 @@ class ProductReviewList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductReviewList, self).get_context_data(**kwargs)
-        context['product'] = get_object_or_404(
-            self.product_model, pk=self.kwargs['product_pk'])
+        context['product'] = get_object_or_404(self.product_model, slug=self.kwargs['product_slug'])
         context['form'] = self.form
         return context

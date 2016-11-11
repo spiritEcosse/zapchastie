@@ -27,11 +27,20 @@ libs:
     # Install compiler from less to css
 	sudo apt install npm
 	sudo npm install -g less
-	sudo ln -s /usr/bin/nodejs /usr/bin/node
+	sudo ln -sf /usr/bin/nodejs /usr/bin/node
 
-	# Install other libs
+    # Install bower
+	sudo npm install -g bower
+
+    # Install bower components
+    cd statis && bower install
+
+    # Install other libs
 	sudo apt-get install libpq-dev
 	sudo apt-get install libmagickwand-dev
+
+    # Install gettext for run makemessages
+	sudo apt-get install gettext
 
 install_pip:
 	sudo apt-get install python-pip

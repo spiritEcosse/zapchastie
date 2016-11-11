@@ -30,6 +30,12 @@
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+    {# Block where global CSS will go. #}
+    {% block styles %}{% endblock %}
+
+    {# Additional CSS - specific to certain pages #}
+    {% block extrastyles %}{% endblock %}
+
     {% block favicon %}
         <link rel="shortcut icon" href="{% static "src/image/icon.ico" %}" />
     {% endblock %}
@@ -71,9 +77,3 @@
 <!-- {% trans "Version:" %} {{ version }} -->
 </body>
 </html>
-
-{# Block where global CSS will go. #}
-{% block styles %}{% endblock %}
-
-{# Additional CSS - specific to certain pages #}
-{% block extrastyles %}{% endblock %}

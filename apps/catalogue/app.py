@@ -1,9 +1,23 @@
 from oscar.apps.catalogue.app import CatalogueApplication as CoreCatalogueApplication
-from django.conf.urls import url
 from apps.catalogue.views import ReviewsView
+from django.conf.urls import include, url
+from oscar.apps.catalogue.reviews.app import application as reviews_app
+from oscar.core.application import Application
 
 
-class CatalogueApplication(CoreCatalogueApplication):
+class ReviewsApplication(Application):
+    name = None
+    reviews_app = reviews_app
+
+    def get_urls(self):
+        urlpatterns = super(ReviewsApplication, self).get_urls()
+        urlpatterns += [
+            url(r'^(?P<product_slug>[\w-]*)/reviews/', include(self.reviews_app.urls)),
+        ]
+        return self.post_process_urls(urlpatterns)
+
+
+class CatalogueApplication(CoreCatalogueApplication, ReviewsApplication):
     def get_urls(self):
         urlpatterns = [
             url(r'comments/$', ReviewsView.as_view(), name='list-reviews'),

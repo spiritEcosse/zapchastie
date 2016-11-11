@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-04 20:42+0000\n"
+"POT-Creation-Date: 2016-11-11 10:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,11 +35,19 @@ msgstr "Ваш вопрос"
 msgid "Please enter your name."
 msgstr "Пожалуйста, введите Ваше имя."
 
-#: apps/catalogue/forms.py:36
+#: apps/catalogue/forms.py:34
+msgid "Ensure this value has at most %(max)d characters (it has %(length)d)."
+msgstr "Убедитесь, что это значение имеет не более %(max) символов (сейчас - %(length))."
+
+#: apps/catalogue/forms.py:35
+msgid "Ensure this value has at least %(min)d characters (it has %(length)d)."
+msgstr "Убедитесь, что это значение имеет не менее %(min) символов (сейчас - %(length))."
+
+#: apps/catalogue/forms.py:38
 msgid "Please enter your email."
 msgstr "Пожалуйста, введите Ваш email."
 
-#: apps/catalogue/forms.py:39
+#: apps/catalogue/forms.py:41
 msgid "Please enter your question."
 msgstr "Пожалуйста, введите Ваш вопрос."
 
@@ -585,35 +593,27 @@ msgstr ""
 msgid "Sort by"
 msgstr "Сортировка"
 
-#: apps/catalogue/reviews/views.py:32
+#: apps/catalogue/reviews/views.py:35
 msgid "You have already reviewed this product!"
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:34
+#: apps/catalogue/reviews/views.py:37
 msgid "You can't leave a review for this product."
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:59
+#: apps/catalogue/reviews/views.py:69
 msgid "Your review appear after moderation by the administrator"
 msgstr "Ваш отзыв появится после модерации администрацией сайта"
 
-#: apps/catalogue/reviews/views.py:61
+#: apps/catalogue/reviews/views.py:71
 msgid "Thank you for reviewing this product"
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:100
-msgid "Thanks for voting!"
-msgstr ""
-
-#: apps/catalogue/views.py:82
-msgid "You question has been sent!"
-msgstr "Ваш вопрос был отправлен!"
-
-#: apps/catalogue/views.py:131
+#: apps/catalogue/reviews/views.py:104 apps/catalogue/views.py:131
 msgid "You received a letter from the site {}"
 msgstr "Вы получили письмо с сайта {}"
 
-#: apps/catalogue/views.py:132
+#: apps/catalogue/reviews/views.py:105 apps/catalogue/views.py:132
 msgid ""
 "User name: {}.\n"
 "Email: {}.\n"
@@ -622,6 +622,14 @@ msgstr ""
 "Имя пользователя: {}.\n"
 "Email: {}.\n"
 "Вопрос: {}"
+
+#: apps/catalogue/reviews/views.py:142
+msgid "Thanks for voting!"
+msgstr ""
+
+#: apps/catalogue/views.py:82
+msgid "You question has been sent!"
+msgstr "Ваш вопрос был отправлен!"
 
 #: apps/ex_flatpages/admin.py:12
 msgid "Advanced options"
@@ -696,10 +704,6 @@ msgstr ""
 
 #: apps/seo/models.py:17
 msgid "Meta tags on pages"
-msgstr ""
-
-#: zapchastie/settings.py:179
-msgid "Russia"
 msgstr ""
 
 #: templates/403.html:5 templates/403.html.py:9
@@ -1479,17 +1483,6 @@ msgid "No"
 msgstr ""
 
 #: templates/catalogue/partials/review.html:56
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
-#| "customer found this useful\n"
-#| "                "
-#| msgid_plural ""
-#| "\n"
-#| "                    <strong>%(num_up_votes)s</strong> из %(num_votes)s "
-#| "customers found this useful\n"
-#| "                "
 msgid ""
 "\n"
 "                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
@@ -1577,7 +1570,6 @@ msgid "No reviews yet."
 msgstr "Нет отзывов."
 
 #: templates/catalogue/reviews/partials/review_stars.html:13
-#, python-format
 msgid ""
 "\n"
 "                    %(num_reviews)s customer review\n"
@@ -1587,8 +1579,17 @@ msgid_plural ""
 "                    %(num_reviews)s customer reviews\n"
 "                "
 msgstr[0] ""
+"\n"
+"                    %(num_reviews)s отзыв пользователя \n"
+"                "
 msgstr[1] ""
+"\n"
+"                    %(num_reviews)s отзывов пользователей \n"
+"                "
 msgstr[2] ""
+"\n"
+"                    %(num_reviews)s отзывов пользователей \n"
+"                "
 
 #: templates/catalogue/reviews/partials/review_stars.html:26
 #: templates/customer/anon_order.html:79
@@ -2436,7 +2437,7 @@ msgstr ""
 #: templates/customer/registration.html:19
 #: templates/customer/registration.html:28
 msgid "Register"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/customer/login_registration.html:36
 #: templates/customer/registration.html:28
@@ -5225,7 +5226,7 @@ msgstr ""
 msgid "Edit this page"
 msgstr ""
 
-#: templates/layout.html:33
+#: templates/layout.html:36
 msgid "Phones"
 msgstr "Телефоны"
 
@@ -5444,6 +5445,10 @@ msgid ""
 "                        Did you mean <a href=\"%(search_url)s?q="
 "%(suggestion)s\">\"%(suggestion)s\"</a>?\n"
 "                    "
+msgstr ""
+
+#: zapchastie/settings.py:177
+msgid "Russia"
 msgstr ""
 
 #, fuzzy

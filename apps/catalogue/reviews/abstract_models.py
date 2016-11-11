@@ -82,7 +82,6 @@ class AbstractProductReview(models.Model):
     def get_absolute_url(self):
         kwargs = {
             'product_slug': self.product.slug,
-            'product_pk': self.product.id,
             'pk': self.id
         }
         return reverse('catalogue:reviews-detail', kwargs=kwargs)

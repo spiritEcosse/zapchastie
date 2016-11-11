@@ -8574,6 +8574,11 @@ a .icon-flip-vertical:before {
 body {
   background-color: #eeeeee;
 }
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  z-index: 0;
+}
 .container-fluid {
   max-width: 1280px;
 }
@@ -9188,10 +9193,6 @@ a:hover .thumbnail {
 .btn-wishlist {
   margin-bottom: 20px;
 }
-#add_review_form #id_title,
-#add_review_form #id_body {
-  width: 500px;
-}
 .review {
   margin-bottom: 20px;
 }
@@ -9497,8 +9498,7 @@ input[type="number"][id*="quantity"] {
   margin: 0 auto;
 }
 #product_gallery .carousel-inner > .item {
-  height: 400px;
-  line-height: 400px;
+  max-height: 400px;
   vertical-align: middle;
   text-align: center;
 }

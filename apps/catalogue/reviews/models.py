@@ -15,7 +15,6 @@ class ProductReview(AbstractProductReview):
         if getattr(self, 'product', False):
             kwargs.update({
                 'product_slug': self.product.slug,
-                'product_pk': self.product.id,
             })
 
         return reverse('catalogue:reviews-detail', kwargs=kwargs)
@@ -25,3 +24,4 @@ from oscar.apps.catalogue.reviews.models import *
 
 ProductReview.default_status = ProductReview.FOR_MODERATION
 ProductReview._meta.get_field('status').default = ProductReview.default_status
+ProductReview._meta.get_field('product').blank = True

@@ -204,7 +204,7 @@
                                     <section>
                                         <div id="reviews" class="sub-header">
                                             {% if product.num_approved_reviews > 3 %}
-                                                <a href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.id %}" class="btn pull-right">{% trans "See all reviews" %}</a>
+                                                <a href="{% url 'catalogue:reviews-list' product_slug=product.slug %}" class="btn pull-right">{% trans "See all reviews" %}</a>
                                             {% endif %}
                                             <h2>{% trans "Customer Reviews of " %} {{ product.get_h1 }}</h2>
                                         </div>
@@ -212,7 +212,7 @@
                                         {% if product.num_approved_reviews == 0 %}
                                             <p>
                                                 {% if product|is_review_permitted:user %}
-                                                    {% url 'catalogue:reviews-add' product_slug=product.slug product_pk=product.id as add_review_url %}
+                                                    {% url 'catalogue:reviews-add' product_slug=product.slug as add_review_url %}
                                                     {% blocktrans %}This product does not have any reviews yet -
                                                         <a href="{{ add_review_url }}#addreview">be the first to write one</a>.
                                                     {% endblocktrans %}

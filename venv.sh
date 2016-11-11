@@ -13,6 +13,9 @@ pip install -r requirements.txt
 # Apply migrate
 ./manage.py migrate
 
+# Collectstatic
+./manage.py collectstatic --noinput
+
 # Load initial data from fixtures.
 ./manage.py loaddata data/fixtures/sites.json
 ./manage.py loaddata data/fixtures/auth.json

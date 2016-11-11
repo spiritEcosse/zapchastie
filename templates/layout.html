@@ -28,19 +28,17 @@
             <div class="row">
                 {% include "partials/brand.html" %}
                 <div class="col-xs-12 col-sm-1 col-md-3">
-                    {% if current_site.info.phone_numbers %}
-                        {% with current_site.info.phone_numbers|length as count_phone_numbers %}
-                            <div class="dropdown">
-                                <button type="button" class="btn btn-transparent dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {% trans 'Phones' %} <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu stop-propagation">
-                                    {% for phone in current_site.info.phone_numbers.all %}
-                                        <li><a class="text-white" href="tel:{{ phone }}">{{ phone.phone_number.as_international }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endwith %}
+                    {% if current_site.info.phone_numbers.all %}
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-transparent dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% trans 'Phones' %} <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu stop-propagation">
+                                {% for phone in current_site.info.phone_numbers.all %}
+                                    <li><a class="text-white" href="tel:{{ phone }}">{{ phone.phone_number.as_international }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     {% endif %}
                 </div>
                 {# Mini-basket wrapped in a block so some templates can now display it #}

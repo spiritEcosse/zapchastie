@@ -18,7 +18,9 @@ from django.views.generic import FormView
 import json
 from apps.catalogue.reviews.forms import ReviewForm
 from apps.catalogue.reviews.models import ProductReview
+from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
+
 get_product_search_handler_class = get_class('catalogue.search_handlers', 'get_product_search_handler_class')
 
 logger = logging.getLogger(__name__)
@@ -142,15 +144,24 @@ class ReviewsView(edit.CreateView, list.MultipleObjectMixin):
     paginate_by = 20
     template_name = 'catalogue/review_list.html'
     context_object_name = 'reviews'
-    success_url = reverse_lazy('catalogue:list-reviews')
 
     def get_form_kwargs(self):
         kwargs = super(ReviewsView, self).get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
 
+    def get_queryset(self):
+        return super(ReviewsView, self).get_queryset().exclude(status=self.model.FOR_MODERATION)
+
     def dispatch(self, request, *args, **kwargs):
         self.object_list = self.get_queryset()
         return super(ReviewsView, self).dispatch(request, *args, **kwargs)
 
+    def get_success_url(self):
+        if self.object.status == self.model.FOR_MODERATION:
+            messages.success(self.request, _("Your review appear after moderation by the administrator"))
+        else:
+            messages.success(self.request, _("Thank you for reviewing."))
+
+        return reverse_lazy('catalogue:list-reviews')
 

@@ -20,7 +20,7 @@
                 <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
             </li>
             <li>
-                <a href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.pk %}">{% trans "Reviews" %}</a>
+                <a href="{% url 'catalogue:reviews-list' product_slug=product.slug %}">{% trans "Reviews" %}</a>
             </li>
         {% endwith %}
         <li class="active">{{ review.title }}</li>
