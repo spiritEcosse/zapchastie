@@ -33,6 +33,10 @@ npm-debug.log
 !apps/catalogue/migrations/0005_auto_20150604_1450.py
 !apps/catalogue/migrations/__init__.py
 
+!apps/catalogue/reviews/migrations/0001_initial.py
+!apps/catalogue/reviews/migrations/0002_auto_20161111_0823.py
+!apps/catalogue/reviews/migrations/__init__.py
+
 !apps/partner/migrations/0001_initial.py
 !apps/partner/migrations/0002_auto_20141007_2032.py
 !apps/partner/migrations/0003_auto_20150604_1450.py
@@ -46,6 +50,11 @@ npm-debug.log
 !apps/basket/migrations/0005_auto_20150604_1450.py
 !apps/basket/migrations/0006_auto_20160111_1108.py
 !apps/basket/migrations/__init__.py
+
+
+!apps/promotions/migrations/0001_initial.py
+!apps/promotions/migrations/0002_auto_20150604_1450.py
+!apps/promotions/migrations/__init__.py
 
 conf
 !media/

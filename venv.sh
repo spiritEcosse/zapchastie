@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 source `which virtualenvwrapper.sh`
-#rmvirtualenv $1
-#mkvirtualenv $1
-workon $1
+rmvirtualenv $1
+mkvirtualenv $1
+
 # Install libs in virtual environment
-#pip install -r requirements.txt
+pip install -r requirements.txt
 
 # Update migrations
 ./manage.py makemigrations
@@ -22,8 +22,8 @@ workon $1
 ./manage.py loaddata data/fixtures/partner.json
 ./manage.py loaddata data/fixtures/redirects.json
 ./manage.py loaddata data/fixtures/promotions.json
-#./manage.py oscar_populate_countries --initial-only
-#./manage.py clear_index --noinput
-#./manage.py update_index catalogue
+./manage.py oscar_populate_countries --initial-only
+./manage.py clear_index --noinput
+./manage.py update_index catalogue
 
 ./manage.py update_rates
