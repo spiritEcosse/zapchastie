@@ -8795,6 +8795,7 @@ form.flat {
 }
 #wrapper {
   display: table;
+  min-width: 100%;
 }
 #footer {
   display: table-footer-group;

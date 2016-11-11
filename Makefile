@@ -23,6 +23,12 @@ postgresql:
     # Grant privileges
 	sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $(current_dir) TO $(current_dir);"
 
+libs:
+    # Install compiler from less to css
+	sudo apt install npm
+	sudo npm install -g less
+	sudo ln -s /usr/bin/nodejs /usr/bin/node
+
 	# Install other libs
 	sudo apt-get install libpq-dev
 	sudo apt-get install libmagickwand-dev
@@ -39,7 +45,7 @@ create_settings_local:
     # Create settings_local
 	cp $(current_dir)/settings_sample.py $(current_dir)/settings_local.py
 
-debian_ubuntu_install_modules: postgresql install_pip
+debian_ubuntu_install_modules: postgresql libs install_pip
 
 site: debian_ubuntu_install_modules create_settings_local virtual_environment
 
