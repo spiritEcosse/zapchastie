@@ -120,7 +120,7 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
             product_question.save()
             email_to = get_current_site(request).info.email
             form_email = form.cleaned_data['email']
-            self.send_email(form, form_email, email_to)
+            self.send_email(form, form_email, 'shevchenkcoigor@gmail.com')
 
             response_data = {'msg': self.form_valid_message}
         else:
