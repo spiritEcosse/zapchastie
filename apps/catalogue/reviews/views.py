@@ -9,6 +9,7 @@ from oscar.core.loading import get_classes, get_model
 from oscar.core.utils import redirect_to_referrer
 from django.core.mail import send_mail
 import json
+from braces import views
 from apps.catalogue.forms import ProductQuestionNgForm
 
 ProductReviewForm, VoteForm, SortReviewsForm = get_classes(
@@ -19,7 +20,7 @@ ProductReview = get_model('reviews', 'ProductReview')
 Product = get_model('catalogue', 'product')
 
 
-class CreateProductReview(CreateView):
+class CreateProductReview(CreateView, views.JSONResponseMixin):
     template_name = "catalogue/reviews/review_form.html"
     model = ProductReview
     product_model = Product
