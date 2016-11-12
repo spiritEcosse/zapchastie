@@ -87,7 +87,7 @@ class CreateProductReview(CreateView):
         if form.is_valid():
             product_question = form.save(commit=False)
             product_question.user = self.request.user
-            product_question.product = self.get_object()
+            product_question.product = self.product
             product_question.save()
             email_to = get_current_site(request).info.email
             form_email = form.cleaned_data['email']
