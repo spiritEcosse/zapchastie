@@ -131,7 +131,7 @@ class ProductDetailView(CoreProductDetailView, FormView, views.JSONResponseMixin
     def send_email(self, form, form_email, email_to):
         send_mail(
             unicode(_('You received a letter from the site {}'.format(get_current_site(self.request).domain))),
-            unicode(_('User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']))),
+            unicode(_(u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']))),
             form.cleaned_data['email'],
             [email_to],
             fail_silently=False
