@@ -76,6 +76,38 @@ class CreateProductReview(CreateView):
         self.view_signal.send(sender=self, review=review, user=request.user,
                               request=request, response=response)
 
+    def post(self, request, **kwargs):
+        if request.is_ajax():
+            return self.ajax(request)
+        return super(CreateProductReview, self).post(request, **kwargs)
+
+    def ajax(self, request):
+        form = ProductQuestionNgForm(data=json.loads(request.body))
+
+        if form.is_valid():
+            product_question = form.save(commit=False)
+            product_question.user = self.request.user
+            product_question.product = self.get_object()
+            product_question.save()
+            email_to = get_current_site(request).info.email
+            form_email = form.cleaned_data['email']
+            self.send_email(form, form_email, email_to)
+
+            response_data = {'msg': self.form_valid_message}
+        else:
+            response_data = {'errors': form.errors}
+
+        return self.render_json_response(response_data)
+
+    def send_email(self, form, form_email, email_to):
+        send_mail(
+            unicode(_('You received a letter from the site {}'.format(get_current_site(self.request).domain))),
+            unicode(_(u'User name: {}.\nEmail: {}.\nQuestion: {}'.format(form.cleaned_data['name'], form_email, form.cleaned_data['question']))),
+            form.cleaned_data['email'],
+            [email_to],
+            fail_silently=False
+        )
+
 
 class ProductReviewDetail(DetailView):
     template_name = "catalogue/reviews/review_detail.html"
