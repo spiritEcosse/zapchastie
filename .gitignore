@@ -51,6 +51,9 @@ npm-debug.log
 !apps/basket/migrations/0006_auto_20160111_1108.py
 !apps/basket/migrations/__init__.py
 
+!apps/customer/migrations/0001_initial.py
+!apps/customer/migrations/0002_auto_20150807_1725.py
+!apps/customer/migrations/__init__.py
 
 !apps/promotions/migrations/0001_initial.py
 !apps/promotions/migrations/0002_auto_20150604_1450.py
@@ -145,3 +148,10 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 Будет удалено static_root/
+Будет удалено Makefile
+Будет удалено apps/customer/__init__.py
+Будет удалено apps/customer/admin.py
+Будет удалено apps/customer/config.py
+Будет удалено apps/customer/migrations/
+Будет удалено apps/customer/models.py
+Будет удалено media/

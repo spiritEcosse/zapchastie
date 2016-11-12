@@ -33,7 +33,7 @@ libs:
 	sudo npm install -g bower
 
     # Install bower components
-    cd statis && bower install
+	cd static && bower install
 
     # Install other libs
 	sudo apt-get install libpq-dev

@@ -70,7 +70,7 @@ INSTALLED_APPS = \
     ] + get_core_apps(
         [
             'apps.catalogue', 'apps.promotions', 'apps.partner', 'apps.dashboard', 'apps.dashboard.promotions',
-            'apps.catalogue.reviews', 'apps.basket',
+            'apps.catalogue.reviews', 'apps.basket', 'apps.customer',
         ]
     )
 
