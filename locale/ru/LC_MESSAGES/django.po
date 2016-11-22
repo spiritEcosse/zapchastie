@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-11 10:44+0000\n"
+"POT-Creation-Date: 2016-11-22 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,19 +35,11 @@ msgstr "Ваш вопрос"
 msgid "Please enter your name."
 msgstr "Пожалуйста, введите Ваше имя."
 
-#: apps/catalogue/forms.py:34
-msgid "Ensure this value has at most %(max)d characters (it has %(length)d)."
-msgstr "Убедитесь, что это значение имеет не более %(max) символов (сейчас - %(length))."
-
-#: apps/catalogue/forms.py:35
-msgid "Ensure this value has at least %(min)d characters (it has %(length)d)."
-msgstr "Убедитесь, что это значение имеет не менее %(min) символов (сейчас - %(length))."
-
-#: apps/catalogue/forms.py:38
+#: apps/catalogue/forms.py:36
 msgid "Please enter your email."
 msgstr "Пожалуйста, введите Ваш email."
 
-#: apps/catalogue/forms.py:41
+#: apps/catalogue/forms.py:39
 msgid "Please enter your question."
 msgstr "Пожалуйста, введите Ваш вопрос."
 
@@ -101,6 +93,21 @@ msgstr "Родитель"
 msgid "Sort"
 msgstr "Сортировка"
 
+#: apps/catalogue/models.py:135 apps/catalogue/models.py:179
+#: apps/catalogue/models.py:359 apps/catalogue/models.py:583
+#: apps/catalogue/models.py:988 templates/customer/alerts/alert_list.html:14
+#: templates/dashboard/promotions/promotion_list.html:44
+#: templates/dashboard/ranges/range_list.html:34
+#: templates/dashboard/reports/partials/submitted_basket_report.html:12
+#: templates/dashboard/reviews/review_delete.html:42
+#: templates/dashboard/reviews/review_list.html:62
+#: templates/dashboard/users/alerts/list.html:47
+#: templates/dashboard/users/alerts/partials/alert.html:24
+#: templates/dashboard/users/detail.html:180
+#: templates/dashboard/vouchers/voucher_list.html:57
+msgid "Date created"
+msgstr ""
+
 #: apps/catalogue/models.py:144
 msgid "Feature"
 msgstr "Особенность"
@@ -138,7 +145,7 @@ msgstr ""
 #: apps/catalogue/models.py:171 apps/catalogue/models.py:548
 #: apps/seo/models.py:9
 msgid "Meta tag: title"
-msgstr ""
+msgstr "Мета тег: title"
 
 #: apps/catalogue/models.py:172 apps/catalogue/models.py:547
 #: apps/seo/models.py:10
@@ -148,12 +155,12 @@ msgstr ""
 #: apps/catalogue/models.py:173 apps/catalogue/models.py:549
 #: apps/seo/models.py:11
 msgid "Meta tag: description"
-msgstr ""
+msgstr "Мета тег: description"
 
 #: apps/catalogue/models.py:174 apps/catalogue/models.py:550
 #: apps/seo/models.py:12
 msgid "Meta tag: keywords"
-msgstr ""
+msgstr "Мета тег: keywords"
 
 #: apps/catalogue/models.py:175 apps/catalogue/models.py:551
 #: templates/dashboard/offers/offer_detail.html:67
@@ -206,20 +213,6 @@ msgstr ""
 #: apps/catalogue/models.py:357
 msgid ""
 "An image with a display order of zero will be the primary image for a product"
-msgstr ""
-
-#: apps/catalogue/models.py:359 apps/catalogue/models.py:583
-#: apps/catalogue/models.py:988 templates/customer/alerts/alert_list.html:14
-#: templates/dashboard/promotions/promotion_list.html:44
-#: templates/dashboard/ranges/range_list.html:34
-#: templates/dashboard/reports/partials/submitted_basket_report.html:12
-#: templates/dashboard/reviews/review_delete.html:42
-#: templates/dashboard/reviews/review_list.html:62
-#: templates/dashboard/users/alerts/list.html:47
-#: templates/dashboard/users/alerts/partials/alert.html:24
-#: templates/dashboard/users/detail.html:180
-#: templates/dashboard/vouchers/voucher_list.html:57
-msgid "Date created"
 msgstr ""
 
 #: apps/catalogue/models.py:367
@@ -538,48 +531,48 @@ msgstr ""
 msgid "Product reviews"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:98
+#: apps/catalogue/reviews/abstract_models.py:97
 msgid "Anonymous reviews must include a name and an email"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:151
+#: apps/catalogue/reviews/abstract_models.py:150
 msgid "anonymous"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:173
+#: apps/catalogue/reviews/abstract_models.py:172
 msgid "Only signed in users can vote"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:194
+#: apps/catalogue/reviews/abstract_models.py:193
 msgid "Up"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:195
+#: apps/catalogue/reviews/abstract_models.py:194
 msgid "Down"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:197
+#: apps/catalogue/reviews/abstract_models.py:196
 msgid "Delta"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:205
+#: apps/catalogue/reviews/abstract_models.py:204
 msgid "Vote"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:206
+#: apps/catalogue/reviews/abstract_models.py:205
 #: templates/dashboard/reviews/review_list.html:60
 msgid "Votes"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:214
+#: apps/catalogue/reviews/abstract_models.py:213
 msgid "You cannot vote on your own reviews"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:217
+#: apps/catalogue/reviews/abstract_models.py:216
 msgid "Only signed-in users can vote on reviews"
 msgstr ""
 
-#: apps/catalogue/reviews/abstract_models.py:221
+#: apps/catalogue/reviews/abstract_models.py:220
 msgid "You can only vote once on a review"
 msgstr ""
 
@@ -593,6 +586,10 @@ msgstr ""
 msgid "Sort by"
 msgstr "Сортировка"
 
+#: apps/catalogue/reviews/views.py:28 apps/catalogue/views.py:84
+msgid "You question has been sent!"
+msgstr "Ваш вопрос был отправлен!"
+
 #: apps/catalogue/reviews/views.py:35
 msgid "You have already reviewed this product!"
 msgstr ""
@@ -601,7 +598,7 @@ msgstr ""
 msgid "You can't leave a review for this product."
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:69
+#: apps/catalogue/reviews/views.py:69 apps/catalogue/views.py:162
 msgid "Your review appear after moderation by the administrator"
 msgstr "Ваш отзыв появится после модерации администрацией сайта"
 
@@ -609,11 +606,11 @@ msgstr "Ваш отзыв появится после модерации адм�
 msgid "Thank you for reviewing this product"
 msgstr ""
 
-#: apps/catalogue/reviews/views.py:104 apps/catalogue/views.py:131
+#: apps/catalogue/reviews/views.py:104 apps/catalogue/views.py:133
 msgid "You received a letter from the site {}"
 msgstr "Вы получили письмо с сайта {}"
 
-#: apps/catalogue/reviews/views.py:105 apps/catalogue/views.py:132
+#: apps/catalogue/reviews/views.py:105 apps/catalogue/views.py:134
 msgid ""
 "User name: {}.\n"
 "Email: {}.\n"
@@ -623,13 +620,13 @@ msgstr ""
 "Email: {}.\n"
 "Вопрос: {}"
 
-#: apps/catalogue/reviews/views.py:142
+#: apps/catalogue/reviews/views.py:144
 msgid "Thanks for voting!"
 msgstr ""
 
-#: apps/catalogue/views.py:82
-msgid "You question has been sent!"
-msgstr "Ваш вопрос был отправлен!"
+#: apps/catalogue/views.py:164
+msgid "Thank you for reviewing."
+msgstr ""
 
 #: apps/ex_flatpages/admin.py:12
 msgid "Advanced options"
@@ -700,11 +697,11 @@ msgstr ""
 
 #: apps/seo/models.py:16
 msgid "Meta tags on page"
-msgstr ""
+msgstr "Мета теги на странице"
 
 #: apps/seo/models.py:17
 msgid "Meta tags on pages"
-msgstr ""
+msgstr "Мета теги на страницах"
 
 #: templates/403.html:5 templates/403.html.py:9
 msgid "Permission denied!"
@@ -746,7 +743,7 @@ msgstr ""
 msgid "Build"
 msgstr ""
 
-#: templates/base.html:71
+#: templates/base.html:77
 msgid "Version:"
 msgstr ""
 
@@ -1483,6 +1480,7 @@ msgid "No"
 msgstr ""
 
 #: templates/catalogue/partials/review.html:56
+#, python-format
 msgid ""
 "\n"
 "                    <strong>%(num_up_votes)s</strong> of %(num_votes)s "
@@ -1570,6 +1568,7 @@ msgid "No reviews yet."
 msgstr "Нет отзывов."
 
 #: templates/catalogue/reviews/partials/review_stars.html:13
+#, python-format
 msgid ""
 "\n"
 "                    %(num_reviews)s customer review\n"
@@ -5226,7 +5225,7 @@ msgstr ""
 msgid "Edit this page"
 msgstr ""
 
-#: templates/layout.html:36
+#: templates/layout.html:35
 msgid "Phones"
 msgstr "Телефоны"
 
@@ -5450,6 +5449,18 @@ msgstr ""
 #: zapchastie/settings.py:177
 msgid "Russia"
 msgstr ""
+
+#~ msgid ""
+#~ "Ensure this value has at most %(max)d characters (it has %(length)d)."
+#~ msgstr ""
+#~ "Убедитесь, что это значение имеет не более %(max) символов (сейчас - "
+#~ "%(length))."
+
+#~ msgid ""
+#~ "Ensure this value has at least %(min)d characters (it has %(length)d)."
+#~ msgstr ""
+#~ "Убедитесь, что это значение имеет не менее %(min) символов (сейчас - "
+#~ "%(length))."
 
 #, fuzzy
 #~| msgid "Information"

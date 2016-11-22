@@ -128,11 +128,11 @@ class CommonFeatureProduct(object):
 
 @python_2_unicode_compatible
 class Feature(MPTTModel):
-    title = models.CharField(max_length=255, verbose_name=_('Title'))
+    title = models.CharField(max_length=255, verbose_name=_('Title'), db_index=True)
     slug = models.SlugField(verbose_name=_('Slug'), max_length=255, unique=True, blank=True)
     parent = TreeForeignKey('self', verbose_name=_('Parent'), related_name='children', blank=True, null=True, db_index=True)
-    sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0)
-    created = models.DateTimeField(auto_now_add=True)
+    sort = models.IntegerField(verbose_name=_('Sort'), blank=True, null=True, default=0, db_index=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name=_('Date created'), db_index=True)
     slug_separator = '/'
 
     class MPTTMeta:
@@ -176,7 +176,7 @@ class Category(MPTTModel):
     image = FilerImageField(verbose_name=_('Image'), null=True, blank=True, related_name="category_image")
     sort = models.IntegerField(blank=True, null=True, default=0, db_index=True)
     enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
-    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    created = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name=_('Date created'))
 
     _slug_separator = '/'
     _full_name_separator = ' > '
@@ -355,7 +355,7 @@ class ProductImage(models.Model, CommonFeatureProduct):
     display_order = models.PositiveIntegerField(
         _("Display order"), default=0,
         help_text=_("An image with a display order of zero will be the primary"
-                    " image for a product"))
+                    " image for a product"), db_index=True)
     date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
 
     class Meta:
@@ -580,7 +580,7 @@ class Product(models.Model, CommonFeatureProduct):
     # Product has no ratings if rating is None
     rating = models.FloatField(_('Rating'), null=True, editable=False)
 
-    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True, db_index=True)
 
     # This field is used by Haystack to reindex search
     date_updated = models.DateTimeField(
@@ -984,8 +984,8 @@ class ProductQuestion(models.Model):
     email = models.EmailField(verbose_name=_('User email'))
     question = models.TextField(verbose_name=_('Question about the product'))
     product = models.ForeignKey(Product, verbose_name=_('Product'))
-    user = models.ForeignKey(User, verbose_name=_('User'), blank=True)
-    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
+    user = models.ForeignKey(User, verbose_name=_('User'), blank=True, db_index=True)
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True, db_index=True)
 
     class Meta:
         verbose_name = _('Question about the product')
