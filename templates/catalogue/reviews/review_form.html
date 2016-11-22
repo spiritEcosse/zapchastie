@@ -5,6 +5,8 @@
     {{ block.super }}
 
     <script>
+        $('#collapse-reviews').addClass('in');
+        $('#collapse-description').removeClass('in');
         $('#reviews').addClass('active');
         $("a[href='#reviews'").parent().addClass('active');
         $('#description').removeClass('active');

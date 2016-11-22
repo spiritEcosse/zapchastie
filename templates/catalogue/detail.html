@@ -287,7 +287,9 @@
 
 {% block extrascripts %}
     {{ block.super }}
-    (function($) {
-        fakewaffle.responsiveTabs(['xs', 'sm']);
-    })(jQuery);
+    <script>
+        (function($) {
+            fakewaffle.responsiveTabs(['xs', 'sm']);
+        })(jQuery);
+    </script>
 {% endblock %}

@@ -42,6 +42,12 @@ libs:
     # Install gettext for run makemessages
 	sudo apt-get install gettext
 
+	# Install grunt
+	sudo npm install -g grunt-cli
+
+	# Install npm libs
+	npm install
+
 install_pip:
 	sudo apt-get install python-pip
 	sudo pip install virtualenvwrapper

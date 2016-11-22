@@ -19,6 +19,7 @@ module.exports = (grunt) ->
                         'static/bower_components/angular/angular.js',
                         'static/bower_components/angular-resource/angular-resource.js',
                         'static/bower_components/angular-route/angular-route.min.js',
+                        'static/bower_components/bootstrap-responsive-tabs/js/responsive-tabs.js',
                         'static_root/djng/js/django-angular.js',
                         'static/oscar/js/oscar/ui.js',
                         "static/oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js",
