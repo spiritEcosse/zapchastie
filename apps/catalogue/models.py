@@ -174,7 +174,7 @@ class Category(MPTTModel):
     meta_keywords = models.TextField(verbose_name=_('Meta tag: keywords'), blank=True)
     description = RichTextUploadingField(_('Description'), blank=True)
     image = FilerImageField(verbose_name=_('Image'), null=True, blank=True, related_name="category_image")
-    sort = models.IntegerField(blank=True, null=True, default=0, db_index=True)
+    sort = models.IntegerField(blank=True, null=True, default=0, db_index=True, verbose_name=_('Sort'))
     enable = models.BooleanField(verbose_name=_('Enable'), default=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name=_('Date created'))
 
