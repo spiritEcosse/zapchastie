@@ -4272,7 +4272,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   color: #444;
 }
 .breadcrumb {
-  padding: 8px 15px;
+  padding: 0px 0px;
   margin-bottom: 20px;
   list-style: none;
   background-color: #f5f5f5;
@@ -8638,6 +8638,15 @@ body {
 .head_h2 .small {
   font-size: 65%;
 }
+.tooltip-wrapper {
+  display: inline-block;
+}
+.tooltip-wrapper .btn[disabled] {
+  pointer-events: none;
+}
+.tooltip-wrapper.disabled {
+  cursor: not-allowed;
+}
 h1,
 h2,
 h3,
@@ -9186,11 +9195,13 @@ a:hover .thumbnail {
   *display: inline;
   zoom: 1;
 }
-.btn-wishlist {
-  vertical-align: bottom;
+.wrapper-wishlist {
+  vertical-align: top;
 }
-.add-to-basket .btn,
-.btn-wishlist {
+.add-to-basket .btn {
+  margin-bottom: 20px;
+}
+.short-info {
   margin-bottom: 20px;
 }
 .review {

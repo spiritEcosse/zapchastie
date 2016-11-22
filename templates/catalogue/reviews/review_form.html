@@ -20,7 +20,7 @@
     <div id="addreview" class="review_add">
         <form id="add_review_form" method="post" action="./#addreview">
             <fieldset>
-                <legend>{% trans "Leave a product review" %}</legend>
+                <h2>{% trans "Leave a product review" %} {{ product.title }}</h2>
                 {% csrf_token %}
 
                 {% include 'partials/form_field.html' with field=form.title %}

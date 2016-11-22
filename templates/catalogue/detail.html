@@ -44,7 +44,7 @@
 
 {% block content %}
     <article class="product_page"><!-- Start of product page -->
-        <div class="row">
+        <div class="row short-info">
             {% block product_gallery %}
                 <div class="col-sm-6">
                     {% include "catalogue/partials/gallery.html" %}
@@ -291,5 +291,9 @@
         (function($) {
             fakewaffle.responsiveTabs(['xs', 'sm']);
         })(jQuery);
+
+        $(function() {
+            $('.tooltip-wrapper').tooltip({position: "bottom"});
+        });
     </script>
 {% endblock %}
