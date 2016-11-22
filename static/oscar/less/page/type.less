@@ -32,6 +32,24 @@ h3, .h3 { font-size: @font-size-base * 1.25; line-height: 1.4; } // 18px
 h4, .h4 { font-size: @font-size-base * 1.15; line-height: 1.4; } // 16px
 h5, .h5 { font-size: @font-size-base; line-height: @line-height-base; } // 14px
 
+@media (max-width: @screen-xs-min) {
+    // Heading fonts a little smaller
+    h1, .h1 { font-size: @font-size-base * 1.40; line-height: 1.6; }
+    h2, .h2 { font-size: @font-size-base; line-height: @line-height-base; }
+    h3, .h3 { font-size: @font-size-base; line-height: @line-height-base; }
+    h4, .h4 { font-size: @font-size-base; line-height: @line-height-base; }
+}
+@media (max-width: @screen-sm-max) {
+    .lead {
+        font-size: @font-size-base * 1.2;
+    }
+}
+@media (max-width: @screen-xs-max) {
+    .lead {
+        font-size: @font-size-base * 1.5;
+    }
+}
+
 .h1,
 .h2,
 .h3 {
@@ -50,16 +68,6 @@ h5, .h5 { font-size: @font-size-base; line-height: @line-height-base; } // 14px
         line-height: 40px;
     }
 }
-// Sub header a little lighter
-.sub-header {
-    h2,h3,h4 {
-        font-size: @font-size-base * 1.6; // 22px
-        line-height: @line-height-base * 1.5;
-        font-weight:normal;
-        color:@gray-dark;
-    }
-}
-
 // Text alignment
 .align-right,
 .table .align-right,
@@ -72,3 +80,4 @@ h5, .h5 { font-size: @font-size-base; line-height: @line-height-base; } // 14px
 .table .align-center {
     text-align:center;
 }
+

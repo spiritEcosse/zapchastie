@@ -43,7 +43,8 @@
         {% endfor %}
     {% endwith %}
 {% else %}
-    <span class="tooltip-wrapper disabled wrapper-wishlist" data-toggle="tooltip" data-placement="top" data-title="{% trans 'Please login to add products to a wish list.' %}">
-        <button class="btn btn-lg btn-primary disabled">{% trans 'Add to wish list' %}</button><br/>
-    </span>
+    <div class="tooltip-wrapper disabled wrapper-wishlist" data-toggle="tooltip" data-placement="top" data-title="{% trans 'Please login to add products to a wish list.' %}">
+        <button class="btn btn-primary disabled btn-lg hidden-xs">{% trans 'Add to wish list' %}</button><br/>
+        <button class="btn btn-block btn-primary disabled btn-sm visible-xs hidden-sm">{% trans 'Add to wish list' %}</button><br/>
+    </div>
 {% endif %}
