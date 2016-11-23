@@ -24,6 +24,7 @@ Use message tags to control these alerts.  Available tags include:
                         <i class="icon-exclamation-sign"></i>
                     {% endif %}
                 {% endif %}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
                 {# Allow HTML to be embedded in messages #}
                 {% if 'safe' in message.tags %}
@@ -31,8 +32,6 @@ Use message tags to control these alerts.  Available tags include:
                 {% else %}
                     {{ message }}
                 {% endif %}
-
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
         {% endfor %}
     {% endif %}

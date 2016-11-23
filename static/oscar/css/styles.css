@@ -8650,6 +8650,9 @@ body {
 .panel-body {
   word-break: break-all;
 }
+.alert .btn {
+  margin-bottom: 10px;
+}
 h1,
 h2,
 h3,
@@ -8757,11 +8760,6 @@ h5,
 .sub-header {
   padding-bottom: 9px;
   border-bottom: 1px solid #eeeeee;
-}
-.page-header h1,
-.page-header h2 {
-  font-size: 29.96px;
-  line-height: 40px;
 }
 .align-right,
 .table .align-right,

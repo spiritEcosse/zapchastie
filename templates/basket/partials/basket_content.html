@@ -54,7 +54,7 @@
                                 {% endwith %}
                             </div>
                             <div class="col-sm-4">
-                                <h3><a href="{{ product.get_absolute_url }}">{{ line.description }}</a></h3>
+                                <a class="h3" href="{{ product.get_absolute_url }}">{{ line.description }}</a>
                                 <p class="availability {{ session.availability.code }}">{{ session.availability.message }}</p>
                             </div>
                             <div class="col-sm-3">
