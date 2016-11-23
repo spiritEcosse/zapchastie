@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-23 08:53+0000\n"
+"POT-Creation-Date: 2016-11-23 11:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -187,7 +187,7 @@ msgstr ""
 #: apps/catalogue/models.py:986 templates/customer/alerts/alert_list.html:12
 #: templates/customer/anon_order.html:58
 #: templates/customer/order/order_detail.html:17
-#: templates/customer/wishlists/wishlists_detail.html:31
+#: templates/customer/wishlists/wishlists_detail.html:30
 #: templates/dashboard/catalogue/stockalert_list.html:48
 #: templates/dashboard/orders/order_detail.html:109
 #: templates/dashboard/reports/partials/product_report.html:8
@@ -465,7 +465,7 @@ msgstr ""
 
 #: apps/catalogue/reviews/abstract_models.py:47
 #: apps/catalogue/reviews/forms.py:12 apps/catalogue/reviews/forms.py:29
-#: apps/ex_sites/models.py:12 templates/checkout/checkout.html:49
+#: apps/ex_sites/models.py:13 templates/checkout/checkout.html:49
 #: templates/checkout/thank_you.html:52
 #: templates/dashboard/partners/partner_manage.html:41
 #: templates/dashboard/partners/partner_user_list.html:43
@@ -632,31 +632,35 @@ msgstr ""
 msgid "Advanced options"
 msgstr ""
 
-#: apps/ex_sites/models.py:11 apps/ex_sites/models.py:34
+#: apps/ex_sites/models.py:12 apps/ex_sites/models.py:36
 msgid "Phone numbers"
 msgstr "Телефонные номера"
 
-#: apps/ex_sites/models.py:13
+#: apps/ex_sites/models.py:14
 msgid "Short description of shop"
 msgstr "Краткое описание магазина"
 
-#: apps/ex_sites/models.py:14
+#: apps/ex_sites/models.py:15
 msgid "Google Analytics"
 msgstr "Google аналитика"
 
-#: apps/ex_sites/models.py:15
+#: apps/ex_sites/models.py:16
 msgid "Yandex verification"
 msgstr "Проверочный мета тег яндекса"
 
-#: apps/ex_sites/models.py:16
+#: apps/ex_sites/models.py:17
 msgid "Google verification"
 msgstr "Проверочный мета тег google"
 
-#: apps/ex_sites/models.py:23 apps/ex_sites/models.py:24
+#: apps/ex_sites/models.py:18
+msgid "Logo"
+msgstr "Логотип"
+
+#: apps/ex_sites/models.py:25 apps/ex_sites/models.py:26
 msgid "Information"
 msgstr "Доп. информация"
 
-#: apps/ex_sites/models.py:29 apps/ex_sites/models.py:33
+#: apps/ex_sites/models.py:31 apps/ex_sites/models.py:35
 msgid "Phone number"
 msgstr "Номер телефона"
 
@@ -743,7 +747,7 @@ msgstr ""
 msgid "Build"
 msgstr ""
 
-#: templates/base.html:77
+#: templates/base.html:91
 msgid "Version:"
 msgstr ""
 
@@ -873,7 +877,7 @@ msgstr ""
 #: templates/basket/partials/basket_content.html:30
 #: templates/checkout/checkout.html:110 templates/checkout/thank_you.html:119
 #: templates/customer/anon_order.html:61
-#: templates/customer/wishlists/wishlists_detail.html:32
+#: templates/customer/wishlists/wishlists_detail.html:31
 #: templates/dashboard/orders/line_detail.html:53
 #: templates/dashboard/orders/line_detail.html:111
 #: templates/dashboard/orders/line_detail.html:136
@@ -894,7 +898,7 @@ msgid "Total"
 msgstr ""
 
 #: templates/basket/partials/basket_content.html:65
-#: templates/customer/wishlists/wishlists_detail.html:99
+#: templates/customer/wishlists/wishlists_detail.html:101
 #: templates/dashboard/orders/shippingaddress_form.html:33
 #: templates/dashboard/reviews/review_list.html:50
 msgid "Updating..."
@@ -910,9 +914,9 @@ msgstr ""
 #: templates/basket/partials/basket_content.html:70
 #: templates/basket/partials/basket_content.html:194
 #: templates/basket/partials/basket_totals.html:48
-#: templates/catalogue/partials/add_to_wishlist.html:45
+#: templates/catalogue/partials/add_to_wishlist.html:43
 #: templates/customer/wishlists/wishlists_delete_product.html:32
-#: templates/customer/wishlists/wishlists_detail.html:81
+#: templates/customer/wishlists/wishlists_detail.html:85
 #: templates/dashboard/promotions/delete_pagepromotion.html:31
 #: templates/dashboard/promotions/page_detail.html:55
 #: templates/dashboard/ranges/range_product_list.html:110
@@ -935,8 +939,8 @@ msgstr ""
 #: templates/catalogue/partials/add_to_basket_form.html:13
 #: templates/catalogue/partials/add_to_basket_form.html:14
 #: templates/catalogue/partials/add_to_basket_form_compact.html:12
-#: templates/catalogue/partials/add_to_wishlist.html:33
-#: templates/catalogue/partials/add_to_wishlist.html:34
+#: templates/catalogue/partials/add_to_wishlist.html:31
+#: templates/catalogue/partials/add_to_wishlist.html:32
 #: templates/dashboard/catalogue/product_update.html:247
 #: templates/dashboard/promotions/form.html:83
 #: templates/dashboard/shipping/weight_based_detail.html:93
@@ -1403,14 +1407,15 @@ msgstr ""
 
 #: templates/catalogue/partials/add_to_wishlist.html:11
 #: templates/catalogue/partials/add_to_wishlist.html:12
-#: templates/catalogue/partials/add_to_wishlist.html:33
-#: templates/catalogue/partials/add_to_wishlist.html:34
-#: templates/catalogue/partials/add_to_wishlist.html:51
-#: templates/catalogue/partials/add_to_wishlist.html:52
+#: templates/catalogue/partials/add_to_wishlist.html:31
+#: templates/catalogue/partials/add_to_wishlist.html:32
+#: templates/catalogue/partials/add_to_wishlist.html:49
+#: templates/catalogue/partials/add_to_wishlist.html:50
 msgid "Add to wish list"
 msgstr ""
 
 #: templates/catalogue/partials/add_to_wishlist.html:18
+#, python-format
 msgid ""
 "\n"
 "                                        Add to '%(name)s' wish list\n"
@@ -1424,13 +1429,8 @@ msgstr ""
 msgid "Create a new wishlist"
 msgstr "Создать новый список"
 
-#: templates/catalogue/partials/add_to_wishlist.html:42
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                        <span class=\"pull-left\">Product is in <a href="
-#| "\"%(url)s\">'%(name)s'</a> wishlist.</span>\n"
-#| "                    "
+#: templates/catalogue/partials/add_to_wishlist.html:40
+#, python-format
 msgid ""
 "\n"
 "                    <span class=\"pull-left\">Product is in <a href=\"%(url)s"
@@ -1442,7 +1442,7 @@ msgstr ""
 "\">'%(name)s'</a> списке.</span>\n"
 "                "
 
-#: templates/catalogue/partials/add_to_wishlist.html:45
+#: templates/catalogue/partials/add_to_wishlist.html:43
 #: templates/customer/wishlists/wishlists_delete_product.html:32
 #: templates/dashboard/promotions/delete_pagepromotion.html:31
 #: templates/dashboard/promotions/form.html:65
@@ -1450,7 +1450,7 @@ msgstr ""
 msgid "Removing..."
 msgstr ""
 
-#: templates/catalogue/partials/add_to_wishlist.html:50
+#: templates/catalogue/partials/add_to_wishlist.html:48
 msgid "Please login to add products to a wish list."
 msgstr ""
 
@@ -2721,16 +2721,16 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/customer/wishlists/wishlists_detail.html:33
+#: templates/customer/wishlists/wishlists_detail.html:32
 #: templates/customer/wishlists/wishlists_list.html:11
 msgid "Action"
 msgstr ""
 
-#: templates/customer/wishlists/wishlists_detail.html:69
+#: templates/customer/wishlists/wishlists_detail.html:70
 msgid "View product"
 msgstr ""
 
-#: templates/customer/wishlists/wishlists_detail.html:75
+#: templates/customer/wishlists/wishlists_detail.html:78
 #: templates/dashboard/catalogue/category_row_actions.html:6
 #: templates/dashboard/catalogue/product_class_list.html:42
 #: templates/dashboard/catalogue/product_row_actions.html:6
@@ -2752,20 +2752,23 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: templates/customer/wishlists/wishlists_detail.html:85
+#: templates/customer/wishlists/wishlists_detail.html:89
 #, python-format
 msgid ""
 "\n"
-"                                                            Move to "
-"'%(name)s' wish list\n"
-"                                                        "
+"                                                Move to '%(name)s' wish "
+"list\n"
+"                                            "
 msgstr ""
+"\n"
+"                                            Добавить к '%(name)s'\n"
+"                                        "
 
-#: templates/customer/wishlists/wishlists_detail.html:99
+#: templates/customer/wishlists/wishlists_detail.html:101
 msgid "Update quantities"
 msgstr ""
 
-#: templates/customer/wishlists/wishlists_detail.html:108
+#: templates/customer/wishlists/wishlists_detail.html:106
 msgid "Your wish list is empty."
 msgstr ""
 
@@ -3075,6 +3078,10 @@ msgid ""
 "you sure?\n"
 "                "
 msgstr ""
+"\n"
+"                    Удалить варианты товара <strong>%(title)s</strong> - Вы "
+"уверены ?\n"
+"                "
 
 #: templates/dashboard/catalogue/product_delete.html:41
 #, python-format

@@ -1,6 +1,13 @@
+{% load thumbnail %}
+
 <div class="col-sm-4 h1">
     {% block brand_title %}
-        <a href="{{ homepage_url }}">{{ shop_name }}</a>
-        <small> {{ shop_tagline }}</small>
+        <a href="{{ homepage_url }}">
+            {% if current_site.info.logo %}
+                {% thumbnail current_site.info.logo current_site.info.size_logo crop as thumb %}
+                <img src="{{ thumb.url }}" title="{{ shop_name }} {{ shop_tagline }}" alt="{{ shop_name }}"/>
+            {% endif %}
+        </a>
+        <div><small> {{ shop_name }}</small></div>
     {% endblock %}
 </div>
