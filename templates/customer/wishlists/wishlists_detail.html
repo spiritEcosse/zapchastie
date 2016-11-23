@@ -66,7 +66,10 @@
                                 <td>
                                     <div class="btn-group">
                                         {% if product %}
-                                            <a class="btn btn-default" href="{{ line.product.get_absolute_url }}">{% trans 'View product' %}</a>
+                                            <a class="btn btn-default" data-toggle="tooltip"
+                                               title="{% trans 'View product' %} {{ line.product.get_title }}" href="{{ line.product.get_absolute_url }}">
+                                                <span class="glyphicon glyphicon-link"></span>
+                                            </a>
                                             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                 <span class="caret"></span>
                                             </button>
@@ -76,7 +79,7 @@
                                                 <span class="caret"></span>
                                             </a>
                                         {% endif %}
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pull-right" >
                                             <li><a href="{% url 'customer:wishlists-remove-product' key=wishlist.key line_pk=line.pk %}">
                                                     {% trans 'Remove' %}
                                             </a></li>

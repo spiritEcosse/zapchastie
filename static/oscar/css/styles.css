@@ -9206,7 +9206,6 @@ a:hover .thumbnail {
   padding-left: 1.78571429em;
 }
 .add-to-basket {
-  width: 220px;
   margin-bottom: 0;
   margin-right: 10px;
   *margin-right: 20px;
@@ -9217,6 +9216,16 @@ a:hover .thumbnail {
   *display: inline;
   zoom: 1;
 }
+@media (max-width: 767px) {
+  .add-to-basket,
+  .btn-wishlist,
+  .wrapper-wishlist {
+    width: 100%;
+  }
+  .btn {
+    display: block;
+  }
+}
 .wrapper-wishlist {
   vertical-align: top;
   display: inline-flex;
@@ -9226,6 +9235,13 @@ a:hover .thumbnail {
 }
 .short-info {
   margin-bottom: 20px;
+}
+.btn-group,
+.btn-group-vertical {
+  vertical-align: top;
+}
+.wishlists {
+  margin-top: 10px;
 }
 .review {
   margin-bottom: 20px;

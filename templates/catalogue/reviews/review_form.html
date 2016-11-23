@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block product_review %}
-    <div id="addreview" class="review_add">
+    <div id="addreview">
         <form id="add_review_form" method="post" action="./#addreview">
             <h2>{% trans "Leave a product review" %} {{ product.title }}</h2>
             {% csrf_token %}

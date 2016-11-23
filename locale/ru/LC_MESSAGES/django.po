@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 21:16+0000\n"
+"POT-Creation-Date: 2016-11-23 08:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -910,7 +910,7 @@ msgstr ""
 #: templates/basket/partials/basket_content.html:70
 #: templates/basket/partials/basket_content.html:194
 #: templates/basket/partials/basket_totals.html:48
-#: templates/catalogue/partials/add_to_wishlist.html:41
+#: templates/catalogue/partials/add_to_wishlist.html:45
 #: templates/customer/wishlists/wishlists_delete_product.html:32
 #: templates/customer/wishlists/wishlists_detail.html:81
 #: templates/dashboard/promotions/delete_pagepromotion.html:31
@@ -935,7 +935,8 @@ msgstr ""
 #: templates/catalogue/partials/add_to_basket_form.html:13
 #: templates/catalogue/partials/add_to_basket_form.html:14
 #: templates/catalogue/partials/add_to_basket_form_compact.html:12
-#: templates/catalogue/partials/add_to_wishlist.html:31
+#: templates/catalogue/partials/add_to_wishlist.html:33
+#: templates/catalogue/partials/add_to_wishlist.html:34
 #: templates/dashboard/catalogue/product_update.html:247
 #: templates/dashboard/promotions/form.html:83
 #: templates/dashboard/shipping/weight_based_detail.html:93
@@ -1401,34 +1402,47 @@ msgid "Notify me"
 msgstr ""
 
 #: templates/catalogue/partials/add_to_wishlist.html:11
-#: templates/catalogue/partials/add_to_wishlist.html:31
-#: templates/catalogue/partials/add_to_wishlist.html:47
-#: templates/catalogue/partials/add_to_wishlist.html:48
+#: templates/catalogue/partials/add_to_wishlist.html:12
+#: templates/catalogue/partials/add_to_wishlist.html:33
+#: templates/catalogue/partials/add_to_wishlist.html:34
+#: templates/catalogue/partials/add_to_wishlist.html:51
+#: templates/catalogue/partials/add_to_wishlist.html:52
 msgid "Add to wish list"
 msgstr ""
 
-#: templates/catalogue/partials/add_to_wishlist.html:17
-#, python-format
+#: templates/catalogue/partials/add_to_wishlist.html:18
 msgid ""
 "\n"
-"                                            Add to '%(name)s' wish list\n"
+"                                        Add to '%(name)s' wish list\n"
+"                                    "
+msgstr ""
+"\n"
+"                                            Добавить к '%(name)s'\n"
 "                                        "
-msgstr ""
 
-#: templates/catalogue/partials/add_to_wishlist.html:24
+#: templates/catalogue/partials/add_to_wishlist.html:25
 msgid "Create a new wishlist"
-msgstr ""
+msgstr "Создать новый список"
 
-#: templates/catalogue/partials/add_to_wishlist.html:38
-#, python-format
+#: templates/catalogue/partials/add_to_wishlist.html:42
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                        <span class=\"pull-left\">Product is in <a href="
+#| "\"%(url)s\">'%(name)s'</a> wishlist.</span>\n"
+#| "                    "
 msgid ""
 "\n"
 "                    <span class=\"pull-left\">Product is in <a href=\"%(url)s"
 "\">'%(name)s'</a> wishlist.</span>\n"
 "                "
 msgstr ""
+"\n"
+"                    <span class=\"pull-left\">Товар в <a href=\"%(url)s"
+"\">'%(name)s'</a> списке.</span>\n"
+"                "
 
-#: templates/catalogue/partials/add_to_wishlist.html:41
+#: templates/catalogue/partials/add_to_wishlist.html:45
 #: templates/customer/wishlists/wishlists_delete_product.html:32
 #: templates/dashboard/promotions/delete_pagepromotion.html:31
 #: templates/dashboard/promotions/form.html:65
@@ -1436,7 +1450,7 @@ msgstr ""
 msgid "Removing..."
 msgstr ""
 
-#: templates/catalogue/partials/add_to_wishlist.html:46
+#: templates/catalogue/partials/add_to_wishlist.html:50
 msgid "Please login to add products to a wish list."
 msgstr ""
 

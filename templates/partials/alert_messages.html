@@ -9,18 +9,9 @@ Use message tags to control these alerts.  Available tags include:
 {% endcomment %}
 
 <div id="messages">
-{% if messages %}
-    {% for message in messages %}
-    <div class="alert {% for tag in message.tags|split %}alert-{{ tag }} {% endfor %} fade in">
-            <a class="close" data-dismiss="alert" href="#">&times;</a>
-            <div class="alertinner {% if 'noicon' not in message.tags %}wicon{% endif %}">
-                {# Allow HTML to be embedded in messages #}
-                {% if 'safe' in message.tags %}
-                    {{ message|safe }}
-                {% else %}
-                    {{ message }}
-                {% endif %}
-
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% for tag in message.tags|split %}alert-{{ tag }} {% endfor %} alert-dismissible" role="alert">
                 {% if 'noicon' not in message.tags %}
                     {# Include an icon by default #}
                     {% if 'success' in message.tags %}
@@ -33,8 +24,16 @@ Use message tags to control these alerts.  Available tags include:
                         <i class="icon-exclamation-sign"></i>
                     {% endif %}
                 {% endif %}
+
+                {# Allow HTML to be embedded in messages #}
+                {% if 'safe' in message.tags %}
+                    {{ message|safe }}
+                {% else %}
+                    {{ message }}
+                {% endif %}
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-        </div>
-    {% endfor %}
-{% endif %}
+        {% endfor %}
+    {% endif %}
 </div>

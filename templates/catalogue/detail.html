@@ -283,16 +283,3 @@
 
     </article><!-- End of product page -->
 {% endblock content %}
-
-{% block extrascripts %}
-    {{ block.super }}
-    <script>
-        (function($) {
-            fakewaffle.responsiveTabs(['xs', 'sm']);
-        })(jQuery);
-
-        $(function() {
-            $('.tooltip-wrapper').tooltip({position: "bottom"});
-        });
-    </script>
-{% endblock %}

@@ -1,20 +1,20 @@
 // OSCAR PRODUCTS UNIQUE STYLES
 // -----------
 .availability {
-    &.outofstock {
-        color:@brand-danger;
-    }
-    &.instock {
-        color:@brand-success;
-    }
+  &.outofstock {
+    color:@brand-danger;
+  }
+  &.instock {
+    color:@brand-success;
+  }
 }
 
 // PRICE SIZE/COLOR
 // -----------
 .price_color {
-    display:block;
-    color:@brand-success;
-    font-weight:bold;
+  display:block;
+  color:@brand-success;
+  font-weight:bold;
 }
 
 .product_main .price_color {font-size: 26px; }
@@ -28,38 +28,51 @@
 .review_all,
 .review_read,
 .side_categories {
-    .well();
-    li {
-        ul,
-        ol {
-            padding-left: 25/14em;
-        }
+  .well();
+  li {
+    ul,
+    ol {
+      padding-left: 25/14em;
     }
+  }
 }
 
 // Wish lists
 // Align wish list button with add to basket button
 .add-to-basket {
-    //Width of default input/select/textarea
-    width: 220px;
-    margin-bottom:0;
-    margin-right:10px;
-    *margin-right:20px;
+  //Width of default input/select/textarea
+  margin-bottom:0;
+  margin-right:10px;
+  *margin-right:20px;
 }
 .add-to-basket,
 .btn-wishlist {
-    display:inline-block;
-    *display:inline;
-    zoom:1;
+  display:inline-block;
+  *display:inline;
+  zoom:1;
+}
+@media (max-width: @screen-xs-max) {
+  .add-to-basket, .btn-wishlist, .wrapper-wishlist {
+    width: 100%;
+  }
+  .btn {
+    display: block;
+  }
 }
 // For responsive - when button falls under each other
 .wrapper-wishlist {
-    vertical-align:top;
-    display: inline-flex;
+  vertical-align:top;
+  display: inline-flex;
 }
 .add-to-basket .btn {
-    margin-bottom:@line-height-computed;
+  margin-bottom:@line-height-computed;
 }
 .short-info {
-    margin-bottom: @line-height-computed;
+  margin-bottom: @line-height-computed;
+}
+.btn-group, .btn-group-vertical {
+  vertical-align: top;
+}
+.wishlists {
+  margin-top:10px;
 }
