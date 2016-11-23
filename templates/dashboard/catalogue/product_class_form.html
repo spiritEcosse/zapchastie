@@ -22,7 +22,7 @@
 {% block headertext %}{{ title }}{% endblock %}
 
 {% block dashboard_content %}
-    <form class="form-stacked wysiwyg fixed-actions" method="post" data-behaviour="affix-nav-errors">
+    <form class="form-stacked wysiwyg fixed-actions" action="." method="post" data-behaviour="affix-nav-errors">
         {% csrf_token %}
 
         <div class="row">

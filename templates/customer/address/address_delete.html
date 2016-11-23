@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block tabcontent %}
-<form method="post">
+<form method="post" action=".">
     {% csrf_token %}
     <p>{% trans 'Are you sure you want to delete this address?' %}</p>
 

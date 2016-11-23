@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block tabcontent %}
-    <form method="post">
+    <form method="post" action=".">
         {% csrf_token %}
         <p>
             {% blocktrans with product_name=object.get_title wishlist_name=wishlist.name %}
