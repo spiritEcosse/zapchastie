@@ -8,7 +8,7 @@ ProductReview = get_model('reviews', 'productreview')
 
 
 class ProductReviewForm(forms.ModelForm):
-    name = forms.CharField(label=_('Name'), required=True)
+    name = forms.CharField(label=_('Your name'), required=True)
     email = forms.EmailField(label=_('Email'), required=True)
 
     def __init__(self, product, user=None, *args, **kwargs):
@@ -21,7 +21,7 @@ class ProductReviewForm(forms.ModelForm):
 
     class Meta:
         model = ProductReview
-        fields = ('title', 'score', 'body', 'name', 'email')
+        fields = ('name', 'score', 'body', 'email')
 
 
 class ReviewForm(forms.ModelForm):

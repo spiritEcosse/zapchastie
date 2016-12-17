@@ -266,7 +266,7 @@ THUMBNAIL_ALIASES = {
         'basket_content': {'size': (150, 150), 'crop': True},
         'checkout': {'size': (150, 150), 'crop': True},
         'home_thumb_slide': {'size': (1170, 392), 'crop': True},
-        'product_main': {'size': (440, 400), 'crop': True},
+        'product_main': {'size': (556, 275), 'crop': True},
     },
 }
 
@@ -280,7 +280,7 @@ DJANGO_MONEY_RATES = {
     'OPENEXCHANGE_APP_ID': 'a4157eac5336497e963212eeee2e1b14',
     'OPENEXCHANGE_BASE_CURRENCY': 'USD',
 }
-
+OSCAR_CURRENCY_FORMAT = u'грн.'
 BASE_CURRENCY = 'UAH'
 
 HTML_MINIFY = not DEBUG

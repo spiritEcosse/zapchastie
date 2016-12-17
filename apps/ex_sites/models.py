@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from oscar.models.fields import PhoneNumberField
 from filer.fields.image import FilerImageField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 @python_2_unicode_compatible
@@ -42,3 +43,15 @@ class PhoneNumber(models.Model):
 
     def __str__(self):
         return self.phone_number.as_international
+
+
+class Delivery(models.Model):
+    title = models.CharField(_('Title'), max_length=255, blank=True)
+    text = RichTextUploadingField(_('Text'), blank=True)
+    site = models.OneToOneField(Site, related_name='delivery')
+
+    class Meta:
+        app_label = 'sites'
+        verbose_name = _('Delivery')
+        verbose_name_plural = _('Delivery')
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-17 13:52+0000\n"
+"POT-Creation-Date: 2016-12-17 19:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,8 +116,8 @@ msgstr "Особенность"
 msgid "Features"
 msgstr "Особенности"
 
-#: apps/catalogue/models.py:168 apps/catalogue/reviews/forms.py:11
-#: apps/catalogue/reviews/forms.py:28 templates/customer/profile/profile.html:9
+#: apps/catalogue/models.py:168 apps/catalogue/reviews/forms.py:28
+#: templates/customer/profile/profile.html:9
 #: templates/customer/wishlists/wishlists_list.html:9
 #: templates/dashboard/catalogue/product_class_form.html:96
 #: templates/dashboard/catalogue/product_class_list.html:26
@@ -243,7 +243,7 @@ msgstr ""
 msgid "Product structure"
 msgstr ""
 
-#: apps/catalogue/models.py:529 templates/catalogue/detail.html:149
+#: apps/catalogue/models.py:529 templates/catalogue/detail.html:139
 #: templates/dashboard/orders/line_detail.html:50
 #: templates/dashboard/orders/order_detail.html:110
 #: templates/dashboard/ranges/range_product_list.html:94
@@ -576,6 +576,10 @@ msgstr ""
 msgid "You can only vote once on a review"
 msgstr ""
 
+#: apps/catalogue/reviews/forms.py:11
+msgid "Your name"
+msgstr "Ваше имя"
+
 #: apps/catalogue/reviews/forms.py:70
 msgid "Recency"
 msgstr ""
@@ -776,7 +780,7 @@ msgstr ""
 #: templates/basket/basket.html:22
 #: templates/basket/partials/basket_totals.html:9
 #: templates/basket/partials/basket_totals.html:164
-#: templates/checkout/thank_you.html:173 templates/partials/nav_primary.html:20
+#: templates/checkout/thank_you.html:173
 msgid "Basket"
 msgstr ""
 
@@ -909,7 +913,9 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:31
 #: templates/basket/partials/basket_content.html:172
-#: templates/catalogue/detail.html:156
+#: templates/catalogue/detail.html:146
+#: templates/catalogue/partials/stock_record.html:13
+#: templates/catalogue/partials/stock_record.html:17
 msgid "Price"
 msgstr ""
 
@@ -974,7 +980,7 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
 #: templates/catalogue/review_form.html:45
-#: templates/catalogue/reviews/review_form.html:62
+#: templates/catalogue/reviews/review_form.html:63
 #: templates/checkout/shipping_address.html:80
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
@@ -1022,7 +1028,7 @@ msgstr ""
 
 #: templates/basket/partials/basket_content.html:127
 #: templates/catalogue/review_form.html:46
-#: templates/catalogue/reviews/review_form.html:63
+#: templates/catalogue/reviews/review_form.html:64
 #: templates/checkout/user_address_delete.html:30
 #: templates/checkout/user_address_form.html:27
 #: templates/customer/address/address_delete.html:20
@@ -1293,22 +1299,27 @@ msgid "Choose"
 msgstr ""
 
 #: templates/catalogue/detail.html:62
-msgid "Edit this product"
+#: templates/dashboard/catalogue/product_class_form.html:97
+#: templates/dashboard/comms/list.html:31
+#: templates/dashboard/vouchers/voucher_delete.html:38
+#: templates/dashboard/vouchers/voucher_detail.html:33
+#: templates/dashboard/vouchers/voucher_list.html:53
+msgid "Code"
 msgstr ""
 
-#: templates/catalogue/detail.html:98
+#: templates/catalogue/detail.html:88
 msgid "Product Description"
 msgstr ""
 
-#: templates/catalogue/detail.html:104
+#: templates/catalogue/detail.html:94
 msgid "Product Information"
 msgstr ""
 
-#: templates/catalogue/detail.html:110 templates/catalogue/detail.html:185
+#: templates/catalogue/detail.html:100 templates/catalogue/detail.html:175
 msgid "Characteristics"
 msgstr "Характеристики"
 
-#: templates/catalogue/detail.html:116
+#: templates/catalogue/detail.html:106
 #: templates/catalogue/reviews/review_detail.html:5
 #: templates/catalogue/reviews/review_detail.html:23
 #: templates/dashboard/reviews/review_delete.html:8
@@ -1319,39 +1330,39 @@ msgstr "Характеристики"
 #: templates/dashboard/reviews/review_update.html:17
 #: templates/dashboard/users/detail.html:108
 #: templates/dashboard/users/detail.html:173
-#: templates/partials/nav_primary.html:80
+#: templates/partials/nav_primary.html:64
 msgid "Reviews"
 msgstr ""
 
-#: templates/catalogue/detail.html:121
+#: templates/catalogue/detail.html:111
 msgid "Question about this item"
 msgstr "Задать вопрос об этом товаре"
 
-#: templates/catalogue/detail.html:133
+#: templates/catalogue/detail.html:123
 msgid "Description of product "
 msgstr "Описание "
 
-#: templates/catalogue/detail.html:144
+#: templates/catalogue/detail.html:134
 msgid "Information of product "
 msgstr "Информация о "
 
-#: templates/catalogue/detail.html:159
+#: templates/catalogue/detail.html:149
 msgid "Availability"
 msgstr ""
 
-#: templates/catalogue/detail.html:172
+#: templates/catalogue/detail.html:162
 msgid "Number of reviews"
 msgstr ""
 
-#: templates/catalogue/detail.html:207
+#: templates/catalogue/detail.html:197
 msgid "See all reviews"
 msgstr ""
 
-#: templates/catalogue/detail.html:209
+#: templates/catalogue/detail.html:199
 msgid "Customer Reviews of "
 msgstr "Отзывы пользователей о "
 
-#: templates/catalogue/detail.html:216
+#: templates/catalogue/detail.html:206
 #, python-format
 msgid ""
 "This product does not have any reviews yet -\n"
@@ -1364,30 +1375,30 @@ msgstr ""
 "\">будьте первым, написавшим отзыв</a>.\n"
 "                                "
 
-#: templates/catalogue/detail.html:220
+#: templates/catalogue/detail.html:210
 msgid "This product does not have any reviews yet"
 msgstr ""
 
-#: templates/catalogue/detail.html:241
+#: templates/catalogue/detail.html:231
 msgid "Question of "
 msgstr "Задать вопрос o "
 
-#: templates/catalogue/detail.html:243 templates/catalogue/detail.html:249
+#: templates/catalogue/detail.html:233 templates/catalogue/detail.html:239
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/catalogue/detail.html:243 templates/dashboard/comms/detail.html:83
+#: templates/catalogue/detail.html:233 templates/dashboard/comms/detail.html:83
 #: templates/dashboard/users/detail.html:92
 #: templates/registration/password_reset_form.html:24
 msgid "Sending..."
 msgstr ""
 
-#: templates/catalogue/detail.html:254
+#: templates/catalogue/detail.html:244
 #: templates/dashboard/orders/order_list.html:72
 msgid "Close"
 msgstr ""
 
-#: templates/catalogue/detail.html:271
+#: templates/catalogue/detail.html:261
 msgid "Recommended items"
 msgstr ""
 
@@ -1566,8 +1577,8 @@ msgstr "Оставить отзыв"
 
 #: templates/catalogue/review_form.html:43
 #: templates/catalogue/review_form.html:44
-#: templates/catalogue/reviews/review_form.html:60
 #: templates/catalogue/reviews/review_form.html:61
+#: templates/catalogue/reviews/review_form.html:62
 #: templates/checkout/shipping_address.html:41
 #: templates/checkout/shipping_address.html:43
 #: templates/checkout/user_address_form.html:26
@@ -1594,8 +1605,8 @@ msgstr ""
 
 #: templates/catalogue/review_form.html:43
 #: templates/catalogue/review_form.html:44
-#: templates/catalogue/reviews/review_form.html:60
 #: templates/catalogue/reviews/review_form.html:61
+#: templates/catalogue/reviews/review_form.html:62
 msgid "Save review"
 msgstr ""
 
@@ -3048,14 +3059,6 @@ msgstr ""
 #: templates/dashboard/catalogue/product_class_form.html:40
 #: templates/dashboard/catalogue/product_class_form.html:85
 msgid "Product attributes"
-msgstr ""
-
-#: templates/dashboard/catalogue/product_class_form.html:97
-#: templates/dashboard/comms/list.html:31
-#: templates/dashboard/vouchers/voucher_delete.html:38
-#: templates/dashboard/vouchers/voucher_detail.html:33
-#: templates/dashboard/vouchers/voucher_list.html:53
-msgid "Code"
 msgstr ""
 
 #: templates/dashboard/catalogue/product_class_form.html:98
@@ -5327,23 +5330,14 @@ msgid "Toggle navigation"
 msgstr "Переключение навигации"
 
 #: templates/partials/nav_primary.html:23
-#: templates/partials/nav_primary.html:27
-#, python-format
-msgid ""
-"\n"
-"                        Total: %(total)s\n"
-"                    "
-msgstr ""
-
-#: templates/partials/nav_primary.html:39
 msgid "Browse store"
 msgstr ""
 
-#: templates/partials/nav_primary.html:46
+#: templates/partials/nav_primary.html:30
 msgid "All products"
 msgstr ""
 
-#: templates/partials/nav_primary.html:50
+#: templates/partials/nav_primary.html:34
 msgid "Catalogue"
 msgstr ""
 

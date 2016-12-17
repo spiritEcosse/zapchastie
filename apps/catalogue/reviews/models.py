@@ -1,10 +1,10 @@
-from oscar.apps.catalogue.reviews.abstract_models import AbstractProductReview
+from apps.catalogue.reviews.abstract_models import AbstractProductReview
 from django.core.urlresolvers import reverse
 
 
 class ProductReview(AbstractProductReview):
     def save(self, *args, **kwargs):
-        super(AbstractProductReview, self).save()
+        super(ProductReview, self).save()
 
         if getattr(self, 'product', False):
             self.product.update_rating()

@@ -3,6 +3,9 @@
 {% load promotion_tags %}
 {% load i18n %}
 
+{% block column_left %}
+{% endblock %}
+
 {% block styles %}
     {% comment %}
         If you are developing Oscar's CSS, or overriding Oscar's CSS
@@ -19,9 +22,6 @@
 {% endblock %}
 
 {% block layout %}
-    {# Top-horizontal bar with account, notifictions, dashboard links #}
-    {% include "partials/nav_accounts.html" %}
-
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header class="header container-fluid">
         <div class="page_inner">
@@ -41,8 +41,6 @@
                         </div>
                     {% endif %}
                 </div>
-                {# Mini-basket wrapped in a block so some templates can now display it #}
-                {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
             </div>
         </div>
         {% block navigation %}

@@ -31,7 +31,7 @@ class AbstractProductReview(models.Model):
 
     title = models.CharField(
         verbose_name=pgettext_lazy(u"Product review title", u"Title"),
-        max_length=255, validators=[validators.non_whitespace])
+        max_length=255, blank=True)
 
     body = models.TextField(_("Body"))
 

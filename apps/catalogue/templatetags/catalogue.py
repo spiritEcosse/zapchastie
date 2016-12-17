@@ -2,6 +2,9 @@ from django.core.urlresolvers import reverse
 from django import template
 from django.template import Node, Library, TemplateSyntaxError, VariableDoesNotExist, NodeList, resolve_variable
 from zapchastie.settings import DJANGO_MONEY_RATES, BASE_CURRENCY
+import math
+from decimal import Decimal
+from zapchastie.settings import OSCAR_CURRENCY_FORMAT
 register = Library()
 
 
@@ -152,5 +155,5 @@ def join_slug(list, separator):
 @register.simple_tag
 def convert_money(price, currency):
     from djmoney_rates.utils import convert_money
-
-    return convert_money(price, currency, BASE_CURRENCY)
+    price = convert_money(price, currency, BASE_CURRENCY).amount
+    return u'{} {}'.format(int(math.ceil(price / Decimal(10.0))) * 10 - 1, OSCAR_CURRENCY_FORMAT)

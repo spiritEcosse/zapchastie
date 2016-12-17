@@ -1,7 +1,7 @@
 from django.contrib.sites.admin import SiteAdmin
 from django.contrib import admin
 from django.contrib.sites.models import Site
-from models import PhoneNumber, Info
+from models import PhoneNumber, Info, Delivery
 
 
 class InfoInline(admin.StackedInline):
@@ -9,8 +9,13 @@ class InfoInline(admin.StackedInline):
     can_delete = False
 
 
+class DeliveryInline(admin.StackedInline):
+    model = Delivery
+    can_delete = False
+
+
 class InfoAdmin(SiteAdmin):
-    inlines = (InfoInline, )
+    inlines = (InfoInline, DeliveryInline, )
 
 
 class PhoneNumberAdmin(admin.ModelAdmin):
