@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from oscar.models.fields import ExtendedURLField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class MetaTags(models.Model):
@@ -15,6 +16,19 @@ class MetaTags(models.Model):
     class Meta:
         verbose_name = _('Meta tags on page')
         verbose_name_plural = _('Meta tags on pages')
+
+    def __str__(self):
+        return self.page_url
+
+
+class MetaContent(models.Model):
+    page_url = ExtendedURLField(_('Page URL'), max_length=128, unique=True, verify_exists=True)
+    text = RichTextUploadingField(_('Text'), blank=True)
+    title = models.CharField(verbose_name=_('Title'), max_length=255)
+
+    class Meta:
+        verbose_name = _('Meta content on page')
+        verbose_name_plural = _('Meta contents on pages')
 
     def __str__(self):
         return self.page_url

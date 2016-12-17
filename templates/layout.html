@@ -74,15 +74,30 @@
                 <div class="content">
                     {% block subheader %}{% endblock subheader %}
 
-                    {# Render promotions #}
-                    <div id="promotions">
-                        {% for promotion in promotions_page %}
-                            {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
+                    <div class="table-wrapper">
+                        {% if content %}
+                            <div class="table-footer">
+                                <section class="well well-blank">
+                                    <div class="sub-header">
+                                        <div class="head_h2">{{ content.title }}</div>
+                                    </div>
+                                    {{ content.text|safe }}
+                                </section>
+                            </div>
+                        {% endif %}
 
-                    {# Div exists for AJAX updates to entire content section #}
-                    <div id="content_inner">{% block content %}{% endblock %}</div>
+                        <div class="table-header">
+                            {# Render promotions #}
+                            <div id="promotions">
+                                {% for promotion in promotions_page %}
+                                    {% render_promotion promotion %}
+                                {% endfor %}
+                            </div>
+
+                            {# Div exists for AJAX updates to entire content section #}
+                            <div id="content_inner">{% block content %}{% endblock %}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

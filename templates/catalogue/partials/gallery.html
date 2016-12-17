@@ -6,7 +6,6 @@
     {# use length rather then count as the images get queried anyways #}
 
     {% if all_images|length > 1 %}
-
         <div id="product_gallery" class="carousel slide">
 
             <div class="thumbnail">
@@ -14,7 +13,7 @@
                 {% for image in all_images %}
                     <div class="item {% if forloop.first %}active{% endif %}">
                         {% thumbnail image.original "440x400" upscale=False as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{% trans 'Photo ' %}{{ product.get_title }}" />
                     </div>
                 {% endfor %}
                 </div>
@@ -36,24 +35,21 @@
                 {% for image in all_images %}
                     <li data-target="#product_gallery" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}">
                         {% thumbnail image.original "65x55" crop="center" as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" title="{% trans 'Photo ' %}{{ product.get_title }}" />
                     </li>
                 {% endfor %}
             </ol>
         </div>
-
     {% else %}
-
         {# Only one image to show #}
         <div id="product_gallery" class="carousel">
             <div class="thumbnail">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="{{ product.primary_image.original|thumbnail_url:'product_main' }}" alt="{{ product.get_title }}" title="{{ product.get_title }}" />
+                        <img src="{{ product.primary_image.original|thumbnail_url:'product_main' }}" alt="{{ product.get_title }}" title="{% trans 'Photo ' %}{{ product.get_title }}" />
                     </div>
                 </div>
             </div>
         </div>
-
     {% endif %}
 {% endwith %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-23 11:45+0000\n"
+"POT-Creation-Date: 2016-12-17 13:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Product date updated"
 msgstr ""
 
-#: apps/catalogue/models.py:131
+#: apps/catalogue/models.py:131 apps/seo/models.py:27
 #: templates/dashboard/catalogue/product_update.html:254
 msgid "Title"
 msgstr ""
@@ -143,22 +143,22 @@ msgid "Name"
 msgstr ""
 
 #: apps/catalogue/models.py:171 apps/catalogue/models.py:548
-#: apps/seo/models.py:9
+#: apps/seo/models.py:10
 msgid "Meta tag: title"
 msgstr "Мета тег: title"
 
 #: apps/catalogue/models.py:172 apps/catalogue/models.py:547
-#: apps/seo/models.py:10
+#: apps/seo/models.py:11
 msgid "h1"
 msgstr ""
 
 #: apps/catalogue/models.py:173 apps/catalogue/models.py:549
-#: apps/seo/models.py:11
+#: apps/seo/models.py:12
 msgid "Meta tag: description"
 msgstr "Мета тег: description"
 
 #: apps/catalogue/models.py:174 apps/catalogue/models.py:550
-#: apps/seo/models.py:12
+#: apps/seo/models.py:13
 msgid "Meta tag: keywords"
 msgstr "Мета тег: keywords"
 
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Advanced options"
 msgstr ""
 
-#: apps/ex_sites/models.py:12 apps/ex_sites/models.py:36
+#: apps/ex_sites/models.py:12 apps/ex_sites/models.py:41
 msgid "Phone numbers"
 msgstr "Телефонные номера"
 
@@ -656,11 +656,19 @@ msgstr "Проверочный мета тег google"
 msgid "Logo"
 msgstr "Логотип"
 
-#: apps/ex_sites/models.py:25 apps/ex_sites/models.py:26
+#: apps/ex_sites/models.py:19
+msgid "Width logo"
+msgstr ""
+
+#: apps/ex_sites/models.py:20
+msgid "Height logo"
+msgstr ""
+
+#: apps/ex_sites/models.py:27 apps/ex_sites/models.py:28
 msgid "Information"
 msgstr "Доп. информация"
 
-#: apps/ex_sites/models.py:31 apps/ex_sites/models.py:35
+#: apps/ex_sites/models.py:36 apps/ex_sites/models.py:40
 msgid "Phone number"
 msgstr "Номер телефона"
 
@@ -695,17 +703,30 @@ msgstr ""
 msgid "In stock (%d available)"
 msgstr ""
 
-#: apps/seo/models.py:13 templates/dashboard/promotions/form.html:49
+#: apps/seo/models.py:14 apps/seo/models.py:25
+#: templates/dashboard/promotions/form.html:49
 msgid "Page URL"
 msgstr ""
 
-#: apps/seo/models.py:16
+#: apps/seo/models.py:17
 msgid "Meta tags on page"
 msgstr "Мета теги на странице"
 
-#: apps/seo/models.py:17
+#: apps/seo/models.py:18
 msgid "Meta tags on pages"
 msgstr "Мета теги на страницах"
+
+#: apps/seo/models.py:26
+msgid "Text"
+msgstr ""
+
+#: apps/seo/models.py:30
+msgid "Meta content on page"
+msgstr "Мета контент на странице"
+
+#: apps/seo/models.py:31
+msgid "Meta contents on pages"
+msgstr "Мета контент на страницах"
 
 #: templates/403.html:5 templates/403.html.py:9
 msgid "Permission denied!"
@@ -1453,6 +1474,13 @@ msgstr ""
 #: templates/catalogue/partials/add_to_wishlist.html:48
 msgid "Please login to add products to a wish list."
 msgstr ""
+
+#: templates/catalogue/partials/gallery.html:16
+#: templates/catalogue/partials/gallery.html:38
+#: templates/catalogue/partials/gallery.html:49
+#: templates/catalogue/partials/product.html:14
+msgid "Photo "
+msgstr "Фото "
 
 #: templates/catalogue/partials/review.html:25
 #, python-format
