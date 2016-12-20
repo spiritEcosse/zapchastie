@@ -60,7 +60,7 @@ create_settings_local:
 debian_ubuntu_install_modules: postgresql libs install_pip
 
 dumpdata:
-    ./dump.sh
+	./dump.sh
 
 site: debian_ubuntu_install_modules create_settings_local virtual_environment
 
