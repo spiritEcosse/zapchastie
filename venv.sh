@@ -17,7 +17,9 @@ pip install -r requirements.txt
 ./manage.py collectstatic --noinput
 
 # Load all data from fixtures
-./manage.py loaddata data/fixtures/all.json
+# tar - data/fixtures/all.json.tar.gz data/fixtures/all.json # Unzip all.json
+# ./manage.py loaddata data/fixtures/all.json
+
 
 # Load initial data from fixtures.
 #./manage.py loaddata data/fixtures/sites.json
