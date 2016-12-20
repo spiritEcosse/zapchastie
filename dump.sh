@@ -9,4 +9,4 @@ function dumpdata() {
     git push
 }
 
-dumpdata | tee error.log
+dumpdata 2>&1 | tee error.log
