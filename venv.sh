@@ -16,16 +16,19 @@ pip install -r requirements.txt
 # Collectstatic
 ./manage.py collectstatic --noinput
 
+# Load all data from fixtures
+./manage.py loaddata data/fixtures/all.json
+
 # Load initial data from fixtures.
-./manage.py loaddata data/fixtures/sites.json
-./manage.py loaddata data/fixtures/auth.json
-./manage.py loaddata data/fixtures/category.json
-./manage.py loaddata data/fixtures/product_class.json
-./manage.py loaddata data/fixtures/product.json
-./manage.py loaddata data/fixtures/partner.json
-./manage.py loaddata data/fixtures/redirects.json
-./manage.py loaddata data/fixtures/promotions.json
-./manage.py oscar_populate_countries --initial-only
+#./manage.py loaddata data/fixtures/sites.json
+#./manage.py loaddata data/fixtures/auth.json
+#./manage.py loaddata data/fixtures/category.json
+#./manage.py loaddata data/fixtures/product_class.json
+#./manage.py loaddata data/fixtures/product.json
+#./manage.py loaddata data/fixtures/partner.json
+#./manage.py loaddata data/fixtures/redirects.json
+#./manage.py loaddata data/fixtures/promotions.json
+#./manage.py oscar_populate_countries --initial-only
 ./manage.py clear_index --noinput
 ./manage.py update_index catalogue
 

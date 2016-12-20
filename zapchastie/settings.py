@@ -295,3 +295,5 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'data/fixtures'), )
 OSCAR_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
+
+FILER_DUMP_PAYLOAD = True
