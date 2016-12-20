@@ -18,10 +18,7 @@ postgresql:
 	sudo -u postgres dropuser $(current_dir) --if-exists
 
     # Create user
-	sudo -u postgres psql -c "CREATE USER $(current_dir) WITH PASSWORD '$(current_dir)';"
-
-    # Grant privileges
-	sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $(current_dir) TO $(current_dir);"
+	sudo -u postgres psql -c "CREATE USER $(current_dir) WITH PASSWORD '$(current_dir)' SUPERUSER;"
 
 libs:
     # Install compiler from less to css
