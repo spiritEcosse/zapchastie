@@ -17,7 +17,7 @@ soloha_shop
 /media/*
 !/media/image_not_found.jpg
 
-/temp/
+/tmp/
 # Vagrant
 .vagrant
 npm-debug.log
